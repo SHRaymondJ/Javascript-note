@@ -86,9 +86,3 @@ class Question extends React.Component {
 ```
 
 
-
-react-router-dom
-
-路由
-
-{ Route, Link, useLocation }
