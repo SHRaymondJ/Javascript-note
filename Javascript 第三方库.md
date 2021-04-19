@@ -60,3 +60,35 @@ moment.updateLocale('zh-cn', {
 });
 ```
 
+
+
+## React 库
+
+### [react-icons](https://react-icons.github.io/react-icons)
+
+> 图标库
+
+安装
+
+```
+npm install react-icons --save
+```
+
+使用方法：
+
+```react
+import { FaBeer } from 'react-icons/fa'
+class Question extends React.Component {
+  render() {
+    return <h3> Lets go for a <FaBeer />? </h3>	// 跟引入Component一样
+  }
+}
+```
+
+
+
+react-router-dom
+
+路由
+
+{ Route, Link, useLocation }
