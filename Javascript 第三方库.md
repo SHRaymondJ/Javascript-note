@@ -86,3 +86,67 @@ class Question extends React.Component {
 ```
 
 
+
+## 动态加载库
+
+### [loadable-components](https://loadable-components.com/) 
+
+动态加载。可以降低打包后的文件大小，提升网站加载速度
+
+安装
+
+```
+npm install @loadable/component
+# or use yarn
+yarn add @loadable/component
+```
+
+如果用Babel plugin，需要使用cacheKey设置
+
+```react
+import React, { useState } from 'react'
+import loadable from '@loadable/component'
+
+const AsyncPage = loadable(props => import(`./${props.page}`),{
+    cacheKey: props => props.page
+})
+
+export default function App() {
+    const {page, setPage} = useState('Home')
+    return (
+    	<button onClick={()=>setPage('Home')}>Home</button>
+    	<button onClick={()=>setPage('About')}>About</button>
+        {page && <AsyncPage page={page}/>}	// 渲染在这里
+    )
+}
+```
+
+相当于动态加载`./Home` 和`./About` 的：
+
+```react
+import React from 'react'
+import Home from './Home'
+import About from './About'
+import { BrowserRouter as Router, Switch, Route, Link }
+
+export default function App() {
+    <Router>
+    	<Link to='/'>Home</Link>
+    	<Link to='/about'>About</Link>
+        <Route path='/'>
+        	<Home /> 
+        </Route>
+        <Route path='/about'>
+        	<About />
+        </Route>
+    </Router>
+}
+```
+
+
+
+## Canvas 库
+
+### [Rough.js](https://roughjs.com/)
+
+画手绘风格图片
