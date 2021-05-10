@@ -14,6 +14,12 @@ spm install moment --save   # spm
 meteor add momentjs:moment  # meteor
 ```
 
+引入
+
+```
+import moment from 'moment'
+```
+
 常用方法：
 
 #### fromNow
@@ -59,6 +65,34 @@ moment.updateLocale('zh-cn', {
     }
 });
 ```
+
+#### [diff](http://momentjs.cn/docs/#/displaying/difference/)
+
+时间差
+
+```react
+const start = moment(new Date())
+const end = moment(new Date('2021/12/4'))
+const diff = end.diff(start)	//返回2021/12/4 距离当前时间的事件差
+```
+
+#### [duration](http://momentjs.cn/docs/#/durations/creating/)
+
+获取具体时间戳的时长，
+
+有方法：`years()`, `months()` ,`days()`, `hours()`, `minutes()`, `seconds()`
+
+分别获取对应时长
+
+```react
+const start = moment(new Date())
+const end = moment(new Date('2021/12/4'))
+const diff = end.diff(start)	
+
+console.log(moment.duration(diff).hours())	//2021/12/4距离现在的时间差内的小时
+```
+
+
 
 
 
