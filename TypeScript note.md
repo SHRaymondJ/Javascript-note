@@ -6,6 +6,18 @@ Install:
 npm install -g typescript
 ```
 
+create tsconfig.json
+
+```
+tsc --init
+```
+
+install development dependency
+
+```
+npm install --save-dev typescript @types/react @types/react-dom ts-loader
+```
+
 
 
 Compiled to JS 
@@ -131,4 +143,96 @@ function add(n1:number): undefined{
 `never`： 必须无返回值，无return
 
 `undefined`： 必须return
+
+
+
+interface
+
+接口： 定义复杂数据类型
+
+1. 可用 `?` 定义可选属性
+
+   ```typescript
+   interface selectSquare {
+       number?: number
+       text?: string
+   }
+   const drawSquare = (square: selectSquare): {color:string; area: number} => {
+       // ... 
+       return newSquare
+   }
+   const square = drawSquare({text: 'this is a square'})
+   ```
+
+   
+
+2. 可用 `readonly` 定义只读属性
+
+   ```typescript
+   interface Point {
+       readonly x: number
+       readonly y: number
+   }
+   const point: Point = {x:123,y:456}
+   point.x = 2 // error
+   ```
+
+   
+
+3. 定义函数参数及返回值
+
+   ```typescript
+   interface SearchFunc {
+       (source: string, subString: string) : boolean
+   }
+   let mySearch: SearchFunc
+   mySearch = (s, string) => {
+       //...
+       return true
+   }
+   ```
+
+
+
+
+泛型:
+
+动态设置函数的入参和返回值类型为同一种类型
+
+```typescript
+const identity = <T>(arg: T): T => {
+    return arg
+}
+let output = identity<string>('myString')
+```
+
+也可以是数组
+
+```typescript
+const loggingIdengtity = <T>(arg: T[]): T[] => {
+    console.log(arg.length)
+    return arg
+}
+// 相当于
+function loggingIdentity<T>(arg: Array<T>): Array<T> {
+    console.log(arg.length);  // Array has a .length, so no more error
+    return arg;
+}
+```
+
+泛型接口：
+
+```typescript
+interface GenericIdentityFn<T> {
+    (arg: T) : T
+}
+function identity<T>(arg: T): T {
+    return arg
+}
+let myIdentity: GenericIdentityFn<number> = identity
+let myIdentity2: GenericIdentityFn<string> = identity
+
+```
+
+
 
