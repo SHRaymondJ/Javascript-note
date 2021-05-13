@@ -34,8 +34,134 @@
 
 
 
+## 状态管理
+
+### useState，或者useContext + Reducer
+
+如果项目不大，建议使用这两个解决方案
+
+### react-redux[^1] 结合 reselect[^2]
+
+对于大型或者较为复杂的项目，可以使用redux管理状态。就使用过程来说非常繁琐
+
+安装：
+
+```
+$ yarn add redux react-redux reselect
+```
+
+使用方法：
+
+react & react-redux
+
+```react
+/* ====================== 1. 创建一个homePage reducer */
+// 定义一个默认状态
+const defaultState = {
+    users: ["No User!"]
+}
+// 定义一个reducer
+const homepageReducer = (state = defaultState, action) => {
+    switch (action.type) {
+        default:
+            return store
+    }
+}
+/* ====================== 2. 用redux创建一个store */
+import { createStore, combineReducers } from 'redux'
+// 把需要用到的reducer合并到一起
+const reducers = combineReducers({ homePage: homepageReducer })	
+// 创建store用来管理
+const store = createStore(reducers)
+export default store
+
+/* ====================== 3. 通过react-redux的Provider把store挂载到app下*/
+// index.js
+import React from 'react'
+import ReactDom from 'react-dom'
+
+import { Provider } from 'react-redux'
+import store from './store'
+import App from './App'
+
+ReactDOM.render(
+	<React.StrictMode>
+    	<Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+)
+
+/* ====================== 4. 管理操作*/
+// action.js
+export const setUsers = (users) => ({
+    type: 'SET_USERS',
+    payload: users
+})
+
+```
+
+以上redux和react-redux的工作基本完成，接下去我们引入reselect获取state
+
+reselect
+
+```react
+/* ======================= 5. 创建select*/
+// selectors.js
+import { createSelector } from 'reselect'
+
+// 获得首页状态
+const homePageState = (state) => state.homePage	//这里的state就是store， homePage就是第二步combine的homePage: homepageReducers
+/*
+ * state = { homePage: { users: ['No User!'] } }
+ *
+ *
+ */
+
+// 通过选择器，从首页状态中获取users对象
+export const makeSelectUsers = createSelector(
+	homePageState,	// 入参， 把homePageState 传入下面的函数
+    (homePage) => homePage.users	// 接收homePageState， 返回homePageState.users
+)
+console.log(makeSelectUsers) // ['No User!']
+
+/* ======================= 6. 将select引入页面*/
+// homepage.jsx
+import React from 'react'
+import { createSelector } from 'reselect'
+import { useSelector } from 'react-redux'
+import { makeSelectUsers } from './selectors.js'
+
+const stateSelector = createSelector(makeSelectUsers, (users) => ({ users }))
+
+export const HomePage = () => {
+    const { users } = useSelector(stateSelector)
+    console.log('stateSelector: ',useSelector(stateSelector))	// stateSelector: {users: Array(1)}
+    console.log('makeSelectUsers: ',useSelector(makeSelectUsers))	// makeSelectUsers: ['No User!']
+    console.log('users: ',users)	// users: ['No User!']
+    return <></>
+}
+```
+
+以上是读取state的流程，接下去我们来通过动作修改state
+
+
+
+
+
+
+
 ## 遇到过的问题
 
 Q. yarn build之后打开页面空白
 
 > A. 在package.json中添加homepage映射： `"homepage":"./"`
+
+
+
+
+
+[^1]: 状态管理，单项数据流
+[^2]: 避免冗余计算
+
