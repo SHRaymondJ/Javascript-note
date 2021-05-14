@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import dictionary from './dictionary'
 import { submitLoginForm } from './components/loginSubmit'
@@ -19,7 +19,7 @@ const Login = () => {
     const [lan, setLan] = useState<'cn' | 'en'>('cn')
     const [text, setText] = useState<Dictionary>(dictionary['cn'])
     const [company, setCompany] = useState('')
-    const companyRef = useRef('')
+    const companyRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
         const dic: Dictionary = dictionary[lan]
         setText(dic)
@@ -33,10 +33,12 @@ const Login = () => {
             setLan('cn')
         }
     }
-    const handleCompanyChange = (e: Event) => {
-        setCompany(companyRef.current.value)
+    const handleCompanyChange = () => {
+        if(companyRef.current) {
+            setCompany(companyRef.current.value)
+        }
     }
-    const handleLoginSubmit = (e: Event) => {
+    const handleLoginSubmit = (e: FormEvent) => {
         e.preventDefault()
         console.log(company)
         submitLoginForm({ companyName: company })
@@ -69,7 +71,7 @@ const Login = () => {
                         {language}
                     </button>
                 </div>
-                <form onSubmit={handleLoginSubmit}>
+                <form onSubmit={(e)=>handleLoginSubmit(e)}>
                     <div className="form-li">
                         <label htmlFor="companyName">{companyName}</label>
                         <input
