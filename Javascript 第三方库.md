@@ -121,6 +121,45 @@ class Question extends React.Component {
 
 
 
+### [styled-components](https://styled-components.com/docs/basics)
+
+> js定义css
+
+安装
+
+```
+yarn add styled-components
+```
+
+使用方法：
+
+```react
+// 引入
+import styled from 'styled-components'
+
+// 定义一个div
+const UserContainer = styled.div`
+	width: 100%;
+    display: flex;
+    justify-content: center;
+`
+
+// 使用div
+const UserPage = () => {
+    return (
+    	<UserContainer>
+            <div></div>
+        </UserContainer>
+    ) 
+}
+
+export default UserPage
+```
+
+如果使用vscode，推荐安装插件 `vscode-styled-components` 
+
+
+
 ## 动态加载库
 
 ### [loadable-components](https://loadable-components.com/) 
@@ -133,6 +172,9 @@ class Question extends React.Component {
 npm install @loadable/component
 # or use yarn
 yarn add @loadable/component
+
+typescript:
+yarn add @types/loadable__component
 ```
 
 如果用Babel plugin，需要使用cacheKey设置

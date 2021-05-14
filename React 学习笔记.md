@@ -40,6 +40,68 @@
 
 如果项目不大，建议使用这两个解决方案
 
+```react
+// context.js
+import reducer from './reducer'
+
+const AppContext = React.useContext()
+
+const defaultState = {
+    loading: false
+}
+
+const AppProvider = ({children}) => {
+    const [state, dispatch] = useReducer(reducer, defaultState)
+    
+    const toggleLoading = () => {
+        dispatch({type: 'TOGGLE_LOADING'})
+    }
+    
+    return (
+    	<AppContext.Provider value={{...state, toggleLoading}}>
+        	{children}
+        </AppContext.Provider>
+    )
+}
+
+export const useGlobalContext = () => {
+    return useContext(AppContent)
+}
+
+export { AppContext, AppProvider }
+
+// reducer.js
+const reducer = (state, action) => {
+    if(action.type === 'TOGGLE_LOADING') {
+        return { ...state, loading: !state.loading}
+    }
+}
+
+export default reducer
+
+// 把AppProvider挂到app下
+// index.js
+import {AppProvider} from './context'
+
+ReactDom.render(
+	<React.StrictMode>
+    	<AppProvider>
+        	<App />
+        </AppProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
+)
+
+// 在需要使用的页面引入useGlobalContext
+// homepage.js
+import { useGlobalContext } from './context'
+const { loading, toggleLoading } = useGlobalContext()
+```
+
+
+
+
+
 ### react-redux[^1] 结合 reselect[^2]
 
 对于大型或者较为复杂的项目，可以使用redux管理状态。就使用过程来说非常繁琐
@@ -61,7 +123,7 @@ const defaultState = {
     users: ["No User!"]
 }
 // 定义一个reducer
-const homepageReducer = (state = defaultState, action) => {
+const homePage = (state = defaultState, action) => {
     switch (action.type) {
         default:
             return store
@@ -69,8 +131,8 @@ const homepageReducer = (state = defaultState, action) => {
 }
 /* ====================== 2. 用redux创建一个store */
 import { createStore, combineReducers } from 'redux'
-// 把需要用到的reducer合并到一起
-const reducers = combineReducers({ homePage: homepageReducer })	
+// 把需要用到的reducer合并到一起， reducer内的名字需要统一，否则会报错
+const reducers = combineReducers({ homePage })	
 // 创建store用来管理
 const store = createStore(reducers)
 export default store
@@ -145,6 +207,37 @@ export const HomePage = () => {
 ```
 
 以上是读取state的流程，接下去我们来通过动作修改state
+
+```react
+/* ======================== 7. 修改reducer*/
+const homePage = (state = defaultState, action) => {
+    switch(action.type) {
+    	case: ActionTypes.SET_USERS:
+            return {...state, user: action.payload}
+       	dafault:
+            return state
+    }
+}
+```
+
+然后在页面中使用
+
+```react
+/* ======================== 8. 添加dispatch*/
+// index.js
+import {setUsers} from './actions'
+
+const actionDispatch = (dispatch) => ({
+    setusers: (users) => dispatch(setUsers(users))
+})
+
+/* ======================== 9. 使用useDispatch调用dispatch*/
+const { setUsers } = actionDispatch(useDispatch())
+// 再使用setUsers更新数据
+useEffect(()=>{
+    setUsers({x:'123'})
+}, [])
+```
 
 
 
