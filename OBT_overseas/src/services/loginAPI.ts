@@ -1,11 +1,18 @@
 import { selectUrl } from '../../ajaxUrl.json'
-import axiosPost from './axiosPost'
+import axiosPost from './AxiosPost'
 
-const companyUrl =
-    selectUrl ||
-    'http://appservice.etravel.net.cn/SystemService.svc/SelectUrlPost'
+const URL =
+  selectUrl ||
+  'http://appservice.etravel.net.cn/SystemService.svc/SelectUrlPost'
 
-export const fetchCompany = async (company: string) => {
-    const data = axiosPost(companyUrl, { CompanyMs: company })
-    return data
+interface fetchCompanyData {
+  Company_Url: string
+  Image_Url: string
+}
+
+export const fetchCompany = async (
+  company: string
+): Promise<fetchCompanyData> => {
+  const data = await axiosPost({ URL, JSONOBJ: { CompanyMs: company } })
+  return data
 }

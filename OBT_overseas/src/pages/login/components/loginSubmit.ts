@@ -1,12 +1,14 @@
-import { fetchCompany } from "../../../services/loginAPI"
+import { fetchCompany } from '../../../services/loginAPI'
+import { setBaseURL } from './setBaseURL'
 
 interface LoginFormType {
-    companyName: string
+  ({}: { companyName: string }): Promise<object>
 }
 
-export const submitLoginForm = async ({ companyName }: LoginFormType):Promise<void|object> => {
-    const company = await fetchCompany(companyName)
-    if(company) {
-        console.log(company) 
-    }
+export const submitLoginForm: LoginFormType = async ({ companyName }) => {
+  const company = await fetchCompany(companyName)
+  if (company?.Company_Url) {
+    setBaseURL(company.Company_Url)
+  }
+  return {}
 }
