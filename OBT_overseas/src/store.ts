@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
-import login from './pages/login/container'
+import loginPage from './pages/login/container'
 
-const reducers = combineReducers({ login })
+const reducers = combineReducers({ loginPage })
 
 export default createStore(reducers)

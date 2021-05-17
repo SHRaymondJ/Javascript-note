@@ -1,9 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom'
 import Login from './pages/login'
 import Home from './pages/home/Homepage'
 import ResetPassword from './pages/resetPassword/ResetPassword'
-
 
 const App = () => {
     return (

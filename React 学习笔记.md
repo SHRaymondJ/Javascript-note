@@ -174,7 +174,7 @@ reselect
 import { createSelector } from 'reselect'
 
 // 获得首页状态
-const homePageState = (state) => state.homePage	//这里的state就是store， homePage就是第二步combine的homePage: homepageReducers
+const homePageState = (state) => state.homePage	//这里的state就是store， homePage就是第二步combine的homePage
 /*
  * state = { homePage: { users: ['No User!'] } }
  *
