@@ -236,3 +236,13 @@ let myIdentity2: GenericIdentityFn<string> = identity
 
 
 
+
+
+S
+
+### 问题
+
+#### 解决复杂接口返回类型
+
+ts类型可以通过API generator将接口model直接转换为TS文件，`Swagger`, `Restful API` 等
+

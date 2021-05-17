@@ -251,6 +251,10 @@ Q. yarn build之后打开页面空白
 
 > A. 在package.json中添加homepage映射： `"homepage":"./"`
 
+Q. hook使用的时候报错
+
+> hook要写在function component下，不能嵌套在if, for之中
+
 
 
 
