@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState, FormEvent } from 'react'
+import React, { useEffect, useState, FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import dictionary from './dictionary'
 import { submitLoginForm } from './components/loginSubmit'
-import { profileSelector, setProfile } from './container'
-import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 
-const actionDispatch = (dispatch: Function) => ({
-    setProfile: (profile: any) => dispatch(setProfile(profile)),
-})
+type InputEvent = FormEvent<HTMLInputElement>
 
 const Login = () => {
     interface Dictionary {
@@ -20,6 +17,8 @@ const Login = () => {
         forgotPasswordTxt: string
         noticeTitleTxt: string
         noticeBodyTxt: string
+        noticeBodyLinkName: string
+        noticeBodyTxt2: string
         backupTxt: string
     }
     const [language, setLanguage] = useState<'CN' | 'EN'>('CN')
@@ -27,11 +26,47 @@ const Login = () => {
     const [companyName, setCompanyName] = useState('')
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
-    const companyRef = useRef<HTMLInputElement>(null)
-    const userNameRef = useRef<HTMLInputElement>(null)
-    const passwordRef = useRef<HTMLInputElement>(null)
-    const { profile } = useSelector(profileSelector)
-    const { setProfile } = actionDispatch(useDispatch())
+    const [rememberUserName, setRememberUserName] = useState(true)
+    const history = useHistory()
+
+    const initFormTable = () => {
+        const usersData = localStorage.loginPageStorage
+        console.log(usersData)
+        if (usersData) {
+            const { rememberUserName, companyName, userName, password } =
+                JSON.parse(usersData)
+            setRememberUserName(rememberUserName)
+            if (rememberUserName) {
+                setCompanyName(companyName)
+                setUserName(userName)
+                setPassword(password)
+            }
+        } else {
+            setCompanyName('')
+            setUserName('')
+            setPassword('')
+        }
+    }
+
+    const saveFormTable = () => {
+        console.log(rememberUserName, companyName, userName, password)
+        if (rememberUserName) {
+            localStorage.setItem(
+                'loginPageStorage',
+                JSON.stringify({
+                    rememberUserName,
+                    companyName,
+                    userName,
+                    password,
+                })
+            )
+        } else {
+            localStorage.removeItem('loginPageStorage')
+        }
+    }
+    useEffect(() => {
+        initFormTable()
+    }, [])
 
     useEffect(() => {
         const dic: Dictionary = dictionary[language]
@@ -46,25 +81,21 @@ const Login = () => {
             setLanguage('CN')
         }
     }
-    const handleCompanyChange = () => {
-        if (companyRef.current) {
-            setCompanyName(companyRef.current.value)
-        }
+    const handleCompanyChange = (e: InputEvent) => {
+        setCompanyName(e.currentTarget.value)
     }
-    const handleUserNameChange = () => {
-        if (userNameRef.current) {
-            setUserName(userNameRef.current.value)
-        }
+    const handleUserNameChange = (e: InputEvent) => {
+        setUserName(e.currentTarget.value)
     }
-    const handlePasswordChange = () => {
-        if (passwordRef.current) {
-            setPassword(passwordRef.current.value)
-        }
+    const handlePasswordChange = (e: InputEvent) => {
+        setPassword(e.currentTarget.value)
+    }
+    const toggleRememberUserName = () => {
+        setRememberUserName(!rememberUserName)
     }
 
     const handleLoginSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        console.log(companyName)
         const newProfile = await submitLoginForm({
             companyName,
             userName,
@@ -72,7 +103,8 @@ const Login = () => {
             language,
         })
         if (newProfile) {
-            setProfile(newProfile)
+            saveFormTable()
+            history.push('/')
         }
     }
 
@@ -86,9 +118,10 @@ const Login = () => {
         forgotPasswordTxt,
         noticeTitleTxt,
         noticeBodyTxt,
+        noticeBodyLinkName,
+        noticeBodyTxt2,
         backupTxt,
     } = text
-    const {AirCards} = profile
     return (
         <section>
             <div className="login-container">
@@ -98,9 +131,9 @@ const Login = () => {
                     </div>
                     <button
                         className="switch-lan"
-                        onClick={() => switchLanguage}
+                        onClick={(e) => switchLanguage(e)}
                     >
-                        {languageTxt + AirCards}
+                        {languageTxt}
                     </button>
                 </div>
                 <form onSubmit={(e) => handleLoginSubmit(e)}>
@@ -110,8 +143,8 @@ const Login = () => {
                             type="text"
                             name="companyName"
                             id="companyName"
-                            ref={companyRef}
                             onChange={handleCompanyChange}
+                            value={companyName}
                         />
                     </div>
                     <div className="form-li">
@@ -120,8 +153,8 @@ const Login = () => {
                             type="text"
                             name="userName"
                             id="userName"
-                            ref={userNameRef}
                             onChange={handleUserNameChange}
+                            value={userName}
                         />
                     </div>
                     <div className="form-li">
@@ -130,8 +163,8 @@ const Login = () => {
                             type="password"
                             name="password"
                             id="password"
-                            ref={passwordRef}
                             onChange={handlePasswordChange}
+                            value={password}
                         />
                     </div>
                     <button type="submit">{loginTxt}</button>
@@ -141,6 +174,8 @@ const Login = () => {
                                 type="checkbox"
                                 name="remember-username"
                                 id="remember-username"
+                                onChange={toggleRememberUserName}
+                                defaultChecked={rememberUserName}
                             />
                             <label htmlFor="remember-username">
                                 {saveUsernameTxt}
@@ -152,6 +187,13 @@ const Login = () => {
                 <article className="notice">
                     <h6>{noticeTitleTxt}</h6>
                     {noticeBodyTxt}
+                    <a
+                        href="http://xxgk.mot.gov.cn/jigou/fgs/201607/t20160721_2973469.html"
+                        target="_blank"
+                    >
+                        {noticeBodyLinkName}
+                    </a>
+                    {noticeBodyTxt2}
                 </article>
                 <a
                     href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402003828"
