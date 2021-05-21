@@ -1,3 +1,19 @@
+export interface Dictionary {
+    languageTxt: string
+    companyNameTxt: string
+    userNameTxt: string
+    passwordTxt: string
+    loginTxt: string
+    saveUsernameTxt: string
+    forgotPasswordTxt: string
+    noticeTitleTxt: string
+    noticeBodyTxt: string
+    noticeBodyLinkName: string
+    noticeBodyTxt2: string
+    backupTxt: string
+}
+
+
 const dictionary = {
     CN: {
         languageTxt: "English",
@@ -30,3 +46,4 @@ const dictionary = {
 }
 
 export default dictionary
+

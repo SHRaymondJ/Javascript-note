@@ -1,26 +1,12 @@
 import React, { useEffect, useState, FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import dictionary from './dictionary'
+import dictionary, { Dictionary } from './dictionary'
 import { submitLoginForm } from './components/loginSubmit'
 import { useHistory } from 'react-router'
 
 type InputEvent = FormEvent<HTMLInputElement>
 
 const Login = () => {
-    interface Dictionary {
-        languageTxt: string
-        companyNameTxt: string
-        userNameTxt: string
-        passwordTxt: string
-        loginTxt: string
-        saveUsernameTxt: string
-        forgotPasswordTxt: string
-        noticeTitleTxt: string
-        noticeBodyTxt: string
-        noticeBodyLinkName: string
-        noticeBodyTxt2: string
-        backupTxt: string
-    }
     const [language, setLanguage] = useState<'CN' | 'EN'>('CN')
     const [text, setText] = useState<Dictionary>(dictionary['CN'])
     const [companyName, setCompanyName] = useState('')
@@ -81,15 +67,10 @@ const Login = () => {
             setLanguage('CN')
         }
     }
-    const handleCompanyChange = (e: InputEvent) => {
-        setCompanyName(e.currentTarget.value)
+    const handleInputChange = (setState: Function, e:InputEvent) => {
+        setState(e.currentTarget.value)
     }
-    const handleUserNameChange = (e: InputEvent) => {
-        setUserName(e.currentTarget.value)
-    }
-    const handlePasswordChange = (e: InputEvent) => {
-        setPassword(e.currentTarget.value)
-    }
+
     const toggleRememberUserName = () => {
         setRememberUserName(!rememberUserName)
     }
@@ -143,7 +124,7 @@ const Login = () => {
                             type="text"
                             name="companyName"
                             id="companyName"
-                            onChange={handleCompanyChange}
+                            onChange={(e)=>handleInputChange(setCompanyName,e)}
                             value={companyName}
                         />
                     </div>
@@ -153,7 +134,7 @@ const Login = () => {
                             type="text"
                             name="userName"
                             id="userName"
-                            onChange={handleUserNameChange}
+                            onChange={(e)=>handleInputChange(setUserName,e)}
                             value={userName}
                         />
                     </div>
@@ -163,7 +144,7 @@ const Login = () => {
                             type="password"
                             name="password"
                             id="password"
-                            onChange={handlePasswordChange}
+                            onChange={(e)=>handleInputChange(setPassword,e)}
                             value={password}
                         />
                     </div>
