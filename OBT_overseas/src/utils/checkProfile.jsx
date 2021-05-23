@@ -1,17 +1,26 @@
 import { useHistory } from 'react-router-dom'
 import { fetchProfile } from '../services/profileAPI'
 
+const _jumpToLoginPage = (history) => {
+    console.log(123)
+  alert('账号过期，请重新登录！')
+  history.push('/Login')
+}
+
 const _fetchProfile = async (history) => {
-    const { token } = localStorage
+  const { token } = localStorage
+  if (!token) {
+    _jumpToLoginPage(history)
+  } else {
     const response = await fetchProfile(JSON.parse(token))
     console.log(response)
     if (!response) {
-        alert('账号过期，请重新登录！')
-        history.push('/Login')
+      _jumpToLoginPage(history)
     }
+  }
 }
 
 export const checkProfile = () => {
-    const history = useHistory()
-    _fetchProfile(history)
+  const history = useHistory()
+  _fetchProfile(history)
 }

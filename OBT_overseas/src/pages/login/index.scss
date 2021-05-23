@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background: none;
+  color: white;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  // 针对chrome自动填充
+  -webkit-transition-delay: 9999999s;
+  -webkit-transition: color 9999999s ease-out,
+    background-color 9999999s ease-out;
+}
+.background-img {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(../../assets/BCDbg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-container {
+  top: 0;
+  left: 0;
+  // height: 850px;
+  width: 485px;
+  position: relative;
+  background: rgba(4, 30, 91, 0.86);
+  color: white;
+  padding: 20px 40px 60px 20px;
+  .remember-box a {
+    color: white;
+  }
+  form {
+    padding: 20px;
+  }
+  .logo-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 40px auto 20px;
+    .logo-box {
+      background-color: white;
+      padding: 20px 80px 20px 20px;
+      margin-left: -20px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .switch-lan {
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .form-li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    label {
+      font-size: 16px;
+      padding-left: 6px;
+      margin-bottom: 5px;
+    }
+    input {
+      height: 40px;
+      font-size: 16px;
+      padding: 4px 6px;
+    }
+  }
+  .login-submit {
+    width: 100%;
+    line-height: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #ef853a;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .other-operations {
+    display: flex;
+    margin-bottom: 20px;
+    .remember-box label {
+      padding-left: 5px;
+    }
+    justify-content: space-between;
+    a {
+      color: white;
+    }
+  }
+  .notice {
+    font-size: 14px;
+    margin-bottom: 20px;
+    .notice-website {
+      color: #ef853a;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  }
+  .record {
+      color: white;
+      font-size: 14px;
+  }
+}
