@@ -6,6 +6,7 @@ import { useHistory } from 'react-router'
 import BCDLOGO from '../../assets/logoImgBCD.png'
 import './index.scss'
 import Loading from '../../components/Loading'
+import { test } from './SetExample'
 
 type InputEvent = FormEvent<HTMLInputElement>
 
@@ -56,6 +57,7 @@ const Login = () => {
     }
     useEffect(() => {
         initFormTable()
+        test()
     }, [])
 
     useEffect(() => {
