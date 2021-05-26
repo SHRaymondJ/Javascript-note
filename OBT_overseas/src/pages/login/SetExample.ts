@@ -24,9 +24,9 @@ export const test = () => {
     s2.has(2) //false
 
     // 通过Array.from把Set结构转为数组
-    const newArray = [1,2,3,4,5,2,3]
+    const newArray = [1, 2, 3, 4, 5, 2, 3]
     const items = new Set(newArray)
-    Array.from(items)   // [1,2,3,4,5]
+    Array.from(items) // [1,2,3,4,5]
 
     // 遍历Set的方法：
     // Set.prototype.keys()     返回键名的遍历器
@@ -34,25 +34,44 @@ export const test = () => {
     // Set.prototype.entries()  返回键值对的遍历器
     // Set.prototype.forEach()  使用回调函数遍历每个成员
     // 由于Set没有键名，所以keys方法和values方法行为完全一致
-    let s3 = new Set(['red','green','blue'])
-    for(let item of s3.keys()){
-        console.log(item);
-    }
-    // red
-    // green
-    // blue
-    
-    for(let item of s3.values()){
+    let s3 = new Set(['red', 'green', 'blue'])
+    for (let item of s3.keys()) {
         console.log(item)
     }
     // red
     // green
     // blue
-    
-    for(let item of s3.entries()){
+
+    for (let item of s3.values()) {
+        console.log(item)
+    }
+    // red
+    // green
+    // blue
+
+    for (let item of s3.entries()) {
         console.log(item)
     }
     // ["red", "red"]
     // ["green", "green"]
     // ["blue", "blue"]
+
+    s3.forEach((value, key) => console.log(key + ' : ' + value))
+    // red : red
+    // green : green
+    // blue : blue
+
+    let a = new Set([1, 2, 3])
+    let b = new Set([4, 3, 2])
+
+    let intersect = new Set([...a].filter((x) => b.has(x))) //交集
+    console.log(intersect)
+
+    let difference = new Set([...a].filter((x) => !b.has(x))) // 差集
+    console.log(difference)
+
+    const weakTest = [[3,4]]
+    // const weakTest = [3,4]  // 会报错
+    const ws = new WeakSet(weakTest)    // WeakSet只能存对象
+    
 }

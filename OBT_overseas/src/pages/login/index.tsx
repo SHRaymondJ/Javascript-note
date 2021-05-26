@@ -7,6 +7,8 @@ import BCDLOGO from '../../assets/logoImgBCD.png'
 import './index.scss'
 import Loading from '../../components/Loading'
 import { test } from './SetExample'
+import { MapTest } from './MapExample'
+import { deepCopy } from './DeepCopy'
 
 type InputEvent = FormEvent<HTMLInputElement>
 
@@ -22,7 +24,6 @@ const Login = () => {
 
     const initFormTable = () => {
         const usersData = localStorage.loginPageStorage
-        console.log(usersData)
         if (usersData) {
             const { rememberUserName, companyName, userName, password } =
                 JSON.parse(usersData)
@@ -40,7 +41,6 @@ const Login = () => {
     }
 
     const saveFormTable = () => {
-        console.log(rememberUserName, companyName, userName, password)
         if (rememberUserName) {
             localStorage.setItem(
                 'loginPageStorage',
@@ -57,7 +57,9 @@ const Login = () => {
     }
     useEffect(() => {
         initFormTable()
-        test()
+        // test()
+        // MapTest()
+        deepCopy()
     }, [])
 
     useEffect(() => {
