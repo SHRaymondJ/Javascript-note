@@ -158,6 +158,10 @@ export default UserPage
 
 如果使用vscode，推荐安装插件 `vscode-styled-components` 
 
+### [react-datepicker](https://github.com/Hacker0x01/react-datepicker)
+
+日期选择器
+
 
 
 ## 动态加载库
@@ -236,3 +240,50 @@ export default function App() {
 ### [SortableJS](https://github.com/SortableJS/Sortable)
 
 还没看过，之后看
+
+
+
+## 弹窗库
+
+### [popper-core](https://github.com/popperjs/popper-core)
+
+安装
+
+```
+npm i @popperjs/core
+// or
+yarn add @popperjs/core
+```
+
+使用
+
+```html
+<!DOCTYPE html>
+<title>Popper example</title>
+
+<style>
+  #tooltip {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+</style>
+
+<button id="button" aria-describedby="tooltip">I'm a button</button>
+<div id="tooltip" role="tooltip">I'm a tooltip</div>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const button = document.querySelector('#button');
+  const tooltip = document.querySelector('#tooltip');
+
+  // Pass the button, the tooltip, and some options, and Popper will do the
+  // magic positioning for you:
+  Popper.createPopper(button, tooltip, {
+    placement: 'right',
+  });
+</script>
+```
+

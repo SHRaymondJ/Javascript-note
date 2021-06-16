@@ -1,0 +1,64 @@
+@import '../common.scss';
+
+$itemColor: $textColorLight;
+$titleColor: $textColor;
+
+.kucity {
+    @include pop-container();
+    &_body {
+        @include scrollbar();
+        max-height: 230px;
+        overflow-y: auto;
+        .kucity_item {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+    .result {
+        color: $itemColor;
+        cursor: pointer;
+        &.active,
+        &:hover {
+            color: $selectedColor;
+        }
+    }
+    .kucity_nav {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $lineColorLight;
+        li {
+            cursor: pointer;
+            font-size: $text-font-size-base;
+            color: $titleColor;
+            font-weight: bold;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            &.active, &:hover {
+                color: $selectedColor;
+                padding-bottom: 9px;
+                border-bottom: 1px solid $selectedColor;
+            }
+        }
+    }
+    &_item dt {
+        font-size: $text-font-size-base;
+        font-weight: bold;
+        line-height: 25px;
+        color: $titleColor;
+    }
+    &_item dd {
+        display: flex;
+        flex-direction: column;
+        span {
+            font-size: $text-font-size-base;
+            color: $itemColor;
+            line-height: 25px;
+            cursor: pointer;
+            &:hover {
+                color: $selectedColor;
+            }
+        }
+    }
+}

@@ -1,12 +1,9 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './pages/login'
 import Home from './pages/home'
 import ResetPassword from './pages/resetPassword/ResetPassword'
+import './App.scss'
 
 const App = () => {
     return (
@@ -16,6 +13,9 @@ const App = () => {
                     <Login></Login>
                 </Route>
                 <Route exact path="/">
+                    <Home></Home>
+                </Route>
+                <Route exact path="/:components">
                     <Home></Home>
                 </Route>
                 <Route exact path="/ResetPassword">

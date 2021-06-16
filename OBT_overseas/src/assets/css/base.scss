@@ -1,0 +1,148 @@
+@import './components/datepicker.scss';
+@import './components/kuCity.scss';
+@import './components/showMap.scss';
+@import './components/progressBar.scss';
+
+.ui-widget-header {
+    background: none;
+    border: none;
+    color: $textColor;
+}
+
+.ui-datepicker-year,
+.ui-datepicker-month {
+    border: none;
+    outline: none;
+    color: $textColor;
+    font-weight: bold;
+    font-size: 20px;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: auto;
+    margin: 0 10px;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+    border: none;
+    background: none;
+}
+%datepicker-table {
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    margin: auto;
+}
+@mixin datepicker-arrow($color, $deg, $width) {
+    background: none;
+    border-right: 2px solid $selectedColor;
+    border-bottom: 2px solid $selectedColor;
+    transform: rotate($deg);
+    width: $width;
+    height: $width;
+}
+
+#ui-datepicker-div {
+    padding: 10px 10px 0 10px;
+}
+.ui-datepicker .ui-datepicker-prev span {
+    @include datepicker-arrow($selectedColor, 135deg, 6px);
+    margin-left: -3px;
+    margin-top: -3px;
+}
+.ui-datepicker .ui-datepicker-next span {
+    @include datepicker-arrow($selectedColor, -45deg, 6px);
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    background: $box-background;
+    border-radius: 1.8rem;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    border-collapse: inherit;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    border: none;
+    background: none;
+    color: $textColor;
+}
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
+    // 不能选
+    color: $textColorLighter !important;
+    background: none;
+    @extend %datepicker-table;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    //能选
+    color: $textColor;
+    background: none;
+    border: none;
+    transition: all 0.2s ease;
+    @extend %datepicker-table;
+}
+table .ui-state-hover,table .ui-state-active {
+    background: $selectedColor !important; 
+    color: $box-background !important;
+    border: none !important;
+}
+.ui-widget.ui-widget-content {
+    @include pop-container();
+    border: none;
+    box-sizing: content-box;
+}
+
+// 评分
+.eTravel_grade {
+    color: $textColor;
+    font-size: $text-font-size-base;
+    font-weight: 600;
+    .eTravel_Score {
+        background-color: $light-orange;
+        border-radius: 0 8px 0 8px;
+        margin-right: 8px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        display: inline-block;
+        text-align: center;
+        &.hide{
+            display: none;
+        }
+    }
+    .eTravel_Grade {
+    }
+}
+
+// 蓝色提醒框
+.eTravel_reminder_box {
+    display: flex;
+    align-items: center;
+    background-color: #EBF4FF;
+    color: #111C4E;
+    padding-left: 22px;
+    border-left: 2px solid #5B89C8;
+    margin-bottom: $normal-margin;
+    font-size: $normal-font-size;
+    line-height: 48px;
+    &_icon {
+        width: 20px;
+        height: 20px;
+        background: url(../../images/Aus/common/icon_note.png) no-repeat;
+        display: inline-block;
+        margin-right: 8px;
+    }
+}

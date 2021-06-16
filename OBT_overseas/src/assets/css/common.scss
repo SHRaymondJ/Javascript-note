@@ -1,0 +1,230 @@
+$normal-pd: 24px;
+$normal-margin: 12px;
+$normal-font-size: 14px;
+$input-pd: 0 8px;
+$filter-side-width: 280px;
+$container-width: 1200px;
+
+$light-orange: #ff9e1b;
+$orange: #ff6720;
+$blue: #0678ff;
+$dark-blue: #111c4e;
+$lighter-gray: #f5f6fa;
+$gray: #5d667c;
+$light-gray: #8c99ab;
+$green: #56c5a3;
+$red: #d22030;
+
+$textColor: $dark-blue;
+$textHoverColor: $blue;
+$textColorLight: $gray;
+$textColorLighter: $light-gray;
+$text-font-size-base: 14px;
+$title-font-size-base: 16px;
+$buttonHoverColor: $light-orange;
+$selectedColor: #0075ff;
+$lineColorLight: #d8d8d8;
+$listBorderColor: #c0cad8;
+$warningColor: $red;
+
+$main-background: $lighter-gray;
+$box-background: #fff;
+
+$company-bill-color: #5a88c6;
+$most-preferred-color: #5aba2c;
+$corporate-color: #9dcf59;
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%search_input {
+    // border: 1px solid #5d667c;
+    background-color: $box-background;
+    outline: none;
+    padding: $input-pd;
+    line-height: 36px;
+    height: 36px;
+    border-radius: 2px;
+}
+@mixin search_input($padding: $input-pd) {
+    outline: none;
+    padding: $padding;
+    line-height: 36px;
+    height: 36px;
+    border-radius: 2px;
+}
+@mixin absolute-top-left($top: 0, $left: 0) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+@mixin clear-input-border {
+    border: none;
+    outline: none;
+}
+@mixin triangle($color) {
+    content: '';
+    position: absolute;
+    border-right: 10px solid $color;
+    border-top: 10px solid transparent;
+    transform: rotate(45deg);
+}
+@mixin solid-triangle($color: #fff, $parent-width: 290px) {
+    content: '';
+    background-color: $color;
+    box-shadow: 4px 5px 7px 0px rgba(17, 28, 78, 0.1);
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+    left: $parent-width/ 2;
+    position: absolute;
+    display: block;
+    transform: rotate(45deg);
+}
+@mixin pop-container($top: 0, $left: 0) {
+    @include absolute-top-left($top, $left);
+    box-sizing: border-box;
+    background-color: $box-background;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px 0px rgba(17, 28, 78, 0.1);
+    padding: $normal-pd;
+    z-index: 1;
+}
+@mixin text-line($line) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
+@mixin button-color() {
+    border: none;
+    outline: none;
+    background-color: $orange;
+    color: $box-background;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    min-width: 133px;
+    padding: 0 8px;
+    text-align: center;
+    &:hover {
+        background-color: $light-orange;
+    }
+}
+@mixin star {
+    position: relative;
+    height: 14px;
+    background: url(../../images/Aus/common/icon_grade_star.png);
+    background-repeat: repeat-x;
+}
+@mixin star-half {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    right: -14px;
+    background: url(../../images/Aus/common/icon_grade_star-half.png);
+}
+@mixin icon-before-text($img) {
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 0;
+        background: url($img) no-repeat;
+        background-position: center left;
+    }
+}
+@mixin _scrollbar-base($width, $height) {
+    /*滚动条*/
+    &::-webkit-scrollbar {
+        // display: none;
+        width: $height;
+        height: $width;
+        background-color: transparent;
+    }
+
+    /*定义滚动条轨道 内阴影+圆角*/
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: #bbb;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+}
+@mixin scrollbar() {
+    @include _scrollbar-base(16px, 2px);
+    scrollbar-color: transparent transparent;
+    scrollbar-track-color: transparent;
+    -ms-scrollbar-track-color: transparent;
+
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: transparent;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: transparent;
+    /*滚动条整体颜色*/
+    scrollbar-highlight-color: transparent;
+    /*滚动条阴影*/
+    scrollbar-shadow-color: transparent;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: transparent;
+    /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+    scrollbar-3dlight-color: transparent;
+    /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+    scrollbar-darkshadow-color: transparent;
+    /*滚动条基准颜色*/
+    scrollbar-base-color: transparent;
+    -ms-overflow-style: none; // 隐藏滚动条
+}
+@mixin scrollbar-x() {
+    @include _scrollbar-base(4px, 12px);
+    padding-bottom: 9px;
+    &:hover {
+        padding-bottom: 5px;
+    }
+    &:hover::-webkit-scrollbar {
+        display: block;
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+@mixin protocal-color($color) {
+    color: $color;
+    border: 1px solid $color;
+}
+@mixin close-btn(){
+    width: 20px;
+    height: 20px;
+    background: url(../../images/Aus/common/close.svg) no-repeat;
+    background-size: 24px;
+    cursor: pointer;
+}
+
+input,
+select {
+    box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* 火狐 */
+input {
+    -moz-appearance: textfield;
+}

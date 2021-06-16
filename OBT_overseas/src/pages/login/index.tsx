@@ -6,16 +6,17 @@ import { useHistory } from 'react-router'
 import BCDLOGO from '../../assets/logoImgBCD.png'
 import './index.scss'
 import Loading from '../../components/Loading'
-import { test } from './SetExample'
-import { MapTest } from './MapExample'
-import { deepCopy } from './DeepCopy'
+import { commonSelector } from '../../commonSelectors'
+import { useDispatch, useSelector } from 'react-redux'
+import { actionDispatch } from '../../commonActions'
 
 type InputEvent = FormEvent<HTMLInputElement>
 
 const Login = () => {
-    const [language, setLanguage] = useState<'CN' | 'EN'>('CN')
     const [loading, setLoading] = useState(false)
-    const [text, setText] = useState<Dictionary>(dictionary['CN'])
+    const { language } = useSelector(commonSelector)
+    const { switchLanguage } = actionDispatch(useDispatch())
+    const [text, setText] = useState<Dictionary>(dictionary[language])
     const [companyName, setCompanyName] = useState('')
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -57,9 +58,6 @@ const Login = () => {
     }
     useEffect(() => {
         initFormTable()
-        // test()
-        // MapTest()
-        deepCopy()
     }, [])
 
     useEffect(() => {
@@ -67,13 +65,9 @@ const Login = () => {
         setText(dic)
     }, [language])
 
-    const switchLanguage = (e: Event) => {
+    const onLanguageClick = (e: Event) => {
         e.preventDefault()
-        if (language === 'CN') {
-            setLanguage('EN')
-        } else {
-            setLanguage('CN')
-        }
+        switchLanguage()
     }
     const handleInputChange = (setState: Function, e: InputEvent) => {
         setState(e.currentTarget.value)
@@ -95,6 +89,8 @@ const Login = () => {
         if (newProfile) {
             saveFormTable()
             history.push('/')
+        } else {
+            alert('user name or password is incorrect')
         }
         setLoading(false)
     }
@@ -124,7 +120,7 @@ const Login = () => {
                     </div>
                     <button
                         className="switch-lan"
-                        onClick={(e) => switchLanguage(e)}
+                        onClick={(e) => onLanguageClick(e)}
                     >
                         {languageTxt}
                     </button>
