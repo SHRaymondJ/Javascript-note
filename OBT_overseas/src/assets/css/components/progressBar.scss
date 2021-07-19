@@ -14,6 +14,7 @@
 	width: 304px;
 	height: 2px;
 	margin-top:24px;
+	background: $listBorderColor;
     &.active{
         background: $selectedColor;
     } 

@@ -8,7 +8,7 @@
         margin: 0 auto;
     }
     .header-first-line {
-        margin-top: 16px;
+        padding-top: 16px;
         margin-bottom: 5px;
         align-items: center;
         .header-logo {
@@ -22,11 +22,18 @@
             margin-left: 0;
         }
         &-left {
-            padding-bottom: 15px;
             box-sizing: border-box;
             display: flex;
             img {
                 margin-right: 6px;
+            }
+            a {
+                padding-bottom: 15px;
+                &.active {
+                    color: $selectedColor;
+                    padding-bottom: 13px;
+                    border-bottom: 2px solid $selectedColor;
+                }
             }
         }
         &-right {
@@ -39,16 +46,17 @@
         a {
             display: flex;
             align-items: center;
-
         }
     }
-    a {
+    a,
+    span {
         color: #041e5b;
         display: inline-block;
         font-size: 14px;
         margin-left: 40px;
         text-decoration: none;
         text-transform: capitalize;
+        cursor: pointer;
     }
     .header-language {
         padding-right: 28px;

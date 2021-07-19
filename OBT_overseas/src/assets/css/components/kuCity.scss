@@ -4,7 +4,9 @@ $itemColor: $textColorLight;
 $titleColor: $textColor;
 
 .kucity {
-    @include pop-container();
+    @include pop-container-top();
+    min-width: 400px;
+    width: auto;
     &_body {
         @include scrollbar();
         max-height: 230px;
@@ -17,10 +19,13 @@ $titleColor: $textColor;
         }
     }
     .result {
+        @include scrollbar();
         color: $itemColor;
         cursor: pointer;
-        &.active,
-        &:hover {
+        max-height: 230px;
+        overflow-y: auto;
+        li.active,
+        li:hover {
             color: $selectedColor;
         }
     }
@@ -34,19 +39,28 @@ $titleColor: $textColor;
             color: $titleColor;
             font-weight: bold;
             padding-bottom: 10px;
+            line-height: 25px;
             box-sizing: border-box;
-            &.active, &:hover {
+            &.active,
+            &:hover {
                 color: $selectedColor;
                 padding-bottom: 9px;
                 border-bottom: 1px solid $selectedColor;
             }
         }
     }
+    dl {
+        margin-bottom: 10px;
+    }
     &_item dt {
         font-size: $text-font-size-base;
         font-weight: bold;
         line-height: 25px;
         color: $titleColor;
+        margin-bottom: 6px;
+    }
+    .kuCity_destination{
+        margin-right: 20px;
     }
     &_item dd {
         display: flex;
@@ -60,5 +74,41 @@ $titleColor: $textColor;
                 color: $selectedColor;
             }
         }
+        & > * {
+            margin-bottom: 5px;
+        }
+        b {
+            font-weight: normal;
+        }
+        .kuCity_recentItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .kuCity_destination {
+                @include icon-before-text(
+                    '../../../images/Aus/common/icon_searchtime.png'
+                );
+                padding-left: 20px;
+                text-transform: uppercase;
+                &:before {
+                    height: 25px;
+                }
+            }
+            .kuCity_dateRange {
+                color: $textColorLight;
+                font-size: $text-font-size-base;
+                text-align: right;
+                min-width: 90px;
+                p{
+                    display: inline-block;
+                }
+            }
+        }
     }
+}
+
+.kucity .result li, .kucity .locationResult li{
+    font-size: $text-font-size-base;
+    line-height: 25px;
+
 }

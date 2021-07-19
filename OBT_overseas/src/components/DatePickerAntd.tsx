@@ -2,7 +2,7 @@ import React from 'react'
 import { DatePicker } from 'antd'
 import moment, { Moment } from 'moment'
 import 'antd/dist/antd.css'
-import { RangePickerAntdProps } from './DatePickerAntd.type'
+import { RangePickerAntdProps } from './types/DatePickerAntd.type'
 
 const { RangePicker } = DatePicker
 

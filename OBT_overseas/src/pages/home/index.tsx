@@ -1,12 +1,9 @@
 import React from 'react'
 import { checkProfile } from '../../utils/checkProfile'
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Air from '../air'
 import Hotel from '../hotel'
+import Search from '../search/search'
 import Header from '../../components/header/header'
 import './index.scss'
 
@@ -23,6 +20,9 @@ const Homepage = () => {
                         </Route>
                         <Route exact path="/hotel">
                             <Hotel></Hotel>
+                        </Route>
+                        <Route exact path="/search/:category">
+                            <Search></Search>
                         </Route>
                     </Switch>
                 </section>

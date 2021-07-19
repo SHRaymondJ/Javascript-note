@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { actionDispatch } from '../../pages/home/flow/actions'
+import { actionDispatch as commonActionDispatch } from '../../commonActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { homePageSelector } from '../../pages/home/flow/selectors'
 
@@ -15,6 +16,7 @@ import AIRACTIVE from '../../assets/icon/icon_home_air-active.png'
 import AIR from '../../assets/icon/icon_home_air.png'
 import PROFILE from '../../assets/icon/icon_profile.png'
 import MENU from '../../assets/icon/icon_nav_menu.png'
+import { commonSelector } from '../../commonSelectors'
 
 const Navigation = styled.nav`
     text-decoration: none;
@@ -30,6 +32,8 @@ const header = memo(() => {
     const onComponentClick = (component: string) => {
         setComponent(component)
     }
+    const { language } = useSelector(commonSelector)
+    const { switchLanguage } = commonActionDispatch(useDispatch())
     const { air, hotel, rail } = useSelector(homePageSelector)
 
     return (
@@ -40,28 +44,36 @@ const header = memo(() => {
                     <Navigation>
                         <Link to="/points">my points</Link>
                         <Link to="/contact">contact service team</Link>
-                        <Link to="/language" className="header-language">
+                        <span
+                            className="header-language"
+                            onClick={switchLanguage}
+                        >
                             australian
-                        </Link>
+                        </span>
                         <Link to="/login">logout</Link>
                     </Navigation>
                 </FlexSpaceBetween>
                 <FlexSpaceBetween className="header-second-line">
                     <Navigation className="header-second-line-left">
-                        <Link to="/air" onClick={() => onComponentClick('air')}>
+                        <Link to="/search/air" onClick={() => onComponentClick('air')} className={air? 'active' : ''}>
                             <img src={air ? AIRACTIVE : AIR} alt="air" />
                             air
                         </Link>
                         <Link
-                            to="/hotel"
+                            to="/search/hotel"
                             onClick={() => onComponentClick('hotel')}
+                            className={hotel? 'active' : ''}
                         >
-                            <img src={hotel ? HOTELACTIVE : HOTEL} alt="hotel" />
+                            <img
+                                src={hotel ? HOTELACTIVE : HOTEL}
+                                alt="hotel"
+                            />
                             hotel
                         </Link>
                         <Link
-                            to="/rail"
+                            to="/search/rail"
                             onClick={() => onComponentClick('rail')}
+                            className={rail? 'active' : ''}
                         >
                             <img src={rail ? RAILACTIVE : RAIL} alt="rail" />
                             rail
