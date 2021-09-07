@@ -1,0 +1,19 @@
+<script>
+    const sumInput = () => {
+        let sum = []
+        do{
+            const userInput = prompt('Please input some numbers(include 0), and input a word to end the inputing')
+            if(userInput === '' || !isFinite(userInput) || userInput === null) {
+                break
+            }
+            sum.push(+userInput)
+        }while(true)
+        let result = 0
+        for(let number of sum) {
+            result += number
+        }
+        return result
+    }
+    alert(sumInput())
+
+</script>
