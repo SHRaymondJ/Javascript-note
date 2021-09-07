@@ -1,0 +1,51 @@
+@import '../../assets/css/common.scss';
+
+.button{
+  cursor: pointer;
+}
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+#tooltip{
+  position: absolute;
+  background-color: $box-background;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba($color: #000000, $alpha: .14);
+  padding: $normal-pd;
+  transition: all 0.3s ease-in-out;
+}
+
+#tooltip[data-popper-placement^='top'] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^='bottom'] > #arrow {
+  top: -4px;
+}
+
+#tooltip[data-popper-placement^='left'] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^='right'] > #arrow {
+  left: -4px;
+}
+#tooltip[data-popper-placement^='bottom-end'] > #arrow {
+  right: 10px;
+}

@@ -23,7 +23,13 @@ export const submitLoginForm: LoginFormType = async ({
             localStorage.setItem('BASE', Company_Url)
         }
         const token = await fetchLogin({ userName, password, language })
+        if (token === '') {
+            return false
+        }
         const profile = await fetchProfile(token)
+        if (!profile) {
+            return false
+        }
         localStorage.setItem('profile', JSON.stringify(profile))
         localStorage.setItem('token', JSON.stringify(token))
         return profile

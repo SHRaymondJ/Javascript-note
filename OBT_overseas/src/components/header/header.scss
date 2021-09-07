@@ -1,0 +1,74 @@
+@import '../../assets/css/common.scss';
+
+.header-wrapper {
+    width: 100%;
+    background-color: $box-background;
+    .header-container {
+        width: $container-width;
+        margin: 0 auto;
+    }
+    .header-first-line {
+        padding-top: 16px;
+        margin-bottom: 5px;
+        align-items: center;
+        .header-logo {
+            width: 162px;
+        }
+    }
+    .header-second-line {
+        height: 70px;
+        align-items: flex-end;
+        a:first-child {
+            margin-left: 0;
+        }
+        &-left {
+            box-sizing: border-box;
+            display: flex;
+            img {
+                margin-right: 6px;
+            }
+            a {
+                padding-bottom: 15px;
+                &.active {
+                    color: $selectedColor;
+                    padding-bottom: 13px;
+                    border-bottom: 2px solid $selectedColor;
+                }
+            }
+        }
+        &-right {
+            line-height: 70px;
+            display: flex;
+            img {
+                margin-left: 10px;
+            }
+        }
+        a {
+            display: flex;
+            align-items: center;
+        }
+    }
+    a,
+    span {
+        color: #041e5b;
+        display: inline-block;
+        font-size: 14px;
+        margin-left: 40px;
+        text-decoration: none;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .header-language {
+        padding-right: 28px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: url(/src/assets/icon/icon_pulldown.png) center no-repeat;
+        }
+    }
+}
