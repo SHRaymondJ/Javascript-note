@@ -1,0 +1,480 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+/*订单*/
+.search-container {
+  margin-bottom: 40px;
+}
+
+.orderDetailsTable {
+  width: 825px;
+  border-right: 1px solid #c0cad8;
+  border-left: 1px solid #c0cad8;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.orderDetailsTable td {
+  overflow: hidden;
+  line-height: 20px;
+  /*text-overflow:ellipsis;
+        white-space:nowrap;*/
+  /*text-align:center;*/
+  /* height: 35px; */
+  height: 52px;
+}
+
+.myOrderTab,
+.pendTab,
+.taTab {
+  /* text-decoration: underline; */
+  /* 新 */
+  position: relative;
+  min-width: 120px;
+  text-align: center;
+  margin: 0 !important;
+  color: #5d667c;
+  font-weight: bold;
+  padding: 0 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.myOrderTab span {
+  position: relative;
+}
+
+.myOrderTab span:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("/images/Aus/common/icon_order.png") no-repeat;
+  background-position: center left;
+}
+
+.myOrderTab span:before {
+  width: 24px;
+  height: 25px;
+  left: -28px;
+  top: -5px;
+}
+
+.pendTab span {
+  position: relative;
+}
+
+.pendTab span:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("/images/Aus/common/icon_pendingapproval.png") no-repeat;
+  background-position: center left;
+}
+
+.pendTab span:before {
+  width: 24px;
+  height: 25px;
+  left: -28px;
+  top: -5px;
+}
+
+.taTab span {
+  position: relative;
+}
+
+.taTab span:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("/images/Aus/common/icon_application.png") no-repeat;
+  background-position: center left;
+}
+
+.taTab span:before {
+  width: 24px;
+  height: 25px;
+  left: -28px;
+  top: -5px;
+}
+
+.myOrderTab.orderTittleActive span:before {
+  background-image: url(/images/Aus/common/icon_order_active.png);
+}
+
+.pendTab.orderTittleActive span:before {
+  background-image: url(/images/Aus/common/icon_pendingapproval_active.png);
+}
+
+.taTab.orderTittleActive span:before {
+  background-image: url(/images/Aus/common/icon_application_active.png);
+}
+
+.ApproveLengthIcon {
+  display: none;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  /* background-color: red; */
+  background-color: #f58a00;
+  border-radius: 50%;
+  /* margin-top: 2px; */
+  position: absolute;
+  top: 3px;
+  right: 7px;
+  font-weight: 400 !important;
+}
+
+.orderTittleActive {
+  color: #0075ff;
+  position: relative;
+}
+
+.orderTittleActive:after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid #0075ff;
+  width: 100%;
+  height: 1px;
+  background-color: #0075ff;
+  bottom: -19px;
+  left: 0;
+}
+
+.srpitLine {
+  height: 14px;
+  width: 2px;
+  background-color: #c0cad8;
+  margin: auto 0;
+  margin-left: 16px;
+}
+
+.moreOrderText {
+  cursor: pointer;
+  font-size: 14px;
+  color: #0075ff;
+  padding-right: 8px;
+}
+
+.rightArrow {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.orderTable-wrapper {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(17, 28, 78, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(17, 28, 78, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 970px;
+  margin-bottom: 30px;
+  float: left;
+}
+
+.orderTable-wrapper .orderTittle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 34px;
+  line-height: 34px;
+  margin-top: 17px;
+  font-size: 14px;
+  position: relative;
+  border-bottom: 1px solid #c0cad8;
+}
+
+.orderTable-wrapper .orderTittle > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 14px;
+  line-height: 14px;
+  font-size: 14px;
+  margin: 16px 0;
+  border-right: 1px solid #c0cad8;
+  text-align: center;
+}
+
+.orderTable-wrapper .orderTittle > div:last-child {
+  border-right: 0;
+}
+
+.orderTable-wrapper #tableBody {
+  height: 400px;
+  width: 100%;
+  /* 3.19新增 */
+}
+
+.orderTable-wrapper .orderTable-showMore {
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f8fa;
+}
+
+.orderRoute {
+  width: 340px;
+}
+
+.pendingRoute {
+  width: 197px;
+}
+
+.pendingOrderMain {
+  width: 580px;
+}
+
+.pendingTextRoute {
+  width: 200px;
+}
+
+.continueBook {
+  width: 100%;
+}
+
+.continueBook #orderTable {
+  width: 1190px;
+}
+
+.continueBook .orderRoute {
+  width: 570px;
+}
+
+.continueBook .pendingRoute {
+  width: 427px;
+}
+
+.continueBook .pendingOrderMain {
+  width: 810px;
+}
+
+.continueBook .pendingTextRoute {
+  width: 430px;
+}
+
+#orderTable {
+  /* width: 1200px; */
+  width: 960px;
+  /* 滚动条10px */
+  border-collapse: collapse;
+  color: #111c4e;
+  table-layout: fixed;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#orderTable th {
+  height: 0px;
+  line-height: 0px;
+  font-size: 14px;
+  color: #041e5b;
+}
+
+#orderTable > div {
+  border-bottom: 1px solid #c0cad8;
+}
+
+.orderHeader {
+  height: 45px;
+}
+
+.orderHeader .tr {
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  color: #5d667c;
+  border-bottom: 1px solid #c0cad8;
+}
+
+.myOrdersTr-orderNo {
+  color: #111c4e;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.orderStatus {
+  font-weight: bold;
+}
+
+.orderNoClick, .approveNoClick {
+  color: #0075ff;
+  font-size: 14px;
+}
+
+.table-cell {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.cellLine {
+  /* line-height: 35px; */
+  line-height: 26px;
+}
+
+.ordersRemind {
+  width: 440px;
+  height: 74px;
+  line-height: 74px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #d9d9d9;
+  font-size: 20px;
+  margin-top: 120px;
+}
+
+.oddrowcolor {
+  background-color: #fff;
+}
+
+.evenrowcolor {
+  background-color: #ebf4ff;
+}
+
+.submit {
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  background: #f6aa25;
+  color: #fff;
+  border-radius: 5px;
+  margin: 4px 0 0 38px;
+  cursor: pointer;
+}
+
+.agreeBtn,
+.denyBtn {
+  width: 62px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  text-align: center;
+  background: #56c5a3;
+  color: #fff;
+  border-radius: 2px;
+  /* 4.8注释掉 */
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.denyBtn {
+  background-color: #d22030;
+}
+
+/*表格图标*/
+.planeIcon,
+.hotelIcon,
+.trainIcon,
+.carIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.planeIcon {
+  background-image: url(/images/Aus/common/icon_home_air.png);
+}
+
+.hotelIcon {
+  background-image: url(/images/Aus/common/icon_home_hotel.png);
+}
+
+.trainIcon {
+  background-image: url(/images/Aus/common/icon_home_rail.png);
+}
+
+.carIcon {
+  background-image: url(/images/Aus/common/icon_home_car.png);
+}
+
+.orderTable-noOrder {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 18px;
+  font-weight: bold;
+  color: #111c4e;
+}
+
+.approval-orderNumber {
+  border-right: 1px solid #c0cad8;
+}
+
+.approval-bookTime {
+  font-size: 14px;
+  color: #5d667c;
+}
+
+.orderDetailsTable {
+  color: #111c4e;
+}
+
+.bold {
+  font-weight: bold;
+}
+/*# sourceMappingURL=order.css.map */

@@ -1,0 +1,153 @@
+@import '../../../css/AusCommon/common.scss';
+
+$index-search_input-radius: 4px;
+// 搜索部分
+.search-container {
+    position: relative;
+    height: 460px;
+    transition: all 0.3s ease-in-out 0s;
+    .banner {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background: url(../../images/Aus/pic_homebg.png);
+        background-position: center;
+        background-size: cover;
+        .banner-img {
+            position: relative;
+            height: 100%;
+            width: 500vw;
+            box-sizing: border-box;
+
+            li {
+                display: inline-block;
+                height: 100%;
+            }
+            .bgImg {
+                height: 100%;
+                width: 100vw;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+#main .search_wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 21, 59, 0.8);
+    box-shadow: 0px 2px 5px 0px #041e5b;
+    color: $textColor;
+    z-index: 0;
+    .search_inputItems {
+        flex-wrap: wrap;
+        .search_input,
+        .search_input-box-multiple {
+            height: 46px;
+            line-height: 46px;
+        }
+    }
+    .search_title {
+        font-size: $text-font-size-base;
+    }
+    .search_input {
+        font-size: 16px;
+        border-top: none !important;
+        border-left: none !important;
+        border-bottom: none !important;
+        color: $textColor !important;
+        border-radius: $index-search_input-radius;
+    }
+    .search_input-box-multiple {
+        font-weight: bold;
+        border-radius: $index-search_input-radius;
+    }
+}
+#main .search_wrapper[name='hotel'] {
+    .search_destination {
+        width: 50%;
+        margin-bottom: $normal-margin;
+        .search_input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 1px solid $listBorderColor !important;
+        }
+    }
+    .search_checkIn,
+    .search_checkOut {
+        width: 25%;
+    }
+    .search_checkIn {
+        .search_input {
+            border-radius: 0;
+            font-weight: bold;
+            border-right: 1px solid $listBorderColor !important;
+        }
+    }
+    .search_checkOut {
+        .search_input {
+            font-weight: bold;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .search_hotelAddress,
+    .search_keyWords {
+        width: 49.5%;
+        .search_input {
+            width: 100%;
+        }
+    }
+    .hotelAddressBody{
+        position: relative;
+    }
+}
+.keyWordBody {
+    right: auto;
+    width: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $box-background;
+}
+.search_btn {
+    width: 280px;
+    margin: 0 auto;
+}
+.search_input-box-multiple * {
+    font-weight: bold;
+    font-size: 16px;
+}
+// 换位图标
+.search_station_transform {
+    height: 46px;
+    width: 46px;
+    background-color: $box-background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    cursor: pointer;
+    position: relative;
+    &-icon {
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        left: 4px;
+    }
+}
+//租车
+#carCompany{
+    @include scrollbar();
+    max-height: 300px;
+    min-width: 250px;
+    overflow-y: scroll;
+}
+#carFromHour, #carToHour {
+    text-align-last: center;
+    option {
+        text-align: center;
+    }
+}

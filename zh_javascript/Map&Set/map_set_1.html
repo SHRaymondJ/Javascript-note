@@ -1,0 +1,13 @@
+<script>
+    // 过滤字谜
+    let arr = ['nap', 'teachers', 'cheaters', 'PAN', 'ear', 'era', 'hectares']
+    const aclean = arr => {
+        const result = {}
+        for(let i = 0; i < arr.length; i++) {
+            const sorted = arr[i].toLowerCase().split('').sort().join('')
+            result[sorted] = arr[i]
+        }
+        return Object.values(result)
+    }
+    alert(aclean(arr)) // "nap,teachers,ear" or "PAN,cheaters,era"
+</script>

@@ -1,0 +1,45 @@
+@import '../../css/AusCommon/components/filterSide.scss';
+@import './airTicketList/search.scss';
+@import './airTicketList/ticketList.scss';
+@import './airTicketList/sort.scss';
+@import './airTicketList/rulePop.scss';
+
+body {
+    background-color: $main-background;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+.filter_side {
+    width: $filter-side-width;
+    margin-right: 20px;
+}
+
+.air_main {
+    width: 900px;
+    background-color: $main-background;
+}
+
+.coronavirus-reminder {
+    background-color: $box-background;
+    padding: $normal-pd;
+    margin-bottom: $normal-margin;
+    h2 {
+        font-size: $title-font-size-base;
+        margin-bottom: $normal-margin;
+        color: $textColor;
+    }
+    p {
+        font-size: $text-font-size-base;
+        color: $textColorLight;
+        a {
+            color: $selectedColor;
+        }
+    }
+}
+
+.search_filter-box_pop{
+    min-width: 180px;
+}

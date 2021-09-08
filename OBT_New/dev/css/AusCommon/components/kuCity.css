@@ -1,0 +1,319 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.kucity .result li.active,
+.kucity .result li:hover, .kucity .kucity_nav li.active, .kucity .kucity_nav li:hover {
+  background-color: #F6F9FD;
+}
+
+.kucity {
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+          box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 24px 0;
+  min-width: 400px;
+  width: auto;
+}
+
+.kucity_body {
+  /*滚动条*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+  padding-right: 5px;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  /*三角箭头的颜色*/
+  scrollbar-arrow-color: transparent;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: transparent;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: transparent;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: transparent;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: transparent;
+  /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+  scrollbar-3dlight-color: transparent;
+  /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+  scrollbar-darkshadow-color: transparent;
+  /*滚动条基准颜色*/
+  scrollbar-base-color: transparent;
+  -ms-overflow-style: none;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.kucity_body::-webkit-scrollbar {
+  width: 2px;
+  height: 16px;
+  background-color: transparent;
+}
+
+.kucity_body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.kucity_body::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #bbb;
+}
+
+.kucity_body::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.kucity_body:hover {
+  padding-right: 3px;
+}
+
+.kucity_body:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.kucity_body::-webkit-scrollbar {
+  display: none;
+}
+
+.kucity_body .kucity_item {
+  display: none;
+}
+
+.kucity_body .kucity_item.active {
+  display: block;
+}
+
+.kucity .result {
+  /*滚动条*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+  padding-right: 5px;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  /*三角箭头的颜色*/
+  scrollbar-arrow-color: transparent;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: transparent;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: transparent;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: transparent;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: transparent;
+  /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+  scrollbar-3dlight-color: transparent;
+  /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+  scrollbar-darkshadow-color: transparent;
+  /*滚动条基准颜色*/
+  scrollbar-base-color: transparent;
+  -ms-overflow-style: none;
+  color: #5d667c;
+  cursor: pointer;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.kucity .result::-webkit-scrollbar {
+  width: 2px;
+  height: 16px;
+  background-color: transparent;
+}
+
+.kucity .result::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.kucity .result::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #bbb;
+}
+
+.kucity .result::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.kucity .result:hover {
+  padding-right: 3px;
+}
+
+.kucity .result:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.kucity .result::-webkit-scrollbar {
+  display: none;
+}
+
+.kucity .kucity_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.kucity .kucity_nav li {
+  cursor: pointer;
+  font-size: 14px;
+  color: #111c4e;
+  font-weight: bold;
+  padding-bottom: 10px;
+  line-height: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.kucity dl {
+  margin-bottom: 10px;
+}
+
+.kucity_item dt {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 25px;
+  color: #111c4e;
+  margin-bottom: 6px;
+}
+
+.kucity .kuCity_destination {
+  margin-right: 20px;
+}
+
+.kucity_item dd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.kucity_item dd span {
+  font-size: 14px;
+  color: #5d667c;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.kucity_item dd span:hover {
+  color: #0075ff;
+}
+
+.kucity_item dd > * {
+  margin-bottom: 5px;
+}
+
+.kucity_item dd b {
+  font-weight: normal;
+}
+
+.kucity_item dd .kuCity_recentItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.kucity_item dd .kuCity_recentItem .kuCity_destination {
+  position: relative;
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+
+.kucity_item dd .kuCity_recentItem .kuCity_destination:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../../images/Aus/common/icon_searchtime.png") no-repeat;
+  background-position: center left;
+}
+
+.kucity_item dd .kuCity_recentItem .kuCity_destination:before {
+  height: 25px;
+}
+
+.kucity_item dd .kuCity_recentItem .kuCity_dateRange {
+  color: #5d667c;
+  font-size: 14px;
+  text-align: right;
+  min-width: 90px;
+}
+
+.kucity_item dd .kuCity_recentItem .kuCity_dateRange p {
+  display: inline-block;
+}
+
+.citybox {
+  padding: 0 24px;
+}
+
+.airTitle, .locationTitle {
+  color: #111c4e;
+  font-size: 16px;
+  margin-bottom: 13px;
+  padding: 0 38px;
+  font-weight: bold;
+}
+
+.airTitle {
+  background: url(/images/Aus/common/icon_home_air.png) no-repeat;
+  background-position: 12px;
+}
+
+.locationTitle {
+  margin-top: 12px;
+  background: url(/images/Aus/common/icon_home_car.png) no-repeat;
+  background-position: 12px;
+}
+
+.kucity .result li, .kucity .locationResult li {
+  color: #041E5B;
+  font-size: 14px;
+  line-height: normal;
+  padding: 12px 38px;
+}
+
+.carAddress {
+  font-weight: 14px;
+  color: #5d667c;
+}
+/*# sourceMappingURL=kuCity.css.map */

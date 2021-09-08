@@ -1,0 +1,557 @@
+.mapBody{
+	position: fixed;
+	width: 600px;
+	height: 625px;
+	top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+	z-index: 100;
+	background-color: #fff;
+}
+#mapTittle{
+	width: 100%;
+	height: 25px;
+	text-align: right;
+	font-size: 25px;
+	line-height: 25px;
+}
+.mapTittleText{
+	margin-right: 10px;
+	color: #4a4a4a;
+	cursor: pointer;
+}
+.mapTittleText:hover{
+	color:#041e58;
+}
+#map{
+	width: 600px;
+	height: 600px;
+}
+/*进度条*/
+.progressBar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #9b9b9b;
+}
+.progressLine{
+	width: 304px;
+	height: 2px;
+	/*background-color: #041e58;*/
+	margin:24px 0 0 30px;
+}
+.progressCircle{
+	width: 6px;
+    height: 6px;
+    /*background-color: #041e58;*/
+    margin: 22px 10px 0 0;
+    border-radius: 50%;
+}
+.tabBarColor{
+	color: #F58A00;
+}
+.tabBarBackColor{
+	background-color: #F58A00;
+}
+.hotelsNumber{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	color: #041e58;
+	border-bottom: 1px solid #a9a9a9;
+	position: relative;
+}
+.allMapBtn{
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	background-color: #f6aa25;
+	text-align: center;
+	line-height: 30px;
+	margin-top: 15px;
+	border-radius: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	position: absolute;
+	left: 1015px;
+}
+/*搜索框*/
+.searchBody{
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	top: 10px;
+	margin-bottom: 14px;
+}
+.searchConditionBody{
+	background-color:#e9f0f6;
+	border-top:1px solid #041e5b;
+}
+#hotelCity,#hotelIntlCity,#hotelDepartureDate,#hotelReturnDate,#keyWordInput,.hotelAddressBody{
+	width: 125px;
+	height: 26px;
+	margin-top: 11px;
+	border: 1px solid #979797;
+	position: relative;
+}
+.hotelAddressBody{
+	background: #fff;
+}
+#hotelAddress{
+	width: 100px;
+	height: 26px;
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 10;
+}
+#hotelAddressSelect{
+	width: 120px;
+	height: 26px;
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 1;
+	outline:none;
+}
+#keyWordInput{
+	width: 200px;
+}
+.keyWordBody{
+	width: 300px;
+    position: absolute;
+    top: 38px;
+    right: 0px;
+    background-color: #fff;
+    z-index: 99;
+    overflow-y: scroll;
+    display: none;
+    max-height: 300px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 7px #D7DDE5;
+    border: 1px solid #D7DDE5;
+}
+.relationTittle,
+.keyWordBodyLi--type,
+.relationLi,
+.keyWordBodyLi{
+	height: 36px;
+	line-height: 36px;
+    font-size: 14px;
+}
+.relationTittle{
+	font-size: 16px;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding-left: 30px;
+	position: relative;
+}
+.relationTittle::after,.keyWordBodyLi::after{
+	content: '';
+    display: block;
+    position: absolute;
+    left: 9px;
+    width: 14px;
+    height: 14px;
+    top: 11px;
+    background-repeat: no-repeat;
+	background-size: 14px;
+}
+.keyWordBodyLi--type{
+	position: absolute;
+	color: #999999;
+	right: 20px;
+
+}
+.keywordTitle--hotel::after{background-image: url(../images/key_words/icon_keyhotel.png);}
+.keywordTitle--brand::after{background-image: url(../images/key_words/icon_keybrand.svg);}
+.keywordTitle--district::after{background-image: url(../images/key_words/icon_keydistrict.svg);}
+.keywordTitle--commercial::after{background-image: url(../images/key_words/icon_keybusiness.svg);}
+.keywordTitle--extCommercial::after{background-image: url(../images/key_words/icon_keylandmark.svg);}
+.relationLi{
+    width: 100%;
+    padding-left: 30px;
+	color: #8C99AB;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.keyWordBodyLi{
+    /* width: 100%; */
+    padding-left: 30px;
+	color: #8C99AB;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	cursor: pointer;
+	position: relative;
+	padding-right: 30%;
+}
+.keyWordBodyLi b{
+	color: #0678FF;
+}
+.relationLi:hover,.keyWordBodyLi:hover{
+	/* color: #0678FF; */
+	background-color: #F6F9FD;
+}
+/* 滚动条样式 */
+.keyWordBody::-webkit-scrollbar {
+/*滚动条整体样式*/
+	width: 10px;  
+	height: 1px;
+}
+.keyWordBody::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 5px #cccccc;
+	background: #cccccc;
+}
+.keyWordBody::-webkit-scrollbar-track {/*滚动条里面轨道*/
+	-webkit-box-shadow: inset 0 0 5px #EFEFEF;
+	border-radius: 10px;
+	background: #EFEFEF;
+}
+.hotelStarBtn{
+	width:150px;
+	height:26px;
+	border: 1px solid #979797;
+	margin:11px 0 0 15px;
+	line-height: 26px;
+	text-align: center;
+	cursor: pointer;
+}
+.starChoose{
+/*	background-color: #041e58;
+	color: #fff;*/
+	border: 1px solid #041e58;
+    color: #fff;
+    background: #041e5b;
+}
+.hotelPriceBtn,.searchMinPrice,.searchMaxPrice{
+	width:80px;
+	height:26px;
+	border: 1px solid #979797;
+	margin:11px 0 0 15px;
+	line-height: 26px;
+	text-align: center;
+	cursor: pointer;
+}
+.searchMinPrice{
+	margin: 11px 10px 0 30px;
+}
+.searchMaxPrice{
+	margin-left:10px;
+}
+.searchHotelBtn{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #f6aa25;
+	text-align: center;
+	border-radius: 8px;
+	margin: 10px 0 0 45px;
+	cursor: pointer;
+	color: #fff;
+}
+/*信息界面*/
+.infoBody{
+	background-color: #fff;
+	width: 100%;
+}
+.hotelChooseBody{
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	border-top: 4px solid #f1f1f1;
+	box-sizing: border-box;
+	padding-left: 20px;
+	color: #DC002E;
+}
+/*筛选部分*/
+.siftBody{
+	width: 100%;
+	height:52px;
+	line-height: 52px;
+	background-color: #e9f0f6;
+	border: #CCC 1px solid;
+	position: relative;
+	font-size: 13px;
+}
+.priceSortIcon,.starSortIcon,.scoreSortIcon,.distanceSortIcon{
+	width:11px;
+	height: 13px;
+	margin: 18px 0 0 5px;
+	background-image: url('../../css/images/sortIcon.png');
+	background-position:0px 0px;
+}
+.breakfastBtn,.freeCancelBtn,.noGuaranteeBtn,.protocolBtn,.companyBillBtn{
+	width: 105px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #979797;
+	margin: 13px 0 0 20px;
+	border-radius: 3px;
+	text-align: center;
+	background-color: #fff;
+	cursor: pointer;
+}
+/*酒店列表*/
+.hotelListBody{
+	margin: 5px 0 20px 0;
+}
+#hotelListMap{
+	width: 850px;
+	height: 700px;
+}
+.hotelList{
+	width: 350px;
+	height: 700px;
+}
+.hotelList .hotelLi{
+	width: 100%;
+	min-height: 235px;
+	border-bottom: 1px dashed#a9a9a9;
+	position: relative;
+}
+.hotelLiImg{
+	width: 100px;
+	height: 100px;
+	/*position: absolute;
+	left: 20px;
+	top: 38px;*/
+	margin: 5px 0 0 20px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.hotelLiName{
+	width: 300px;
+	min-height: 20px;
+	max-height: 40px;
+	line-height: 16px;
+	font-size: 15px;
+	/*font-weight: bold;*/
+	color: #3083FB;
+	/*position: absolute;
+	top: 10px;
+	left: 20px;*/
+	margin: 5px 0 0 20px;
+	cursor: pointer;
+	word-break: break-word;
+}
+.hotelLiScore{
+	width: 30px;
+    height: 30px;
+    background-color: #f6aa25;
+    border-radius: 0px 10px 0px 10px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}
+.hotelLiGrade{
+	width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #f6aa25;
+    text-align: right;
+    position: absolute;
+    top: 5px;
+    left: 145px;
+}
+.hotelLiComment{
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #404040;
+	text-align: right;
+	position: absolute;
+	top: 49px;
+    right: 135px;
+}
+.hotelLiLine{
+	width: 200px;
+	height: 0px;
+	border-bottom: 1px dashed #979797;
+	margin: 0px 0 0 128px;
+	/*position: absolute;
+	left: 128px;
+	top: 38px;*/
+}
+.hotelLiInfo{
+	width: 150px;
+	position: absolute;
+	left: 128px;
+	top: 38px;
+}
+.hotelLiDistance{
+	width: 150px;
+	min-height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+}
+.hotelLiStar{
+	height: 16px;
+	background-image: url("../images/starIcon.png");
+}
+.hotelTelPhone{
+	width: 250px;
+	min-height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	margin: 10px 0 0 20px;
+	/*position: absolute;
+	left: 20px;
+	top:  140px;*/
+}
+.hotelLiAddress{
+	width: 250px;
+	min-height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	/*position: absolute;
+	left: 20px;
+	top: 170px;*/
+	margin: 0px 0 0 20px;
+}
+.hotelAddressText{
+	width: 230px;
+	cursor: pointer;
+	word-break: break-word;
+	line-height: 25px;
+}
+.mapIcon,.phoneIcon{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background-image: url(../../hotel/images/mapIcon.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.mapIcon{
+	cursor: pointer;
+}
+.phoneIcon{
+	background-image: url(../../hotel/images/phoneIcon.png);
+}
+.hotelLiTelephone{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+}
+.hotelLiPrice{
+	width: 200px;
+	top: 110px;
+	right: 10px;
+	font-size: 12px;
+	position: absolute;
+	text-align: right;
+	color: #041e58;
+}
+.hotelLiAverageSpan{
+	color: #666666;
+	font-size: 12px;
+	top: 140px;
+	right: 10px;
+	position: absolute;
+	text-align: right;
+}
+.searchHotelDetailBtn{
+	width: 110px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    background-color: #041e58;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    right: 70px;
+    bottom: 5px;
+    cursor: pointer;
+}
+.protocolBody{
+	width: 60px;
+    height: 40px;
+    position: absolute;
+    right: -60px;
+    top: 20px;
+}
+.protocolText{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	font-size: 13px;
+	background-color: #8dc73f;
+	color:#fff;
+	text-align: center;
+}
+.triangleTopRight{
+	width: 0;
+    height: 0;
+    border-top: 7px solid #446a10;
+    border-right: 60px solid transparent;
+}
+
+/* 2020.1.10 */
+		.listEnd{
+			display: flex;
+		    justify-content: center;
+		    height: 100px;
+		    align-items: center;
+			color: #666666;
+		}
+		.textSpan{
+			margin-left: 10px;
+		}
+		/* loading */
+		.loadingSpan {
+		    display: inline-block;
+		    width: 1.3em;
+		    height: 1.3em;
+		    color: inherit;
+		    vertical-align: middle;
+		    pointer-events: none;
+			box-sizing: border-box;
+		}
+		.loadingSpan {
+		    border: .2em solid #666666;
+		    border-bottom-color: transparent;
+		    border-radius: 50%;
+		    -webkit-animation: 1s loadingSpan linear infinite;
+		    animation: 1s loadingSpan linear infinite;
+		    position: relative;
+		}
+		@-webkit-keyframes loadingSpan {
+		    0% {
+		        -webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+		    }
+		    100% {
+		        -webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+		    }
+		}
+		@keyframes loadingSpan {
+		    0% {
+		        -webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+		    }
+		    100% {
+		        -webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+		    }
+		}

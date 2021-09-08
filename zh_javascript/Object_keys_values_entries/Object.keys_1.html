@@ -1,0 +1,12 @@
+<script>
+    // 属性求和
+    let salaries = {
+        'John' : 100,
+        'Pete' : 300,
+        'Mary' : 250
+    }
+    const sumSalaries = (obj) => {
+        return Object.values(obj).reduce((sum, curr) => sum + curr, 0)
+    }
+    alert(sumSalaries(salaries));// 650
+</script>

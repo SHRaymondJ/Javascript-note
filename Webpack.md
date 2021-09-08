@@ -350,7 +350,8 @@ module.exports = {
 - `node-sass` — Node Sass
 - `postcss-loader` — 使用 PostCSS 处理 CSS
 - `css-loader` — 解析 css import
-- `style-loader` —— 将CSS注入到DOM中
+  - `style-loader` —— 将CSS注入到DOM中（和MiniCssExtractPlugin不能同时用，如果用需要放在css-loader之前）
+- `MiniCssExtractPlugin.loader` —— 将CSS转成JS再注入CSS
 
 ```
 npm i -D sass-loader postcss-loader css-loader style-loader postcss-preset-env node-sass
@@ -396,7 +397,7 @@ import './styles/main.scss'
 
 **webpack.config.js**
 
-```
+```javascript
 module.exports = {
   /* ... */
   module: {
@@ -404,10 +405,13 @@ module.exports = {
       // CSS, PostCSS, and Sass
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
+  plugins: [
+  	new MiniCssExtractPlugin()
+  ]
 }
 ```
 
@@ -445,9 +449,9 @@ module.exports = {
 npm i -D webpack-dev-server
 ```
 
-出于演示目的，我们可以仅将开发配置添加到正在构建的当前`webpack.config.js`文件中并对其进行测试。 但是，我们开发一般要创建两个配置文件：一个生产环境用的 `mode: production`，一个开发环境用的`mode: development`。
+出于演示目的，我们可以仅将开发配置添加到正在构建的当前`webpack.config.js`文件中并对其进行测试。 但是，我们开发一般要创建两个配置文件：一个生产环境用的 `mode: production`，一个开发环境用的`mode: development`。`mode:production` 环境下打包后的文件压缩的更小。
 
-```
+```javascript
 const webpack = require('webpack')
 
 module.exports =  {
@@ -560,6 +564,63 @@ module.export = {
 ```
 
 
+
+## 常见问题
+
+**Q: 报错 SCRIPT5022: SecurityError sockjs.js (1687,3)**
+
+A: 找到/node_modules/sockjs-client/dist/sockjs.js 找到代码的 1605行 try { // self.xhr.send(payload)
+
+**Q: Promise找不到**
+
+A: 入口文件头引入"core-js/features/promise"
+
+**Q: 各种语法找不到**
+
+A: webpack5 打包的时候默认会用一些 ES6 的语法糖，需要在 output 的时候配置一下，如下：
+
+```javascript
+{
+    output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
+    environment: {
+        arrowFunction: false,  // 不支持箭头函数
+        bigIntLiteral: false,  // 不支持BigInt
+        const: true,
+        destructuring: false,  // 不支持解构
+        dynamicImport: false,  // 不支持异步import
+        forOf: false,   // 不支持for...of
+        module: false,  // 不支持module
+    },
+}}
+```
+
+**Q: js中的图片加载不出**
+
+A: JS中图片需要先引入，再调用，webpack 才能识别出图片并打包
+
+**Q: CSS中的图片路径不对**
+
+A: 如果用的 `MiniCssExtractPlugin.loader` 打包 css 文件，在 `MiniCssExtractPlugin.loader` 下设置个 publicPath
+
+```javascript
+ {
+     test: /\.(scss|css)$/,
+         use: [{
+             loader: MiniCssExtractPlugin.loader,
+             options: {
+                 publicPath: '../',
+             }
+         }, 'css-loader', 'postcss-loader', 'sass-loader']
+ },
+```
+
+
+
+
+
+# -------------分割----------------------------
 
 
 

@@ -1,0 +1,47 @@
+@import '../../../css/AusCommon/common.scss';
+
+
+.hotelRoomSearch {
+    background-color: $box-background;
+    padding: $normal-pd;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    > * {
+        margin-right: $normal-margin;
+    }
+    .hotelRoomSearchBtn {
+        @include button-color();
+        line-height: 36px;
+        margin-left: 30px;
+    }
+    .checkInDateSearch,
+    .checkOutDateSearch {
+        position: relative;
+        .checkOutDateIcon,
+        .checkInDateIcon {
+            width: 20px;
+            height: 20px;
+            top: 6px;
+            left: 8px;
+            background: url(../../images/Aus/common/icon_date-light.png);
+            position: absolute;
+        }
+        .hasDatepicker {
+            @include search_input((0 0 0 36px));
+            border: 1px solid $gray;
+            color: $textColorLight;
+            height: 36px;
+            width: 200px;
+        }
+        .checkInWeek,
+        .checkOutWeek {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            line-height: 16px;
+            font-size: $text-font-size-base;
+            color: $textColorLighter;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import './index/TA.scss';
+@import '../../hotel/css/hotelList/keyword.scss';
+@import './index/search.scss';
+@import './index/search.air.scss';
+@import './index/order.scss';
+@import './index/others.scss';
+
+body{
+    overflow-x: hidden;
+}
+#main{
+    margin-top: 0;
+}
+// 订单
+
+
+// 广告图
+.picGroup {
+    height: 274px;
+    width: 220px;
+}

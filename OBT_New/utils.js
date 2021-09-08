@@ -8,8 +8,8 @@ exports.getHtmlArray = function (moduleExportsPlugins) {
     // 根据模板配置生成 HtmlWebpackPlugin 需要的配置
     const getHtmlConfig = function ( name, chunks) {
         return {
-            template: path.resolve(__dirname,`./${name}/${name}.html`),
-            filename: `./${name}/${name}.html`,
+            template: path.resolve(__dirname,`./dev/${name}.html`),
+            filename: `./${name}.html`,
             inject: true,
             hash: true, // 开启hash
             title: 'Travel Portal,企业差旅管理专家',
@@ -25,7 +25,7 @@ exports.getHtmlArray = function (moduleExportsPlugins) {
     // 循环创建模板配置
     htmlArray.forEach((element) => {
         const { _html, chunks, title } = element
-        moduleExportsPlugins.push(new HtmlWebpackPlugin(getHtmlConfig( _html, chunks, title)))
+        moduleExportsPlugins.push(new HtmlWebpackPlugin(getHtmlConfig( _html, chunks)))
     })
 }
 
@@ -35,7 +35,7 @@ const glob = require('glob')
 exports.getEntry = function () {
     const entry = {}
     // 读取src目录所有page入口
-    glob.sync('./src/pages/*.js').forEach((name) => {
+    glob.sync('./dev/pages/*.js').forEach((name) => {
         const start = name.indexOf('src\\pages\\') + 9;    //本地路径
         const end = name.length - 3;
         const eArr = [];

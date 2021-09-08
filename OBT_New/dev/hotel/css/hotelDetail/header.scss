@@ -1,0 +1,96 @@
+@import '../../../css/AusCommon/common.scss';
+.hotelInfoBody {
+    background-color: $box-background;
+    padding: $normal-pd;
+    margin-bottom: $normal-margin;
+}
+.hotelInfoName {
+    color: $textColor;
+    margin-bottom: $normal-margin;
+    align-items: center;
+    > * {
+        margin-right: 12px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .hotelReselection {
+        color: $selectedColor;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .starBox{
+        display: flex
+    }
+    .hotelInfoStar {
+        @include star();
+    }
+    .hotelLiStarHalf {
+        @include star-half();
+        position: relative;
+        right: auto;
+    }
+}
+.hotel_header_contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.hotel_header_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-height: 130px;
+    justify-content: flex-end;
+    > * {
+        margin-bottom: $normal-margin;
+    }
+}
+.hotelAddress,
+.hotelInfoScore,
+.hotelInfoTelephone,
+.hotelInfoFax,
+.hotelInfoDescription {
+    color: $textColorLight;
+    font-size: $text-font-size-base;
+    margin-bottom: $normal-margin;
+    line-height: 19px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    img {
+        margin-top: 2.5px;
+        margin-right: $normal-margin;
+    }
+}
+.hotelInfoDescription {
+    @include text-line(2);
+    margin-bottom: 0;
+    &.active {
+        @include text-line(999);
+    }
+    img {
+        margin-right: 8px;
+    }
+}
+
+.showMore {
+    text-transform: capitalize;
+    color: $selectedColor;
+    font-size: $text-font-size-base;
+    display: none;
+    cursor: pointer;
+}
+
+
+.hotelInfoPrice {
+    font-size: $text-font-size-base;
+    color: $textColorLight;
+    text-align: right;
+    span {
+        color: $textColor;
+        font-size: 24px;
+    }
+}

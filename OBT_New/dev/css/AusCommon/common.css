@@ -1,0 +1,20 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.hotelRoomSearch {
+  background-color: #fff;
+  padding: 24px;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hotelRoomSearch > * {
+  margin-right: 12px;
+}
+
+.hotelRoomSearch .hotelRoomSearchBtn {
+  border: none;
+  outline: none;
+  background-color: #ff6720;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  min-width: 133px;
+  padding: 0 8px;
+  text-align: center;
+  line-height: 36px;
+  margin-left: 30px;
+}
+
+.hotelRoomSearch .hotelRoomSearchBtn:hover {
+  background-color: #ff9e1b;
+}
+
+.hotelRoomSearch .checkInDateSearch,
+.hotelRoomSearch .checkOutDateSearch {
+  position: relative;
+}
+
+.hotelRoomSearch .checkInDateSearch .checkOutDateIcon,
+.hotelRoomSearch .checkInDateSearch .checkInDateIcon,
+.hotelRoomSearch .checkOutDateSearch .checkOutDateIcon,
+.hotelRoomSearch .checkOutDateSearch .checkInDateIcon {
+  width: 20px;
+  height: 20px;
+  top: 6px;
+  left: 8px;
+  background: url(../../images/Aus/common/icon_date-light.png);
+  position: absolute;
+}
+
+.hotelRoomSearch .checkInDateSearch .hasDatepicker,
+.hotelRoomSearch .checkOutDateSearch .hasDatepicker {
+  outline: none;
+  padding: 0 0 0 36px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+  border: 1px solid #5d667c;
+  color: #5d667c;
+  height: 36px;
+  width: 200px;
+}
+
+.hotelRoomSearch .checkInDateSearch .checkInWeek,
+.hotelRoomSearch .checkInDateSearch .checkOutWeek,
+.hotelRoomSearch .checkOutDateSearch .checkInWeek,
+.hotelRoomSearch .checkOutDateSearch .checkOutWeek {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #8c99ab;
+}
+/*# sourceMappingURL=bookDate.css.map */

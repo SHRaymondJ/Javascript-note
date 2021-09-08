@@ -1,0 +1,16 @@
+<script>
+    // 为 counter 添加 set 和 decrease 方法
+    const makeCounter = function fun() {
+        let count = 0
+        const counter = () => {
+            return count++
+        }
+        counter.set = (value) => (count = value)
+        counter.decrease = (value) => count - value
+        return counter
+    }
+    const counter = makeCounter()
+    console.log(counter())
+    console.log(counter.set(100))
+    console.log(counter.decrease(10))
+</script>

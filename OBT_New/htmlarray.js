@@ -1,12 +1,11 @@
 module.exports = [
     {
-        // _folder: 'index',
-        _html: 'index',
-        chunks: ['index', 'common'],
+        _html: 'login/LoginPageBCDTest',
+        chunks: ['login'],
     },
     {
-        // _folder: 'about',
-        _html: 'about',
-        chunks: ['about'],
+        _html: 'test/test',
+        chunks: ['test']
     }
+
 ]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        const data = [
+            {
+                id: '1',
+                name: '广东省',
+                children: [
+                    {
+                        id: '11',
+                        name: '深圳市',
+                        children: [
+                            {
+                                id: '111',
+                                name: '南山区',
+                            },
+                            {
+                                id: '112',
+                                name: '福田区',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ]
+
+        const value = '112'
+        const fn = (value) => {
+            const result = []
+            const baseData = data
+
+            const searchRoot = (data) => {
+                for(let i = 0; i  < data.length; i++) {
+                    if (data[i].id === value) {
+                        result.unshift(data[i].id)
+                        return true
+                    } else if (data[i].children) {
+                        const hasData = searchRoot(data[i].children)
+                        if (hasData) {
+                            result.unshift(data[i].id)
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                }
+                    
+                
+                return false
+            }
+            searchRoot(baseData)
+            return result
+        }
+        alert(fn(value))
+    </script>
+</html>

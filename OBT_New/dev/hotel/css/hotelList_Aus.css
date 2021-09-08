@@ -1,0 +1,1066 @@
+@charset "UTF-8";
+/* 关键字搜索*/
+.keyWordBody {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  background-color: #fff;
+  z-index: 99;
+  overflow-y: scroll;
+  display: none;
+  max-height: 300px;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 2px 7px #D7DDE5;
+          box-shadow: 1px 2px 7px #D7DDE5;
+  border: 1px solid #D7DDE5;
+}
+
+.relationTittle,
+.keyWordBodyLi--type,
+.relationLi,
+.keyWordBodyLi {
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+
+.relationTittle {
+  font-size: 16px;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 30px;
+  position: relative;
+}
+
+.relationTittle::after, .keyWordBodyLi::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 9px;
+  width: 14px;
+  height: 14px;
+  top: 11px;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.keyWordBodyLi--type {
+  position: absolute;
+  color: #999999;
+  right: 20px;
+}
+
+.keywordTitle--hotel::after {
+  background-image: url(../images/key_words/icon_keyhotel.png);
+}
+
+.keywordTitle--brand::after {
+  background-image: url(../images/key_words/icon_keybrand.svg);
+}
+
+.keywordTitle--district::after {
+  background-image: url(../images/key_words/icon_keydistrict.svg);
+}
+
+.keywordTitle--commercial::after {
+  background-image: url(../images/key_words/icon_keybusiness.svg);
+}
+
+.keywordTitle--extCommercial::after {
+  background-image: url(../images/key_words/icon_keylandmark.svg);
+}
+
+.relationLi {
+  width: 100%;
+  padding-left: 30px;
+  color: #8C99AB;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.keyWordBodyLi {
+  /* width: 100%; */
+  padding-left: 30px;
+  color: #8C99AB;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  padding-right: 30%;
+}
+
+.keyWordBodyLi b {
+  color: #0678FF;
+}
+
+.relationLi:hover, .keyWordBodyLi:hover {
+  /* color: #0678FF; */
+  background-color: #F6F9FD;
+}
+
+/* 滚动条样式 */
+.keyWordBody::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  height: 1px;
+}
+
+.keyWordBody::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px #cccccc;
+  background: #cccccc;
+}
+
+.keyWordBody::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px #EFEFEF;
+  border-radius: 10px;
+  background: #EFEFEF;
+}
+
+.mapBody {
+  position: fixed;
+  width: 600px;
+  height: 625px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #fff;
+}
+
+#mapTittle {
+  width: 100%;
+  height: 25px;
+  text-align: right;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.mapTittleText {
+  margin-right: 10px;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+
+.mapTittleText:hover {
+  color: #041e58;
+}
+
+#map {
+  width: 600px;
+  height: 600px;
+}
+
+.mapboxViewDetailBtn {
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: #041e5b;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice, .search_hotelAddress .hotelAddressBody input {
+  outline: none;
+  padding: 0 8px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.hotelLi {
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+}
+
+.hotelLi:hover {
+  -webkit-box-shadow: 0px 4px 16px #e6e4e4;
+          box-shadow: 0px 4px 16px #e6e4e4;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice, .search_hotelAddress .hotelAddressBody input {
+  outline: none;
+  padding: 0 8px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.hotelLi {
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+}
+
+.hotelLi:hover {
+  -webkit-box-shadow: 0px 4px 16px #e6e4e4;
+          box-shadow: 0px 4px 16px #e6e4e4;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.siftBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+  padding: 14px 24px;
+  color: #111c4e;
+  margin-bottom: 12px;
+}
+
+.siftBody h3 {
+  font-size: 14px;
+  color: #111c4e;
+}
+
+.siftBody .siftBody_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.siftBody .siftBody_wrapper > .sortTab {
+  border-right: 1px solid #c0cad8;
+  text-align: center;
+}
+
+.siftBody .sortTab {
+  width: 180px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.siftBody .sortTab.active {
+  color: #0075ff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.siftBody .hamb_menu {
+  position: relative;
+}
+
+.siftBody .hamb_menu_btn {
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.siftBody .hamb_menu_btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.siftBody .hamb_menu_wrapper {
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+          box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px;
+  z-index: 2;
+  position: absolute;
+  left: -150px;
+  top: 35px;
+  opacity: 1;
+  top: 35px;
+  -webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+  position: absolute;
+  box-sizing: border-box;
+  width: 180px;
+}
+
+.siftBody .hamb_menu_wrapper.hidden {
+  top: 30px;
+  opacity: 0;
+}
+
+.siftBody .hamb_menu .sortTab {
+  margin-bottom: 20px;
+}
+
+.siftBody .hamb_menu .sortTab:last-child {
+  margin-bottom: 0;
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice, .search_hotelAddress .hotelAddressBody input {
+  outline: none;
+  padding: 0 8px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.hotelLi {
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+}
+
+.hotelLi:hover {
+  -webkit-box-shadow: 0px 4px 16px #e6e4e4;
+          box-shadow: 0px 4px 16px #e6e4e4;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.hotelLi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px;
+  background-color: #fff;
+  margin-bottom: 12px;
+}
+
+.hotelLi_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  border-right: 1px solid #c0cad8;
+}
+
+.hotelLi_aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.hotelLi_aside.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.hotelLi_aside.center .hotelDetailNoRoom {
+  color: #5d667c;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hotelLiImg {
+  margin-right: 16px;
+}
+
+.hotelLiImg img {
+  width: 180px;
+  height: 160px;
+}
+
+.hotelLi_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hotelLi_details > div {
+  margin-bottom: 8px;
+}
+
+.hotelLi_details .hotelLiName {
+  cursor: pointer;
+  color: #111c4e;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.hotelLi_details .hotelLiName[noRoom='true'] {
+  cursor: default;
+}
+
+.hotelLi_details .hotelLiName_title {
+  margin-right: 6px;
+}
+
+.hotelLi_details .hotelLiStar {
+  position: relative;
+  height: 13px;
+  background: url(../../images/Aus/common/icon_grade_star.png);
+  background-repeat: repeat-x;
+}
+
+.hotelLi_details .hotelLiStarHalf {
+  position: absolute;
+  height: 13px;
+  width: 13px;
+  right: -13px;
+  background: url(../../images/Aus/common/icon_grade_star-half.png);
+}
+
+.hotelLi_details .hotelLi_protocals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.hotelLi_details .hotelLi_protocals .companyPay {
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.hotelLi_details .hotelLiInfo {
+  color: #5d667c;
+  font-size: 14px;
+}
+
+.hotelLi_details .hotelLiInfo > div {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.hotelLi_details .hotelLiInfo .hotelLiAddress {
+  background: url("../../../images/Aus/common/icon_locate-gray.png") no-repeat;
+  background-position: left;
+}
+
+.hotelLi_details .hotelLiInfo .hotelLiTelephone {
+  background: url("../../../images/Aus/common/icon_phone-gray.png") no-repeat;
+  background-position: left;
+}
+
+.hotelLiPrice {
+  font-size: 14px;
+  color: #5d667c;
+  text-align: right;
+}
+
+.hotelLiPrice p:first-child {
+  margin-bottom: 6px;
+}
+
+.hotelLiPrice_price {
+  color: #111c4e;
+  font-size: 24px;
+}
+
+.hotelLiPrice_tax {
+  color: #8c99ab;
+}
+
+.searchHotelDetailBtn {
+  border: none;
+  outline: none;
+  background-color: #ff6720;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  min-width: 133px;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.searchHotelDetailBtn:hover {
+  background-color: #ff9e1b;
+}
+
+.hotel_main {
+  width: 900px;
+}
+
+.hotelsNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 10px 24px;
+  font-size: 14px;
+  color: #5d667c;
+}
+
+.hotelsNumber .hotelsNumberText {
+  font-weight: bold;
+  color: #111c4e;
+}
+
+.hotelsNumber > div {
+  margin: 6px 12px 6px 0;
+}
+
+.hotelsNumber .hotels_filter_tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f4f8ff;
+  color: #111c4e;
+}
+
+.hotelsNumber .hotels_filter_tag_text {
+  padding: 6px 3px 6px 12px;
+}
+
+.hotelsNumber .hotels_filter_tag .close {
+  width: 14px;
+  height: 14px;
+  background: url("../../../images/Aus/common/close.svg") no-repeat center;
+  background-size: 14px;
+  padding: 6px 12px 6px 9px;
+  cursor: pointer;
+  -webkit-transition: background-size 0.1s ease;
+  transition: background-size 0.1s ease;
+}
+
+.hotelsNumber .hotels_filter_tag .close:hover {
+  background-size: 18px;
+}
+
+.banner_middle {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.banner_middle img {
+  width: 100%;
+  height: 100px;
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice, .search_hotelAddress .hotelAddressBody input {
+  outline: none;
+  padding: 0 8px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.hotelLi {
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+}
+
+.hotelLi:hover {
+  -webkit-box-shadow: 0px 4px 16px #e6e4e4;
+          box-shadow: 0px 4px 16px #e6e4e4;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.filter_wrapper {
+  position: relative;
+  width: 280px;
+  background: #f5f6fa;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1;
+}
+
+.filter_wrapper.fixed {
+  /*滚动条*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+  padding-right: 5px;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  /*三角箭头的颜色*/
+  scrollbar-arrow-color: transparent;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: transparent;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: transparent;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: transparent;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: transparent;
+  /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+  scrollbar-3dlight-color: transparent;
+  /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+  scrollbar-darkshadow-color: transparent;
+  /*滚动条基准颜色*/
+  scrollbar-base-color: transparent;
+  -ms-overflow-style: none;
+  position: fixed;
+  top: 0;
+  overflow-y: scroll;
+}
+
+.filter_wrapper.fixed::-webkit-scrollbar {
+  width: 2px;
+  height: 16px;
+  background-color: transparent;
+}
+
+.filter_wrapper.fixed::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.filter_wrapper.fixed::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #bbb;
+}
+
+.filter_wrapper.fixed::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.filter_wrapper.fixed:hover {
+  padding-right: 3px;
+}
+
+.filter_wrapper.fixed:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.filter_wrapper.fixed::-webkit-scrollbar {
+  display: none;
+}
+
+.filter_wrapper.fixed.little-width {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.filter_wrapper > div {
+  margin-bottom: 24px;
+}
+
+.filter_wrapper .filter_title {
+  color: #111c4e;
+  font-size: 16px;
+}
+
+.filter_wrapper .filter_sub_title {
+  color: #111c4e;
+  font-size: 14px;
+}
+
+.filter_wrapper .filter_reset {
+  margin-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.filter_wrapper .filter_reset button {
+  border: none;
+  outline: none;
+  background: none;
+  color: #0075ff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter_wrapper .filter_option-box {
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #c0cad8;
+}
+
+.filter_wrapper .filter_option-box .filter_title, .filter_wrapper .filter_option-box .filter_sub_title {
+  margin-bottom: 16px;
+}
+
+.filter_wrapper .filter_option-box li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #111c4e;
+}
+
+.filter_wrapper .filter_option-box li label {
+  padding-left: 10px;
+}
+
+.filter_wrapper .filter_option-box li input,
+.filter_wrapper .filter_option-box li label {
+  cursor: pointer;
+}
+
+.filter_wrapper .filter_option-box:last-child {
+  border-bottom: none;
+}
+
+.filter_wrapper .filter_price_range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+}
+
+.filter_wrapper .filter_price_range .filter_price_inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice {
+  width: 90px;
+  border: 1px solid #5d667c;
+  z-index: 1;
+}
+
+.filter_wrapper .filter_price_range .hyphen {
+  margin: 0 16px;
+  z-index: 1;
+}
+
+.filter_wrapper .filter_price_range .filter_price_submit {
+  border: none;
+  outline: none;
+  background: url(../../../images/Aus/common/icon_search.png);
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .filter_wrapper.fixed {
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .filter_wrapper.fixed.close {
+    width: 0;
+    padding: 0;
+  }
+  .filter_wrapper.fixed .filter_box {
+    padding: 4px;
+  }
+  .filter_switch.show {
+    width: 30px;
+    height: 60px;
+    position: fixed;
+    background-color: #f5f6fa;
+    top: 50%;
+    left: 280px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    cursor: pointer;
+    -webkit-box-shadow: 2px -2px 4px 0px rgba(17, 28, 78, 0.1);
+            box-shadow: 2px -2px 4px 0px rgba(17, 28, 78, 0.1);
+    -webkit-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    z-index: 1;
+  }
+  .filter_switch.show.close {
+    left: 0;
+  }
+  .filter_switch.show.close:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    margin-left: 8px;
+  }
+  .filter_switch.show:after {
+    content: '';
+    /* background: none; */
+    display: block;
+    border-right: 2px solid #0075ff;
+    border-bottom: 2px solid #0075ff;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+    width: 6px;
+    height: 6px;
+    margin-left: 11px;
+    margin-top: 23px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+.filter_wrapper .filter_price_range .filterMinPrice,
+.filter_wrapper .filter_price_range .filterMaxPrice, .search_hotelAddress .hotelAddressBody input {
+  outline: none;
+  padding: 0 8px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.hotelLi {
+  -webkit-transition: -webkit-box-shadow 0.5s ease;
+  transition: -webkit-box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+}
+
+.hotelLi:hover {
+  -webkit-box-shadow: 0px 4px 16px #e6e4e4;
+          box-shadow: 0px 4px 16px #e6e4e4;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.search_destination {
+  width: 320px;
+}
+
+.search_checkIn, .search_checkOut {
+  width: 160px;
+}
+
+.search_hotelAddress {
+  width: 280px;
+}
+
+.search_hotelAddress .hotelAddressBody {
+  height: 36px;
+  position: relative;
+}
+
+.search_hotelAddress .hotelAddressBody input {
+  border: none;
+  outline: none;
+  z-index: 1;
+  width: 100%;
+  border-right: none;
+}
+
+.search_hotelAddress_options {
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+          box-shadow: 0px 1px 8px 0px rgba(17, 28, 78, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  width: 100%;
+}
+
+.search_hotelAddress_options li {
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.search_hotelAddress_options li:last-child {
+  margin-bottom: 0;
+}
+
+.search_hotelAddress_options li:hover {
+  color: #0678ff;
+}
+
+.search_keyWords {
+  width: 200px;
+}
+
+.search_keyWords .search_input {
+  width: 100%;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.filter_side {
+  width: 280px;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=hotelList_Aus.css.map */

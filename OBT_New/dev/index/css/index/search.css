@@ -1,0 +1,256 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.search-container {
+  position: relative;
+  height: 460px;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.search-container .banner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: url(../../images/Aus/pic_homebg.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.search-container .banner .banner-img {
+  position: relative;
+  height: 100%;
+  width: 500vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-container .banner .banner-img li {
+  display: inline-block;
+  height: 100%;
+}
+
+.search-container .banner .banner-img .bgImg {
+  height: 100%;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#main .search_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(13, 21, 59, 0.8);
+  -webkit-box-shadow: 0px 2px 5px 0px #041e5b;
+          box-shadow: 0px 2px 5px 0px #041e5b;
+  color: #111c4e;
+  z-index: 0;
+}
+
+#main .search_wrapper .search_inputItems {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#main .search_wrapper .search_inputItems .search_input,
+#main .search_wrapper .search_inputItems .search_input-box-multiple {
+  height: 46px;
+  line-height: 46px;
+}
+
+#main .search_wrapper .search_title {
+  font-size: 14px;
+}
+
+#main .search_wrapper .search_input {
+  font-size: 16px;
+  border-top: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  color: #111c4e !important;
+  border-radius: 4px;
+}
+
+#main .search_wrapper .search_input-box-multiple {
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+#main .search_wrapper[name='hotel'] .search_destination {
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+#main .search_wrapper[name='hotel'] .search_destination .search_input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 1px solid #c0cad8 !important;
+}
+
+#main .search_wrapper[name='hotel'] .search_checkIn,
+#main .search_wrapper[name='hotel'] .search_checkOut {
+  width: 25%;
+}
+
+#main .search_wrapper[name='hotel'] .search_checkIn .search_input {
+  border-radius: 0;
+  font-weight: bold;
+  border-right: 1px solid #c0cad8 !important;
+}
+
+#main .search_wrapper[name='hotel'] .search_checkOut .search_input {
+  font-weight: bold;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#main .search_wrapper[name='hotel'] .search_hotelAddress,
+#main .search_wrapper[name='hotel'] .search_keyWords {
+  width: 49.5%;
+}
+
+#main .search_wrapper[name='hotel'] .search_hotelAddress .search_input,
+#main .search_wrapper[name='hotel'] .search_keyWords .search_input {
+  width: 100%;
+}
+
+#main .search_wrapper[name='hotel'] .hotelAddressBody {
+  position: relative;
+}
+
+.keyWordBody {
+  right: auto;
+  width: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.search_btn {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.search_input-box-multiple * {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.search_station_transform {
+  height: 46px;
+  width: 46px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.search_station_transform-icon {
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  left: 4px;
+}
+
+#carCompany {
+  /*滚动条*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+  padding-right: 5px;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  -ms-scrollbar-track-color: transparent;
+  /*三角箭头的颜色*/
+  scrollbar-arrow-color: transparent;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: transparent;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: transparent;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: transparent;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: transparent;
+  /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+  scrollbar-3dlight-color: transparent;
+  /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+  scrollbar-darkshadow-color: transparent;
+  /*滚动条基准颜色*/
+  scrollbar-base-color: transparent;
+  -ms-overflow-style: none;
+  max-height: 300px;
+  min-width: 250px;
+  overflow-y: scroll;
+}
+
+#carCompany::-webkit-scrollbar {
+  width: 2px;
+  height: 16px;
+  background-color: transparent;
+}
+
+#carCompany::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#carCompany::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #bbb;
+}
+
+#carCompany::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+#carCompany:hover {
+  padding-right: 3px;
+}
+
+#carCompany:hover::-webkit-scrollbar {
+  display: block;
+}
+
+#carCompany::-webkit-scrollbar {
+  display: none;
+}
+
+#carFromHour, #carToHour {
+  text-align-last: center;
+}
+
+#carFromHour option, #carToHour option {
+  text-align: center;
+}
+/*# sourceMappingURL=search.css.map */

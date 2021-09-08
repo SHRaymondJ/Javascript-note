@@ -1,0 +1,84 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.ui-datepicker-close, .ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker .ui-datepicker-buttonpane button.ui-state-hover {
+  border: none;
+  outline: none;
+  background-color: #ff6720;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  min-width: 133px;
+  padding: 0 8px;
+  text-align: center;
+  min-width: 70px;
+  padding: 4px 8px;
+  line-height: 14px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.ui-datepicker-close:hover, .ui-datepicker .ui-datepicker-buttonpane button:hover {
+  background-color: #ff9e1b;
+}
+
+.ui-widget-header {
+  background: none;
+  border: none;
+  color: #111c4e;
+}
+
+.ui-datepicker-year,
+.ui-datepicker-month {
+  border: none;
+  outline: none;
+  color: #111c4e;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+  border: none;
+  background: none;
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+  background: none;
+  border-right: 2px solid #0075ff;
+  border-bottom: 2px solid #0075ff;
+}
+
+.ui-datepicker .ui-datepicker-next span {
+  background: none;
+  border-right: 2px solid #0075ff;
+  border-bottom: 2px solid #0075ff;
+}
+/*# sourceMappingURL=datepicker.css.map */

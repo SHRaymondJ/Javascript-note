@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+            name="viewport"
+        />
+        <meta name="renderer" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+        <title>Travel Portal,企业差旅管理专家</title>
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/common.css" />
+        <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../css/jquery.mloading.css"
+        />
+        <link rel="stylesheet" type="text/css" href="../index/css/banner.css" />
+        <link rel="stylesheet" href="../css/mapBoxBase.css" />
+        <link rel="stylesheet" href="../index/css/mapbox.css" />
+        <style type="text/css">
+            /* 城市列表被订单的loading遮盖问题 */
+            #main {
+                position: relative;
+                z-index: 1;
+            }
+            /* end */
+            .kucity {
+                background-color: #fff;
+                width: 400px;
+                z-index: 200;
+            }
+            div {
+                box-sizing: border-box;
+            }
+            .footerContact a {
+                color: #ffffff;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mapbox_tips">
+            Cannot open the map, please update your browser to open the map.
+        </div>
+        <div class="mapboxMap" id="mapboxMap"></div>
+        <div class="autoCenter">
+            <div class="calendarBody">
+                <div style="position: relative">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cover"></div>
+        <div class="articlePop"></div>
+        <div id="main"></div>
+    </body>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/tools.js"></script>
+    <script type="text/javascript" src="../js/jquery.mloading.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jquery.session.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/commonFunctions.js"></script>
+    <script type="text/javascript" src="../js/allPageCommon.js"></script>
+    <script type="text/javascript" src="../js/config.js?v=1.00"></script>
+    <script type="text/javascript" src="../index/js/banner.js"></script>
+    <script type="text/javascript" src="../js/calendar.js"></script>
+    <script type="text/javascript" src="../index/js/kuCity.js"></script>
+    <script src="../js/thirdJS/mapbox-gl.js"></script>
+    <script src="../js/thirdJS/mapbox-gl-geocoder.min.js"></script>
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script type="text/javascript" src="../js/es6-promise.min.js"></script>
+    <script type="text/javascript" src="../js/es6-promise.auto.min.js"></script>
+    <script src="../index/js/mapbox.js"></script>
+    <script type="text/javascript">
+        var onlineStyle = JSON.parse($.session.get('ProfileInfo')).onlineStyle
+        // tools.searchLoadingShow()
+        if (onlineStyle) {
+            if (onlineStyle === 'APAC') {
+                includeLinkStyle('../css/AusCommon/base.css')
+                includeLinkStyle('./css/index_Aus.css')
+                includeScript('../index/js/index_Aus.js')
+            } else {
+                includeLinkStyle('../css/kuCity.css')
+                includeScript('../index/js/index.js')
+            }
+            switch (onlineStyle) {
+                case 'BCD':
+                    includeLinkStyle('../css/BCDColorStyle.css')
+                    includeLinkStyle('../index/css/index_BCD.css?v=1.00')
+                    break
+                case 'eTravel':
+                    includeLinkStyle('../css/eTravelColorStyle.css')
+                    includeLinkStyle('../index/css/index_1.css?v=1.00')
+                    break
+                case 'APPLE':
+                    includeLinkStyle('../css/AppleColorStyle.css')
+                    includeLinkStyle('../index/css/index_Apple.css?v=1.00')
+                    includeLinkStyle('../css/calendar_Apple.css?v=1.00')
+                    break
+            }
+        }
+        function includeScript(url) {
+            var url = url
+            var script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = url
+            document.getElementsByTagName('html')[0].appendChild(script)
+        }
+        function includeLinkStyle(url) {
+            var link = document.createElement('link')
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = url
+            document.getElementsByTagName('head')[0].appendChild(link)
+        }
+    </script>
+</html>

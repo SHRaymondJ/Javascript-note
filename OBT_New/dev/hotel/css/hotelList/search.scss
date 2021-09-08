@@ -1,0 +1,47 @@
+@import '../../../css/AusCommon/common.scss';
+
+.search {
+    &_destination {
+        width: 320px;
+    }
+    &_checkIn,
+    &_checkOut {
+        width: 160px;
+    }
+    &_hotelAddress {
+        width: 280px;
+        .hotelAddressBody {
+            height: 36px;
+            position: relative;
+            input {
+                @include clear-input-border();
+                z-index: 1;
+                width: 100%;
+                border-right: none;
+                @extend %search_input;
+            }
+        }
+        &_options {
+            @include pop-container-top(36px);
+            width: 100%;
+            li {
+                margin-bottom: 18px;
+                cursor: pointer;
+            }
+            li:last-child {
+                margin-bottom: 0;
+            }
+            li:hover {
+                color: $textHoverColor;
+            }
+        }
+    }
+    &_keyWords {
+        width: 200px;
+        .search_input {
+            width: 100%;
+        }
+    }
+}
+
+

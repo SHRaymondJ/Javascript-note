@@ -1,0 +1,251 @@
+@import '../../../css/AusCommon/common.scss';
+
+%hotelImgMasks {
+    position: relative;
+    .hotelImgBodyMask {
+        @include absolute-top-left();
+        width: 100%;
+        height: 100%;
+        padding: $normal-pd;
+        box-sizing: border-box;
+        background: transparent;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        span {
+            color: #ffffff;
+            text-transform: capitalize;
+            text-align: center;
+            width: 100%;
+            font-size: $text-font-size-base;
+            transition: all 0.5s ease;
+            font-weight: bold;
+        }
+    }
+    &:hover .hotelImgBodyMask {
+        background-color: rgba(17, 28, 78, 0.6);
+        span {
+            color: #73b0ff;
+        }
+    }
+}
+
+// 主图
+.hotelImgBody {
+    width: 780px;
+    height: 360px;
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &_noPic {
+        background-color: $light-gray;
+        text-align: center;
+        height: 100%;
+        position: relative;
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    img {
+        // width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    .hotelImgBody_pic0 {
+        width: 440px;
+        height: 360px;
+        overflow: hidden;
+        @extend %hotelImgMasks;
+    }
+    .hotelImgBody_pic1 {
+        width: 336px;
+        height: 226px;
+        overflow: hidden;
+        @extend %hotelImgMasks;
+    }
+    .hotelImgBody_pic2,
+    .hotelImgBody_pic3 {
+        width: 166px;
+        height: 130px;
+        overflow: hidden;
+        @extend %hotelImgMasks;
+    }
+    .hotelImgBody_pic3 .hotelImgBodyMask {
+        background-color: rgba(17, 28, 78, 0.6);
+    }
+    .hotelImgBody_secondPart {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .hotelImgBody_thirdPart {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// 地图、距离
+.hotelMapPhoto_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $normal-margin;
+    .hotelLocation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 400px;
+
+        .allMapBtn {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        &_destination {
+            background-color: $box-background;
+            padding: $normal-pd;
+            box-sizing: border-box;
+            height: 228px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    .smallMap{
+        display: block;
+    }
+    .bigMap{
+        display: none;
+    }
+}
+.hotelMapPhoto_wrapper.noPic {
+    > .hotelLocation {
+        width: 100%;
+        flex-direction: row;
+        > .allMapBtn {
+            width: 386px;
+            height: 160px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        > .hotelLocation_destination {
+            height: 160px;
+            width: 802px;
+            flex-direction: row;
+            padding-bottom: 60px;
+            position: relative;
+            > .hotel_destination_items {
+                width: 48%;
+                justify-content: flex-start;
+            }
+            > .hotel_destination_more {
+                position: absolute;
+                bottom: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .destination_moreBox{
+                left: -140px;
+                &:after{
+                    left: 240px;
+                }
+            }
+        }
+    }
+    .smallMap{
+        display: none;
+    }
+    .bigMap{
+        display: block;
+    }
+    .allMapText{
+        top: 90px;
+    }
+}
+.hotel_destination_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $normal-margin;
+    .hotel_destination_items_title {
+        display: flex;
+        align-items: center;
+        margin-bottom: $normal-margin;
+        img {
+            margin-right: 6px;
+        }
+        h4 {
+            color: $textColor;
+            font-size: $text-font-size-base;
+        }
+    }
+
+    ul {
+        color: $textColorLight;
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $normal-margin;
+            font-size: $text-font-size-base;
+        }
+    }
+    .hotel_destination_items_text{
+        font-size: $text-font-size-base;
+        span{
+            display: inline-block;
+            margin-bottom: $normal-margin/2;
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+        }
+    }
+    .shortLine {
+        @include text-line(2);
+        max-height: 40px;
+    }
+}
+.hotel_destination_more {
+    position: relative;
+    .destination_showMore {
+        text-align: right;
+        float: right;
+        color: $selectedColor;
+        font-size: $text-font-size-base;
+        text-transform: capitalize;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .destination_moreBox {
+        @include pop-container-bottom(25px);
+        @include pop-container-animation(0.3s, bottom, 25px);
+        width: 440px;
+        height: 264px;
+        left: -87px;
+        height: -100px;
+        &:after {
+            @include solid-triangle(#fff, 440px);
+            left: 350px;
+        }
+    }
+    .destination_wrapper {
+        @include scrollbar();
+        box-sizing: border-box;
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+    }
+}

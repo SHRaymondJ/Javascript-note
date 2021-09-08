@@ -1,0 +1,118 @@
+@import '../../../css/AusCommon/common.scss';
+
+.bedDetails_pop {
+    padding: $normal-pd;
+    background-color: $box-background;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 1000px;
+    z-index: 101;
+    &.hide {
+        display: none;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 33px;
+        .bedDetails_pop_title {
+            display: flex;
+            align-items: baseline;
+            color: $textColor;
+            h1 {
+                font-size: 24px;
+                color: $textColor;
+                margin-right: $normal-margin;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        .close_bedDetails {
+            width: 20px;
+            height: 20px;
+            background: url(../../images/Aus/common/close.svg) no-repeat;
+            background-size: 24px;
+            cursor: pointer;
+        }
+    }
+    .bedDetails_pop_props {
+        margin-bottom: 25px;
+        h3 {
+            padding-left: 30px;
+            font-size: 18px;
+            color: $textColor;
+            margin-bottom: 12px;
+        }
+        .title{
+            &-description{
+                @include icon-before-text('../../images/Aus/hotel/icon_introduction.png');
+            }
+            &-cancelPolicy{
+                @include icon-before-text('../../images/Aus/hotel/icon_time.png');
+            }
+            &-basicInformation{
+                @include icon-before-text('../../images/Aus/hotel/icon_information.png');
+            }
+            &-roomFacilities{
+                @include icon-before-text('../../images/Aus/hotel/icon_facilities.png');
+            }
+            &-guaranteeCardType{
+                @include icon-before-text('../../images/Aus/hotel/icon_card.png');
+            }
+            &-otherCharges{
+                @include icon-before-text('../../images/Aus/hotel/icon_othercharge.png');
+            }
+        }
+        .bedDetails_props_body {
+            padding-bottom: 12px;
+            margin-left: 30px;
+            border-bottom: 1px dashed #ececec;
+        }
+        &:last-child .bedDetails_props_body {
+            border-bottom: none;
+        }
+        p {
+            font-size: $text-font-size-base;
+            color: $textColor;
+            margin-bottom: 12px;
+            line-height: 16px;
+        }
+        .bedDetail_pop_cancelPolicy {
+            color: $orange;
+        }
+        ul {
+            display: flex;
+        }
+        .bedDetails_creditCard_list {
+            align-items: center;
+
+            li {
+                margin-right: 16px;
+            }
+        }
+        .bedDetails_basicInfo_list,
+        .bedDetails_otherCharges_list {
+            flex-direction: column;
+            li {
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .bedDetails_roomFacilities_list {
+            flex-wrap: wrap;
+            li {
+                @include icon-before-text('../../images/Aus/common/icon_hook.png');
+                padding-left: 20px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                width: 30%;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+@import '../common.scss';
+
+$bottom-margin: 16px;
+
+.filter_wrapper {
+    position: relative;
+    width: $filter-side-width;
+    background: $main-background;
+    box-sizing: border-box;
+    z-index: 1;
+    &.fixed {
+        @include scrollbar();
+        position: fixed;
+        top: 0;
+        overflow-y: scroll;
+        &.little-width {
+            transition: all 0.5s ease;
+            box-sizing: border-box;
+        }
+    }
+    > div {
+        margin-bottom: 24px;
+    }
+    .filter_title {
+        color: $textColor;
+        font-size: $title-font-size-base;
+    }
+    .filter_sub_title{
+        color: $textColor;
+        font-size: $text-font-size-base;
+    }
+    .filter_reset {
+        margin-top: $normal-margin;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        button {
+            border: none;
+            outline: none;
+            background: none;
+            color: $selectedColor;
+            font-size: $text-font-size-base;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+    .filter_option-box {
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $listBorderColor;
+        .filter_title,.filter_sub_title {
+            margin-bottom: $bottom-margin;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: $bottom-margin;
+            font-size: $text-font-size-base;
+            color: $textColor;
+            label {
+                padding-left: 10px;
+            }
+            input,
+            label {
+                cursor: pointer;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .filter_price_range {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+        margin-bottom: $bottom-margin;
+        .filter_price_inputs {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .filterMinPrice,
+        .filterMaxPrice {
+            width: 90px;
+            border: 1px solid #5d667c;
+            z-index: 1;
+            @extend %search_input;
+        }
+        .hyphen {
+            margin: 0 16px;
+            z-index: 1;
+        }
+        .filter_price_submit {
+            @include clear-input-border();
+            background: url(../../../images/Aus/common/icon_search.png);
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .filter_wrapper {
+        &.fixed {
+            transition: width 0.5s ease;
+            box-sizing: border-box;
+            &.close {
+                width: 0;
+                padding: 0;
+            }
+            .filter_box {
+                padding: 4px;
+            }
+        }
+    }
+    .filter_switch.show {
+        width: 30px;
+        height: 60px;
+        position: fixed;
+        background-color: $main-background;
+        top: 50%;
+        left: 280px;
+        transform: translateY(-50%);
+        // border-top-right-radius: 20px;
+        // border-bottom-right-radius: 20px;
+        cursor: pointer;
+        box-shadow: 2px -2px 4px 0px rgba(17, 28, 78, 0.1);
+        transition: left 0.5s ease;
+        z-index: 1;
+        &.close {
+            left: 0;
+            &:after {
+                transform: rotate(-45deg);
+                margin-left: 8px;
+            }
+        }
+        &:after {
+            content: '';
+            /* background: none; */
+            display: block;
+            border-right: 2px solid #0075ff;
+            border-bottom: 2px solid #0075ff;
+            transform: rotate(135deg);
+
+            width: 6px;
+            height: 6px;
+            margin-left: 11px;
+            margin-top: 23px;
+            transition: all 0.5s ease;
+        }
+    }
+}

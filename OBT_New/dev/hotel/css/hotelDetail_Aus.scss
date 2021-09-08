@@ -1,0 +1,106 @@
+@import '../../css/AusCommon/common.scss';
+@import './hotelDetail/photoAndMap.scss';
+@import './hotelDetail/header.scss';
+@import './hotelDetail/bedList.scss';
+@import './hotelDetail/bookDate.scss';
+@import './hotelDetail/picturePop.scss';
+@import './hotelDetail/bed_moreDetails.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $main-background;
+}
+#cover,
+#cover_moreDetail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+.select_hotel_btn,
+.book_hotel_btn {
+    @include button-color();
+    text-transform: capitalize;
+    min-width: 133px;
+    text-align: center;
+    line-height: 40px;
+    padding: 0 8px;
+    text-decoration: none;
+}
+
+// 列表
+.hotelTabBody {
+    width: 100%;
+    background-color: $box-background;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 $normal-pd;
+    .hotelTab {
+        color: $textColor;
+        font-size: $title-font-size-base;
+        text-transform: capitalize;
+        box-sizing: border-box;
+        padding: 6px 0;
+        margin-right: 40px;
+        cursor: pointer;
+        &.hotelTabActive {
+            color: $selectedColor;
+            border-bottom: 2px solid $selectedColor;
+        }
+    }
+}
+.eTravel_reminder_box {
+    margin: 4px 0;
+}
+
+.map_pop_container {
+    z-index: 101;
+    width: 800px;
+    padding: $normal-pd;
+    box-sizing: border-box;
+    background: $box-background;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .pic_pop_header {
+        margin-bottom: 11px;
+        display: flex;
+        justify-content: space-between;
+        .pop_hotelName {
+            color: $textColor;
+            font-size: 20px;
+        }
+    }
+    .hotelAddress {
+        color: $textColorLight;
+        font-size: $text-font-size-base;
+        margin-bottom: $normal-margin;
+        line-height: 19px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        img {
+            margin-top: 2.5px;
+            margin-right: $normal-margin;
+        }
+    }
+    .closeMapPop {
+        @include close-btn();
+    }
+    #hotelMap,
+    #mapboxMap {
+        width: 752px;
+        height: 490px;
+        display: block;
+        position: relative;
+    }
+}

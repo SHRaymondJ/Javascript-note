@@ -1,0 +1,44 @@
+.right-bottom{
+    color:#fff;
+    font-size: 14px;
+    text-align: left;
+}
+a{
+    color:#EF853A;
+    text-decoration: underline;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+}
+#cover{
+    background: rgba(0, 0, 0);
+}
+/* 记住密码 */
+label[name="Remember"]{
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+label[name="Remember"] input{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+.checkboxSpan{
+    /* display: inline-block; */
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background-image: url(../../images/box.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.checked{
+    background-image: url(../../images/checkebox.png);
+}

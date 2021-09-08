@@ -1,0 +1,486 @@
+/* tools dialog */
+.toolsCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 219;
+}
+
+.weui_dialog_alert {
+  font-size: 0.15rem;
+  width: 700px;
+  min-height: 1.25rem;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: -350px;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 220;
+}
+
+.weui_dialog_hd {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 16px;
+  display: none;
+}
+
+.weui_dialog_bd {
+  width: 100%;
+  font-size: 14px;
+  padding: 0 10% 0 10%;
+  line-height: 20px;
+  text-align: center;
+  margin: 30px auto;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+.weui_dialog_ft {
+  width: 200px;
+  margin: 20px auto;
+  line-height: 40px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.weui_btn_dialog {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #3083FB;
+}
+
+/* ============================  12306相关  ============================== */
+#cover12306 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: none;
+}
+
+.customer12306account {
+  box-sizing: border-box;
+  position: relative;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.customer12306account img.add12306Icon{
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  margin-top: 0;
+  display: block;
+}
+.train12306 {
+  font-weight: bold;
+}
+.customer12306account .hasAccount {
+  margin-left: 10px;
+}
+
+.customer12306account img {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-top: 0.075rem;
+}
+
+.open12306accPopWindow {
+  /* margin-left: 10px; */
+  cursor: pointer;
+  color: #0075FF;
+}
+
+/* 修改12306账号弹窗 */
+.train--maintain12306-box {
+  width: 600px;
+  /* min-height: 400px; */
+  position: fixed;
+  background-color: white;
+  z-index: 101;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  transform: translateY(-50%);
+  display: none;
+  border-radius: 10px;
+}
+
+.train--maintain12306-box header {
+  display: block;
+  z-index: 111;
+}
+
+.train--maintain12306-box * {
+  display: block;
+}
+
+.train--maintain12306--agreePolicy * {
+  display: inline;
+  vertical-align: baseline;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.train--maintain12306-box img {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.train--maintain12306-box section {
+  margin: 20px;
+}
+
+.train--maintain12306-box h6,
+.train--verificationCode h5 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333333;
+}
+
+.train--verificationCode h5 {
+  margin-top: 20px;
+  width: 90%;
+  margin: 20px auto 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #979797;
+}
+
+.train--maintain12306--inputbox {
+  width: 260px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.train--maintain12306--inputbox:nth-child(1) {
+  margin-bottom: 20px;
+}
+.train--maintain12306--inputbox .train--maintain12306--tipsImg{
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+	background-image: url(/train/images/icon_hotts_bcd.svg);
+}
+.pageColor{
+	color: #F58A00;
+}
+.train--maintain12306--inputbox.tipsBox{
+  margin-bottom: 20px;
+}
+.train--maintain12306--tips{
+  font-size: 14px;
+  line-height: 18px;
+}
+.train--maintain12306--inputText {
+  display: block;
+  position: absolute;
+  color: #333333;
+  font-size: 16px;
+  left: -100px;
+  top: 13px;
+}
+
+input#train--maintain12306--account,
+input#train--maintain12306--password {
+  width: 100%;
+  outline: none;
+  height: 46px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.train--maintain12306--password-show {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  background-image: url(/train/images/icon_hide.png);
+  background-size: 30px;
+}
+
+.train--maintain12306--password-show.show {
+  background-image: url(/train/images/icon_show.svg);
+}
+
+.train--maintain12306--agreePolicy {
+  font-size: 13px;
+  line-height: 13px;
+  width: 260px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.train--maintain12306-box label {
+  color: #999999;
+  cursor: pointer;
+}
+
+.agreementText--openBtn {
+  text-decoration: none;
+  color: #3083FB;
+  cursor: pointer;
+}
+
+.train--maintain12306--btn,
+.train--verificationCode--submit {
+  width: 260px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  line-height: 36px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: #CCCCCC;
+}
+.train--verificationCode--submit{
+  margin-bottom: 20px;
+}
+
+#train--maintain12306--btn.active,
+#train--verificationCode--submit.active {
+  cursor: pointer;
+}
+.train--maintain12306--btnBox {
+  margin-bottom: 20px;
+  width: 260px;
+  margin: 0 auto;
+}
+.train--maintain12306--forgotBox {
+  font-size: 14px;
+  color: #333333;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.train--maintain12306--forgot {
+  text-decoration: underline;
+  margin-right: 10px;
+  color: #333333;
+
+}
+.train--maintain12306--reminder{
+  position: relative;
+}
+.train--maintain12306--forgotPwdReminder{
+  position: absolute;
+  padding: 5px;
+  color: #666666;
+  background-color: white;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  /* height: 40px; */
+  top: -60px;
+  left: -60px;
+  display: none;
+}
+.train--maintain12306--forgotPwdReminder::after{
+  content: '';
+  width: 0;
+  display: block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  position: absolute;
+  bottom: -7px;
+  left: 57px;
+}
+.train--maintain12306--reminder:hover .train--maintain12306--forgotPwdReminder{
+  display: block;
+}
+.train--maintain12306--reminder img{
+  position: relative;
+  right: 0;
+  top: 0;
+}
+#agreementText {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 101;
+  height: 600px;
+  width: 900px;
+  top: 50%;
+  left: 50%;
+  margin-left: -450px;
+  transform: translateY(-50%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#agreementText header {
+  background-color: white;
+  width: 100%;
+  height: 60px;
+  line-height: 40px;
+}
+
+.agreementText--closeBtn {
+  z-index: 101;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+h6.agreementText--title {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.agreementText--textBox {
+  overflow-y: scroll;
+  height: 89%;
+}
+
+#agreementText p {
+  font-size: 14px;
+}
+
+/* 账号核验 */
+.train--maintain12306-box section.train--verificationCode--container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.train--verificationCode * {
+  color: #333333;
+}
+
+.train--verificationCode--container *,
+.train--verificationCode--textbox p,
+.train--verificationCode--box *,
+.train--verificationCode--submit {
+  font-size: 16px;
+}
+
+.train--verificationCode--textbox p {
+  margin-bottom: 8px;
+}
+
+.train--verificationCode--textbox strong,
+.train--verificationCode--textbox b {
+  color: #3083FB;
+}
+
+.train--verificationCode--textbox *:not(p),
+.train--verificationCode--box * {
+  display: inline;
+}
+
+#train--verificationCode--send,
+.train--verificationCode--box {
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+}
+
+#train--verificationCode--send {
+  text-align: center;
+  margin-bottom: 16px;
+
+}
+
+.train--verificationCode--box span {
+  position: absolute;
+  left: 10px;
+  color: #666666;
+}
+
+.train--verificationCode--box input {
+  width: 50%;
+  text-align: left;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.train--maintain12306-box.train--verificationCode {
+  background-color: white;
+}
+
+.train--verificationCode header {
+  background-color: white;
+}
+
+.train--verificationCode--errorMsg {
+  color: #3083FB;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  display: none;
+}
+
+.train--verificationCode--submit {
+  margin-top: 40px;
+  background-color: #CCCCCC;
+  color: white;
+}
+
+#coverCredent .cancelBtn,
+#coverCredent .credentBtn {
+  width: 220px;
+  height: 38px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 38px;
+  margin-top: 30px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cancelBtn {
+  background-color: #9B9B9B;
+}
+
+.credentLi {
+  margin-bottom: 20px;
+}
+
+.credentLi h6 {
+  color: #333333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.credent--verifyStatus {
+  width: #333333;
+}

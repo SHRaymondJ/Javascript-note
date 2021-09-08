@@ -1,0 +1,399 @@
+@import '../../../css/AusCommon/common.scss';
+
+// 列表
+@mixin bedLi-props($img) {
+    @include icon-before-text($img);
+    color: $textColor;
+    font-size: $text-font-size-base;
+    padding-left: 24px;
+    position: relative;
+}
+.hotelRoomList {
+    // 底部留白
+    padding-bottom: 60px;
+}
+.hotelRoomLi {
+    background-color: $box-background;
+    margin-bottom: 8px;
+    width: 100%;
+    padding: $normal-pd;
+    box-sizing: border-box;
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &_left {
+        width: 220px;
+        align-items: flex-start;
+        img {
+            width: 180px;
+            height: 100%;
+            position: absolute;
+            // top: 50%;
+            // margin-top: -50%;
+
+            cursor: pointer;
+        }
+    }
+    &_right {
+        width: 916px;
+        display: flex;
+        flex-direction: column;
+    }
+    &_img {
+        position: relative;
+        width: 180px;
+        height: 120px;
+        overflow: hidden;
+        margin-bottom: 16px;
+    }
+    &_more {
+        color: $selectedColor;
+        font-size: $text-font-size-base;
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+}
+
+.liRoomType {
+    color: $textColor;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: $normal-margin;
+}
+
+.bedLi {
+    border: 1px solid $listBorderColor;
+    margin-bottom: $normal-margin;
+    padding: $normal-pd;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    min-height: 188px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &_informations {
+        display: flex;
+        width: 615px;
+        flex-direction: column;
+        padding-right: $normal-pd;
+        box-sizing: border-box;
+        border-right: 1px solid $listBorderColor;
+    }
+    .bedLiText {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+        margin-bottom: $normal-margin;
+        &_typeGroup {
+            display: flex;
+            align-items: center;
+        }
+        &_bedIcon {
+            margin-right: $normal-margin;
+        }
+        &_bedType {
+            color: $textColor;
+            font-size: $text-font-size-base;
+            margin-right: $normal-margin;
+        }
+        &_moreDetails {
+            color: $selectedColor;
+            font-size: $text-font-size-base;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        .bedLiPolicyRule {
+            font-size: $text-font-size-base;
+            &.tips {
+                text-decoration: underline;
+                color: $green;
+            }
+            &.policyUnderline {
+                cursor: pointer;
+                text-decoration: underline;
+                text-decoration-style: dotted;
+            }
+        }
+    }
+    &_props {
+        display: flex;
+        align-items: center;
+        margin-bottom: $normal-margin;
+        .bedBreakfast {
+            @include bedLi-props('../../images/Aus/common/icon_meal-gray.png');
+            margin-right: 20px;
+        }
+        .bedWLAN {
+            @include bedLi-props(
+                '../../images/Aus/common/icon_hotel_wifi-gray.png'
+            );
+        }
+    }
+    .bedLi_tag {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: $normal-margin;
+        * {
+            margin-right: 8px;
+        }
+    }
+    &_description {
+        font-size: $text-font-size-base;
+        color: $textColorLight;
+    }
+    &_operations {
+        width: 300px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: $text-font-size-base;
+        &_left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            flex: 1;
+        }
+        &_right {
+            padding-left: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-weight: bold;
+            flex: 0.6;
+        }
+        .priceType {
+            color: #5a88c6;
+            margin-bottom: 8px;
+        }
+        .payType {
+            color: $textColor;
+            margin-bottom: 8px;
+        }
+        .bedLiBook {
+            @include button-color();
+            min-width: 90px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .violationIcon {
+            margin-bottom: 8px;
+        }
+        &_average {
+            color: $textColorLight;
+            position: relative;
+        }
+        .shakeHands {
+            display: flex;
+            align-items: baseline;
+            font-size: $text-font-size-base;
+            margin-bottom: 4px;
+        }
+        &_priceBox {
+            position: relative;
+        }
+
+        .hotelDailyRate_currency {
+            color: $textColorLight;
+            margin-right: 4px;
+        }
+        .hotelDailyRateText {
+            color: $textColor;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .rateUnderline {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .dailyRateBody {
+            @include pop-container-top();
+            position: absolute;
+            min-width: 400px;
+            left: -200px;
+            bottom: 30px;
+            top: auto;
+            z-index: 10;
+            background: #fff;
+            color: $textColor;
+            display: none;
+            &Tittle {
+                width: 100%;
+                height: 25px;
+                line-height: 25px;
+                text-align: left;
+                font-size: 12px;
+            }
+
+            &Li {
+                width: 32%;
+                height: 60px;
+                border: 1px solid #e9e9e9;
+                margin-bottom: 2px;
+                box-sizing: border-box;
+            }
+            &Content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            &LiTittle {
+                width: 100%;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+                text-align: center;
+                background-color: #e9e9e9;
+            }
+
+            &LiContent {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 12px;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.bedLiPolicyRule {
+    height: 18px;
+    line-height: 18px;
+    width: 100px;
+    margin: 0px 0 0 25px;
+    position: relative;
+    cursor: default;
+}
+
+.cancelPolicy {
+    @include pop-container-bottom(25px);
+    @include pop-container-animation(0.3s, bottom, 25px);
+    position: absolute;
+    color: $textColorLight;
+    font-size: $text-font-size-base;
+    left: -78px;
+    width: 290px;
+    z-index: 1;
+    word-break: break-all;
+    text-align: left;
+}
+.cancelPolicy::after {
+    @include solid-triangle(#fff, 290px);
+}
+
+// 服务介绍
+$service-part-margin: 24px;
+$title-margin: 16px;
+%service-title {
+    font-size: $title-font-size-base;
+    color: $textColor;
+}
+.hotelIntroBody {
+    padding: $normal-pd;
+    margin-top: 4px;
+    margin-bottom: 60px;
+    background-color: $box-background;
+    h2 {
+        margin-bottom: $service-part-margin;
+        @extend %service-title;
+    }
+    h3 {
+        margin-bottom: $title-margin;
+        padding-left: $normal-pd;
+        @extend %service-title;
+    }
+    p {
+        padding: 0 $normal-pd;
+        font-size: $text-font-size-base;
+        line-height: 20px;
+    }
+    .serviceItem {
+        margin-bottom: $service-part-margin;
+    }
+    .popularAmenitiesList {
+        display: flex;
+        padding: 0 $normal-pd;
+        font-size: $text-font-size-base;
+        li {
+            margin-right: 24px;
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .otherAmenitiesList {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 $normal-pd;
+        font-size: $text-font-size-base;
+        li {
+            @include icon-before-text('../../images/Aus/common/icon_hook.png');
+            padding-left: $normal-pd;
+            width: 30%;
+            margin-bottom: $normal-margin;
+            &:before {
+                top: -2px;
+            }
+        }
+    }
+    .popularAmenities {
+        @include icon-before-text(
+            '../../images/Aus/hotel/icon_popular_amenities.png'
+        );
+        &:before {
+            top: -2px;
+        }
+    }
+    .recreation {
+        @include icon-before-text('../../images/Aus/hotel/icon_recreation.png');
+        &:before {
+            top: -2px;
+        }
+    }
+    .facilities {
+        @include icon-before-text('../../images/Aus/hotel/icon_facility.png');
+        &:before {
+            top: -2px;
+        }
+    }
+    .hotelService {
+        @include icon-before-text('../../images/Aus/hotel/icon_service.png');
+        &:before {
+            top: -2px;
+        }
+    }
+    .foodService {
+        @include icon-before-text('../../images/Aus/hotel/icon_meal.png');
+    }
+    .serviceBody {
+        @include text-line(2);
+        margin-bottom: 0;
+        &.active {
+            @include text-line(999);
+        }
+    }
+    .showMore {
+        display: none;
+        margin-top: $normal-margin;
+        justify-content: center;
+        span {
+            @include icon-after-text(
+                '../../images/Aus/common/icon_showmore.png'
+            );
+            padding-right: 20px;
+            box-sizing: border-box;
+            font-size: $text-font-size-base;
+            text-transform: capitalize;
+            color: $selectedColor;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}

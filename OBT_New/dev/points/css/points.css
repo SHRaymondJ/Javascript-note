@@ -1,0 +1,639 @@
+body{
+    background-color: #F1F1F1;
+}
+#main{
+    width: 100%;
+}
+.autoCenter{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+/*头部*/
+.header{
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(90deg, #8BCCFF 0%, #7086D8 100%);
+    border-radius: 8px;
+    position: relative;
+    margin-top: 20px;
+}
+.pointsIcon{
+    position: absolute;
+    width: 122px;
+    height: 109px;
+    top: -20px;
+    left: -30px;
+}
+.currentPoints,.ranking,.details{
+    width: 250px;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    left: 140px;
+    top: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+.ranking{
+    left: 363px;
+}
+.details{
+    top: 70px;
+    cursor: pointer;
+}
+.earn{
+    width: 136px;
+    height: 28px;
+    background: linear-gradient(133deg, #F9C91A 0%, #F9A741 30%, #F76B1C 100%);
+    border-radius: 100px 0px 0px 100px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}
+.headerText{
+    font-size: 24px;
+    margin-left: 20px;
+}
+/*兑换*/
+.exchangeTittle{
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    margin: 16px 0 8px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.exchangeBody{
+    width: 100%;
+    padding: 30px 0 30px 20px;
+    background-color: #fff;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row; /* Safari 6.1+ */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.exchangeLi{
+    width: 210px;
+    height: 250px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    margin-right: 40px;
+    position: relative;
+}
+.liImgBody{
+    width: 100%;
+    height: 164px; 
+    background: #FFF6ED;
+    line-height: 164px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.liImg{
+    display: block;
+    width: 128px;
+    margin: 0 auto;
+}
+.liTittle{
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #333;
+    position: absolute;
+    top: 164px;
+    left: 0;
+    text-align: center;
+}
+.liPoints{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #FF7A00;
+    position: absolute;
+    top: 198px;
+    left: 0;
+    text-align: center;
+    padding: 0 10px;
+}
+.liPointsIcon{
+    width: 14px;
+    height: 14px;
+    display: block;
+    margin-right: 4px;
+    margin-top: 1px;
+}
+.liLeft{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #999;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    padding: 0 10px;
+}
+.exchangeBtn{
+    width: 209px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 1;
+    background-color: #F6AA25;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+/*弹窗*/
+.popCover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+.popBody{
+    position:relative;
+    width: 720px;
+    background-color: #fff;
+    z-index: 101;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.popTittle{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+.closeIcon{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    cursor: pointer;
+    display: block;
+}
+.popBtn{
+    width: 240px;
+    height: 36px;
+    background: #F6AA25;
+    border-radius: 4px;
+    margin: 15px auto 0 auto;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+/*赚取更多积分*/
+.earnPopTittle{
+    width: 100%;
+    height: 25px;
+    font-weight: 600;
+    line-height: 25px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+    position: relative;
+}
+.earnPointsBody{
+    width: 70px;
+    height: 26px;
+    border: 1px solid #FF7A00;
+    border-radius: 2px;
+    line-height: 26px;
+    position: absolute;
+    top: -2px;
+    right: 0;
+}
+.earnPointsImg{
+    width: 30px;
+    height: 26px;
+    text-align: center;
+}
+.earnImg{
+    width: 14px;
+    height: 14px;
+}
+.earnPointsText{
+    width: 40px;
+    height: 24px;
+    text-align: center;
+    color: #FF7A00;
+    font-size: 14px;
+    background-color: #FFF6DD;
+    border-radius:0 2px 2px 0;
+    font-weight: 400;
+    border-left: 1px solid #FF7A00;
+}
+.earnLiBody{
+    width: 100%;
+    padding-left: 15px;
+    line-height: 25px;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+/*end*/
+/*收支明细*/
+.detailsList{
+    height: 230px;
+}
+.detailsLi{
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px solid #ececec;
+    padding-top: 5px;
+}
+.detailsLiTittle{
+    width: 100%;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+}
+.detailsLiPoints{
+    width:100px;
+    text-align:right;
+    position:absolute;
+    right:10px;
+    font-weight:400;
+}
+.detailsLiBody{
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+    color: #999;
+    font-size: 12px;
+    margin-top: 6px;
+}
+/*end*/
+/*兑换弹窗*/
+.exchangePop{
+    width: 520px;
+}
+.exchangePopLi{
+    margin-bottom: 10px;
+}
+.exchangePopTittle{
+    width: 135px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+}
+.numberBody{
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.numberSubtract{
+    width: 25px;
+    color: #666;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+.numberText{
+    width: 50px;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+}
+.numberAdd{
+    width: 25px;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+.quantityTittle{
+    height: 32px;
+    line-height: 32px;
+}
+.exchangePopText{
+    width: 326px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.successIcon{
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    display: block;
+}
+.successText{
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+/*end*/
+/*手机布局*/
+@media only screen and (max-width: 640px) {
+    body{
+        background-color: #fff;
+    }
+    .autoCenter{
+        width: 3.55rem;
+    }
+    /*头部*/
+    .header{
+        height: 1.4rem;
+        border-radius: 0.24rem;
+        margin-top: 0.25rem;
+    }
+    .pointsIcon{
+        width: 0.9rem;
+        height: 0.73rem;
+        top: -0.2rem;
+        left: 0;
+    }
+    .currentPoints,.ranking,.details{
+        width: 3rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+        left: 0.1rem;
+        top: 0.6rem;
+        font-size: 0.14rem;
+    }
+    .ranking{
+        top: 0.82rem;
+    }
+    .details{
+        top: 1.04rem;
+    }
+    .earn{
+        width: 1.15rem;
+        height: 0.26rem;
+        border-radius: 0.5rem 0px 0px 0.5rem;
+        top: 0.32rem;
+        right: 0;
+        font-size: 0.12rem;
+        line-height: 0.26rem;
+    }
+    .headerText{
+        font-size: 0.14rem;
+    }
+    /*end*/
+    /*兑换*/
+    .exchangeTittle{
+        height: 0.2rem;
+        line-height: 0.2rem;
+        margin: 0.15rem 0 0.08rem 0;
+        font-size: 0.13rem;
+    }
+    .exchangeBody{
+        padding: 0;
+        display: block;
+    }
+    .exchangeLi{
+        width: 100%;
+        height: 0.7rem;
+        border-radius: 0.04rem;
+        border: 0;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        margin-right: 0;
+        margin-bottom: 0.08rem;
+    }
+    .liImgBody{
+        width: 0.85rem;
+        height: 0.7rem; 
+        background: #fff;
+        line-height: 0.7rem;
+        display: flex;
+        align-items: center;
+    }
+    .liImg{
+        display: block;
+        width: 0.64rem;
+        margin: 0 auto;
+    }
+    .liTittle{
+        width: 1.4rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.14rem;
+        font-weight: 500;
+        top: 0.15rem;
+        left: 0.95rem;
+        text-align: left;
+    }
+    .liPoints{
+        width: 1.4rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.12rem;
+        top: 0.37rem;
+        left: 0.95rem;
+        text-align: left;
+        padding: 0;
+    }
+    .liPointsIcon{
+        width: 0.1rem;
+        height: 0.1rem;
+        margin-right: 0.02rem;
+        margin-top: 0.04rem;
+    }
+    .liLeft{
+        width: 0.8rem;
+        height: 0.14rem;
+        line-height: 0.14rem;
+        font-size: 0.12rem;
+        color: #999;
+        top: 0.5rem;
+        left: 2.65rem;
+        text-align: center;
+    }
+    .exchangeBtn{
+        width: 0.8rem;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        font-size: 0.12rem;
+        left: 2.65rem;
+        bottom: 0.25rem;
+        border-radius: 0.15rem;
+        display: block;
+    }
+    /*弹窗*/
+    .popBody{
+        width: 3.35rem;
+        padding: 0.15rem;
+    }
+    .popTittle{
+        height: 0.24rem;
+        line-height: 0.24rem;
+        font-size: 0.17rem;
+        margin-bottom: 0.2rem;
+    }
+    .closeIcon{
+        width: 0.2rem;
+        height: 0.2rem;
+        top: 0.02rem;
+        cursor: auto;
+    }
+    .popBtn{
+        width: 3.05rem;
+        height: 0.44rem;
+        border-radius: 0.04rem;
+        margin: 0.1rem auto 0 auto;
+        font-size: 0.15rem;
+        line-height: 0.44rem;
+    }
+    /*赚取更多积分*/
+    .earnPopTittle{
+        height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.14rem;
+        margin-bottom: 0.06rem;
+    }
+    .earnPointsBody{
+        width: 0.43rem;
+        height: 0.17rem;
+        border: 1px solid #FF7A00;
+        border-radius: 2px;
+        line-height: 0.17rem;
+        box-sizing: content-box;
+        top:0.01rem;
+    }
+    .earnPointsImg{
+        width: 0.17rem;
+        height: 0.17rem;
+    }
+    .earnImg{
+        width: 0.1rem;
+        height: 0.1rem;
+    }
+    .earnPointsText{
+        width: 0.26rem;
+        height: 0.17rem;
+        font-size: 0.1rem;
+    }
+    .earnLiBody{
+        padding-left: 0.07rem;
+        line-height: 0.18rem;
+        font-size: 0.1rem;
+        margin-bottom: 0.1rem;
+    }
+    /*end*/
+    /*收支明细*/
+    .detailsList{
+        height: 2rem;
+    }
+    .detailsLi{
+        width: 100%;
+        min-height: 0.5rem;
+        padding-top: 0.05rem;
+    }
+    .detailsLiTittle{
+        min-height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.14rem;
+    }
+    .detailsLiText{
+        margin-right: 0.2rem;
+    }
+    .detailsLiPoints{
+        width:0.4rem;
+        text-align:right;
+        right:0;
+    }
+    .detailsLiBody{
+        height: 0.17rem;
+        line-height: 0.17rem;
+        font-size: 0.12rem;
+        margin-top: 0.06rem;
+    }
+    /*end*/
+    /*兑换弹窗*/
+    .exchangePopLi{
+        margin-bottom: 0.1rem;
+    }
+    .exchangePopTittle{
+        width: 1.35rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.14rem;
+        color: #666;
+    }
+    .numberBody{
+        width: 1.2rem;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 0.04rem;
+    }
+    .numberSubtract{
+        width: 0.3rem;
+        color: #666;
+        font-size: 0.14rem;
+    }
+    .numberText{
+        width: 0.6rem;
+        color: #333;
+        font-size: 0.14rem;
+    }
+    .numberAdd{
+        width: 0.3rem;
+        color: #666;
+        font-size: 0.14rem;
+    }
+    .quantityTittle{
+        height: 0.3rem;
+        line-height: 0.3rem;
+    }
+    .exchangePopText{
+        width: 1.8rem;
+        min-height: 0.2rem;
+        line-height: 0.2rem;
+        font-size: 0.14rem;
+    }
+    .successIcon{
+        width: 0.8rem;
+        height: 0.8rem;
+        margin: 0.2rem auto;
+    }
+    .successText{
+        height: 0.3rem;
+        font-size: 0.22rem;
+        margin-bottom: 0.3rem;
+    }
+    /*end*/
+}

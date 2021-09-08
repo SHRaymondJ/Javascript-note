@@ -1,0 +1,62 @@
+@import '../../../css/AusCommon/common.scss';
+
+
+$hambur-menu-width: 180px;
+
+.siftBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $box-background;
+    padding: 14px $normal-pd;
+    color: $textColor;
+    margin-bottom: $normal-margin;
+    h3 {
+        font-size: $normal-font-size;
+        color: $textColor;
+    }
+    .siftBody_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        > .sortTab {
+            border-right: 1px solid $listBorderColor;
+            text-align: center;
+        }
+    }
+    .sortTab {
+        width: $hambur-menu-width;
+        cursor: pointer;
+        font-size: $text-font-size-base;
+        transition: all 0.1s ease;
+        &.active {
+            color: $selectedColor;
+            font-size: $text-font-size-base;
+            font-weight: bold;
+        }
+    }
+    
+    .hamb_menu {
+        position: relative;
+        &_btn {
+            cursor: pointer;
+            transition: all 0.1s ease;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        &_wrapper {
+            @include pop-container-top(35px, -$hambur-menu-width+30px);
+            @include pop-container-animation(0.3s, top, 35px);
+            position: absolute;
+            box-sizing: border-box;
+            width: $hambur-menu-width;
+        }
+        .sortTab {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

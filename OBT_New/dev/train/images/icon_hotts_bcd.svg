@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_hotts</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="公版-维护-未填" transform="translate(-719.000000, -406.000000)" fill="#FF7A00" fill-rule="nonzero">
+            <g id="分组-3" transform="translate(519.000000, 271.000000)">
+                <g id="分组" transform="translate(200.000000, 135.000000)">
+                    <g id="icon_hotts" transform="translate(-0.000000, 0.000000)">
+                        <path d="M7,14 C3.2,14 0,10.9 0,7 C0,3.2 3.1,0 7,0 C10.8,0 14,3.1 14,7 C14,10.9 10.8,14 7,14 Z M7,1 C3.7,1 1,3.7 1,7 C1,10.3 3.7,13 7,13 C10.3,13 13,10.3 13,7 C13,3.7 10.3,1 7,1 Z" id="形状"></path>
+                        <path d="M6.20881935,4 C6.20881935,4.5 6.58381935,5 7.20881935,5 C7.83381935,5 8.20881935,4.625 8.20881935,4 C8.20881935,3.375 7.70881935,3 7.20881935,3 C6.70881935,3 6.20881935,3.375 6.20881935,4 Z M7.00995733,11.5 C6.70953058,11.5 6.50924609,11.2818182 6.50924609,10.9545455 L6.50924609,6.04545455 C6.50924609,5.71818182 6.70953058,5.5 7.00995733,5.5 C7.31038407,5.5 7.51066856,5.71818182 7.51066856,6.04545455 L7.51066856,10.9545455 C7.51066856,11.2818182 7.31038407,11.5 7.00995733,11.5 Z" id="形状"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

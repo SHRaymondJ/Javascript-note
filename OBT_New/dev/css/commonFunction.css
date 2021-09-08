@@ -1,0 +1,100 @@
+.popUpWindow--mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    z-index: 101;
+}
+.popUpWindow--box{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    width: 800px;
+    border-radius: 10px;
+    position: fixed;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+.popUpWindow--close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.popUpWindow--title{
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: #979797 dashed;
+    color: #094B90;
+}
+.popUpWindow--body{
+    color: #666666;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 40px;
+}
+.popUpWindow--btn{
+    width: 240px;
+    height: 32px;
+    background: #041E5B;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    line-height: 32px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.popUpWindow--confirmBox{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+    min-width: 400px;
+    border-radius: 10px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.popUpWindow--msg{
+    color: #333333;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.popUpWindow--msg img{
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+.popUpWindow--btn_box{
+    display: flex;
+    justify-content: space-evenly;
+}
+.popUpWindow--cancel,.popUpWindow--confirm{
+    cursor: pointer;
+    border-radius: 4px;
+    min-width: 120px;
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+.popUpWindow--cancel{
+    background-color: #999999;
+}
+.popUpWindow--confirm{
+    /* background-color: #041E5B; */
+}

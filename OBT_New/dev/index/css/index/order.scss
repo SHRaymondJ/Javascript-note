@@ -1,0 +1,342 @@
+@import '../../../css/AusCommon/common.scss';
+
+$continueBook_width_increasement: 230px;
+$orderRoute_width: 340px;
+$pendingRoute_width: 197px;
+$pendingOrderMain_width: 580px;
+
+@mixin order_title_icon {
+    &:before {
+        width: 24px;
+        height: 25px;
+        left: -28px;
+        top: -5px;
+    }
+}
+
+/*订单*/
+.search-container {
+    margin-bottom: 40px;
+}
+.orderDetailsTable {
+    width: 825px;
+    border-right: 1px solid $listBorderColor;
+    border-left: 1px solid $listBorderColor;
+    border-collapse: collapse;
+    table-layout: fixed;
+    td {
+        overflow: hidden;
+        line-height: 20px;
+        /*text-overflow:ellipsis;
+        white-space:nowrap;*/
+        /*text-align:center;*/
+        /* height: 35px; */
+        height: 52px;
+    }
+}
+.myOrderTab,
+.pendTab,
+.taTab {
+    /* text-decoration: underline; */
+    /* 新 */
+    position: relative;
+    min-width: 120px;
+    text-align: center;
+    margin: 0 !important;
+    color: $textColorLight;
+    font-weight: bold;
+    padding: 0 24px;
+    font-size: $text-font-size-base;
+    cursor: pointer;
+}
+.myOrderTab span {
+    @include icon-before-text('/images/Aus/common/icon_order.png');
+    @include order_title_icon;
+}
+.pendTab span {
+    @include icon-before-text('/images/Aus/common/icon_pendingapproval.png');
+    @include order_title_icon;
+}
+.taTab span {
+    @include icon-before-text('/images/Aus/common/icon_application.png');
+    @include order_title_icon;
+}
+.myOrderTab.orderTittleActive span:before {
+    background-image: url(/images/Aus/common/icon_order_active.png);
+}
+.pendTab.orderTittleActive span:before {
+    background-image: url(/images/Aus/common/icon_pendingapproval_active.png);
+}
+.taTab.orderTittleActive span:before {
+    background-image: url(/images/Aus/common/icon_application_active.png);
+}
+.ApproveLengthIcon {
+    display: none;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    /* background-color: red; */
+    background-color: #f58a00;
+    border-radius: 50%;
+    /* margin-top: 2px; */
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    font-weight: 400 !important;
+}
+.orderTittleActive {
+    color: $selectedColor;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid $selectedColor;
+        width: 100%;
+        height: 1px;
+        background-color: $selectedColor;
+        bottom: -19px;
+        left: 0;
+    }
+}
+.srpitLine {
+    height: 14px;
+    width: 2px;
+    background-color: $listBorderColor;
+    margin: auto 0;
+    margin-left: 16px;
+}
+.moreOrderText {
+    cursor: pointer;
+    font-size: $text-font-size-base;
+    color: $selectedColor;
+    padding-right: 8px;
+}
+.rightArrow {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+.orderTable-wrapper {
+    box-shadow: 0 4px 8px 0 rgba(17, 28, 78, 0.2);
+    display: flex;
+    flex-direction: column;
+    width: 970px;
+    margin-bottom: 30px;
+    float: left;
+    .orderTittle {
+        display: flex;
+        height: 34px;
+        line-height: 34px;
+        margin-top: 17px;
+        font-size: $text-font-size-base;
+        position: relative;
+        border-bottom: 1px solid $listBorderColor;
+        > div {
+            flex: 1;
+            height: 14px;
+            line-height: 14px;
+            font-size: $text-font-size-base;
+            margin: 16px 0;
+            border-right: 1px solid $listBorderColor;
+            text-align: center;
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+    #tableBody {
+        height: 400px;
+        width: 100%;
+        /* 3.19新增 */
+    }
+    .orderTable-showMore {
+        font-size: 14px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f6f8fa;
+    }
+}
+
+.orderRoute{
+    width: $orderRoute_width;
+}
+.pendingRoute{
+    width: $pendingRoute_width;
+}
+.pendingOrderMain {
+    width: $pendingOrderMain_width;
+}
+.pendingTextRoute{
+    width: 200px;
+}
+.continueBook  {
+    width: 100%;
+    #orderTable{
+        width: 960px + $continueBook_width_increasement;
+    }
+    .orderRoute {
+        width: $orderRoute_width + $continueBook_width_increasement;
+    }
+    .pendingRoute{
+        width: $pendingRoute_width + $continueBook_width_increasement;
+    }
+    .pendingOrderMain {
+        width: $pendingOrderMain_width+ $continueBook_width_increasement;
+    }
+    .pendingTextRoute{
+        width: 200px + $continueBook_width_increasement;
+    }
+}
+
+#orderTable {
+    /* width: 1200px; */
+    width: 960px;
+    /* 滚动条10px */
+    border-collapse: collapse;
+    color: $textColor;
+    table-layout: fixed;
+    font-size: $text-font-size-base;
+    box-sizing: border-box;
+    th {
+        height: 0px;
+        line-height: 0px;
+        font-size: $text-font-size-base;
+        color: #041e5b;
+    }
+    > div {
+        border-bottom: 1px solid $listBorderColor;
+    }
+}
+.orderHeader{
+    height: 45px;
+    .tr {
+        height: 45px;
+        line-height: 45px;
+        font-size: $text-font-size-base;
+        color: $textColorLight;
+        border-bottom: 1px solid $listBorderColor;
+    }
+}
+.myOrdersTr-orderNo {
+    color: $textColor;
+    font-size: $text-font-size-base;
+    font-weight: bold;
+}
+.orderStatus {
+    font-weight: bold;
+}
+.orderNoClick, .approveNoClick {
+    color: $selectedColor;
+    font-size: $text-font-size-base;
+}
+.table-cell {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.cellLine {
+    /* line-height: 35px; */
+    line-height: 26px;
+}
+
+.ordersRemind {
+    width: 440px;
+    height: 74px;
+    line-height: 74px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #d9d9d9;
+    font-size: 20px;
+    margin-top: 120px;
+}
+.oddrowcolor {
+    background-color: $box-background;
+}
+.evenrowcolor {
+    background-color: #ebf4ff;
+}
+.submit {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    background: #f6aa25;
+    color: #fff;
+    border-radius: 5px;
+    margin: 4px 0 0 38px;
+    cursor: pointer;
+}
+.agreeBtn,
+.denyBtn {
+    width: 62px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    background: $green;
+    color: $box-background;
+    border-radius: 2px;
+    /* 4.8注释掉 */
+    cursor: pointer;
+    margin-left: 10px;
+}
+.denyBtn{
+    background-color: $red;
+}
+/*表格图标*/
+.planeIcon,
+.hotelIcon,
+.trainIcon,
+.carIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.planeIcon {
+    background-image: url(/images/Aus/common/icon_home_air.png);
+}
+.hotelIcon {
+    background-image: url(/images/Aus/common/icon_home_hotel.png);
+}
+.trainIcon {
+    background-image: url(/images/Aus/common/icon_home_rail.png);
+}
+.carIcon {
+    background-image: url(/images/Aus/common/icon_home_car.png);
+}
+.orderTable-noOrder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 18px;
+    font-weight: bold;
+    color: $textColor;
+}
+.approval-orderNumber{
+    border-right: 1px solid $listBorderColor;
+}
+.approval-bookTime{
+    font-size: $text-font-size-base;
+    color: $textColorLight;
+}
+.orderDetailsTable{
+    color: $textColor;
+}
+.bold {
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+<script>
+    function Rabbit(name) {
+        this.name = name
+    }
+    Rabbit.prototype.sayHi = function() {
+        alert(this.name)
+    }
+    
+    let rabbit = new Rabbit('Rabbit')
+
+    rabbit.sayHi()  // this 是 rabbit
+    Rabbit.prototype.sayHi()    // this 都是 Rabbit.prototype
+    Object.getPrototypeOf(rabbit).sayHi()   // this 都是 Rabbit.prototype
+    rabbit.__proto__.sayHi()    // this 都是 Rabbit.prototype
+</script>

@@ -1,0 +1,31 @@
+
+.search_wrapper{
+    background: url(../../../images/Aus/air/pic_airbg.png) no-repeat;
+    height: 188px;
+    width: 1200px;
+    background-size: cover;
+    box-sizing: border-box;
+}
+.search_to,
+.search_from {
+    width: 320px;
+}
+.search_air-date{
+    width: 82px;
+    box-sizing: content-box;
+}
+
+#intlDepartureSelect, #intlReturnSelect{
+    width: 78px;
+}
+.noTime{
+    .search_air-date{
+        width: 112px;
+    }
+    #intlDepartureSelect, #intlReturnSelect{
+        width: 108px;
+    }
+}
+#DepartPlusMinusintel, #returnPlusMinusintel{
+    width: 60px;
+}

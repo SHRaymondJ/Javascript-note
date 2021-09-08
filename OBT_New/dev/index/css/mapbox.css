@@ -1,0 +1,147 @@
+#mapboxMap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 4px;
+    height: 100%;
+    z-index: 21;
+    display: none;
+    /* box-shadow: 1px 1px 10px #d5d8df; */
+    background-color: white;
+}
+.mapbox_tips{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    z-index: 15;
+    width: 50%;
+    font-size: 13px;
+    line-height: 40px;
+    min-height: 40px;
+    top: 50%;
+    left: 25%;
+    transition: all 1s;
+    text-align: center;
+    display: none;
+}
+.mapboxgl-map {
+    /* overflow: visible; */
+}
+
+.mapboxgl-canvas {
+    /* display: none; */
+    /* width: 100% !important; */
+    outline: none;
+    height: 100% !important;
+}
+
+.mapboxgl-marker {
+    /* 搜索标记 */
+    /* display: none; */
+}
+
+.suggestions {
+    z-index: 2;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+    /* 搜索框 */
+    /* margin: 0; */
+}
+
+/* .mapboxgl-ctrl-geocoder--input {
+    padding: 0 36px;
+} */
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl,
+.mapbox-ctrl-selectBtn-custom,
+.mapbox-ctrl-cancelBtn-custom {
+    margin: 30px 0 0 0;
+    float: none;
+    display: inline-block;
+    position: relative;
+}
+
+.mapbox-ctrl-selectBtn-custom.mapboxgl-ctrl,
+.mapbox-ctrl-cancelBtn-custom.mapboxgl-ctrl {
+    margin-left: 2%;
+    min-width: 15%;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px 0px rgba(4, 30, 91, 0.1);
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-left: 1%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    cursor: default;
+    font-size: 13px;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 920px) {
+
+    .mapbox-ctrl-selectBtn-custom.mapboxgl-ctrl,
+    .mapbox-ctrl-cancelBtn-custom.mapboxgl-ctrl {
+        font-size: 16px;
+
+    }
+}
+
+.mapbox-ctrl-selectBtn-custom.active,
+.mapbox-ctrl-cancelBtn-custom.active {
+    cursor: pointer;
+}
+.mapbox-ctrl-selectBtn-custom.active{
+    background-color: #041E5B;
+}
+.mapbox-ctrl-selectBtn-custom {
+    background-color: #CCCCCC;
+    color: white;
+}
+
+.mapbox-ctrl-cancelBtn-custom {
+    background-color: white;
+    color: #041E5B;
+}
+
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right>* {
+    top: 16px;
+    right: 16px;
+}
+
+.mapboxgl-ctrl-geocoder {
+    width: 60% !important;
+    min-width: 200px !important;
+    height: 36px;
+    max-width: none;
+    line-height: 56px;
+    height: 56px;
+    box-shadow: 0px 2px 4px 0px rgba(4, 30, 91, 0.1);
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+    top: 13px;
+    left: 13px;
+    width: 30px;
+    height: 30px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    height: 56px;
+    padding: 6px 56px;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+    /* 下拉框 */
+    /* width: 500px; */
+}
+
+.mapboxgl-ctrl-top-left {
+    width: 80%;
+    left: 10%;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+    display: none;
+}

@@ -1,0 +1,115 @@
+@import '../../../css/AusCommon/common.scss';
+
+.hotelLi {
+    display: flex;
+    justify-content: space-between;
+    padding: $normal-pd;
+    background-color: $box-background;
+    margin-bottom: $normal-margin;
+    @extend %hover-box_shadow;
+    &_main {
+        display: flex;
+        width: 600px;
+        border-right: 1px solid $listBorderColor;
+    }
+    &_aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        &.center {
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            .hotelDetailNoRoom {
+                color: $textColorLight;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+.hotelLiImg {
+    margin-right: 16px;
+    img {
+        width: 180px;
+        height: 160px;
+    }
+}
+.hotelLi_details {
+    display: flex;
+    flex-direction: column;
+    > div {
+        margin-bottom: 8px;
+    }
+    .hotelLiName {
+        cursor: pointer;
+        color: $textColor;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 8px;
+        &[noRoom='true'] {
+            cursor: default;
+        }
+        &_title {
+            margin-right: 6px;
+        }
+    }
+    .hotelLiStar {
+        @include star();
+    }
+    .hotelLiStarHalf {
+        @include star-half();
+    }
+    .hotelLi_protocals {
+        display: flex;
+        flex-wrap: nowrap;
+        .companyPay {
+            margin-bottom: 8px;
+            margin-right: 8px;
+        }
+    }
+    .hotelLiInfo {
+        color: $textColorLight;
+        font-size: $text-font-size-base;
+        > div {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        .hotelLiAddress {
+            background: url('../../../images/Aus/common/icon_locate-gray.png')
+                no-repeat;
+            background-position: left;
+        }
+        .hotelLiTelephone {
+            background: url('../../../images/Aus/common/icon_phone-gray.png')
+                no-repeat;
+            background-position: left;
+        }
+    }
+}
+
+.hotelLiPrice {
+    font-size: $text-font-size-base;
+    color: $textColorLight;
+    text-align: right;
+    p:first-child {
+        margin-bottom: 6px;
+    }
+    &_price {
+        color: $textColor;
+        font-size: 24px;
+    }
+    &_tax {
+        color: $textColorLighter;
+    }
+}
+.searchHotelDetailBtn {
+    @include button-color();
+    font-size: $text-font-size-base;
+    line-height: 40px;
+    padding: 0 12px;
+    cursor: pointer;
+}

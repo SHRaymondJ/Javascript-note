@@ -1,0 +1,826 @@
+.pageColor{
+	color: #F58A00;
+}
+.bottomColor{
+	color: #E31836;
+}
+.obtColor{
+	color: #1e66ae;
+}
+/*进度条*/
+.progressBar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #9b9b9b;
+}
+.progressLine{
+	width: 304px;
+	height: 2px;
+	margin:24px 0 0 30px;
+}
+.progressCircle{
+	width: 6px;
+    height: 6px;
+    margin: 22px 10px 0 0;
+    border-radius: 50%;
+}
+/*备注信息*/
+.remarkPop{
+	width: 592px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    /*font-family: PingFangSC-Regular;*/
+}
+.businessTripTittle,.remarkInfoTittle{
+	width: 100%;
+	height: 25px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	line-height: 25px;
+	font-size: 13px;
+	color: #FFFFFF;
+	/*background-color: #041E5B;*/
+}
+.businessTripBody{
+	width: 100%;
+	min-height: 40px;
+}
+.businessTripLi{
+	width: 100%;
+	height: 40px;
+}
+.tripLiTittle{
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.companyRemindTittle{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	/*font-family: PingFangSC-Semibold;*/
+	font-size: 14px;
+	color: #041E5B;
+}
+.companyRemindText{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	line-height: 18px;
+	width: 200px;
+	margin-left: 196px;
+	margin-bottom: 10px;
+}
+.employeeName{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 105px;
+	margin-top: 6px;
+	line-height: 28px;
+	font-size: 14px;
+	/*border: 1px solid #979797;*/
+}
+.chooseCompany{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 100px;
+	outline:none;
+	margin-top: 6px;
+	border: 1px solid #979797;
+	font-size: 14px;
+}
+.remarkInfoBody{
+	width: 100%;
+	height: 253px;
+	/*padding-bottom: 10px;
+	border-bottom: 1px solid #f3f3f3;*/
+}
+.remarkLi{
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	color: #4A4A4A;
+	border-bottom: 1px solid #979797;
+	/*font-family: PingFangSC-Regular;*/
+}
+.liTittle{
+	width: 240px;
+	height: 28px;
+	border-right: 1px solid #979797;
+	box-sizing: border-box;
+	padding-left: 20px;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.colorRed{
+	color: red;
+}
+.liContent{
+	width: 295px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	position: relative;
+}
+.remarkSelect{
+	width: 258px;
+	height: 25px;
+	border: 0;
+	outline:none;
+}
+.remarkLiInput{
+	width: 260px;
+	height: 26px;
+	border: 0;
+	position: absolute;
+	left: 0px;
+	padding-left: 20px;
+	top: 1px;
+	box-sizing: border-box;
+	z-index: 200;
+	outline: none;
+}
+.remarkFooter{
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #979797;
+}
+.sureRemarkBtn,.closeRemarkBtn{
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	/*background: #f6aa25;*/
+	border-radius: 4px;
+	color: #fff;
+	position: relative;
+	top: 20px;
+	cursor: pointer;
+}
+/*.closeRemarkBtn{
+	background-color: #041e58;
+}*/
+/*个人信息弹窗*/
+.PassengerPop,.newCustomerPop{
+	width: 490px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    /*font-family: PingFangSC-Regular;*/
+}
+.passengerPopTittle,.newCustomerPopTittle{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	box-sizing: border-box;
+	padding-left: 50px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 14px;
+	color: #FFFFFF;
+	/*background-color: #041E5B;*/
+}
+.passengerPopList,.newCustomerPopList{
+	min-height: 208px;
+}
+.passengerBarLi,.passengerLiDiv{
+	text-align:left;
+	box-sizing: border-box;
+	height: 30px;
+	line-height: 30px;
+	/*font-family: PingFangSC-Medium;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.documentsSelect{
+	width: 236px;
+	height: 25px;
+	border: 1px solid #979797;
+	border-radius: 2px;
+}
+.popChooseName{
+	width: 420px;
+	min-height: 17px;
+	line-height: 17px;
+	/*font-family: PingFangSC-Medium;*/
+	font-size: 12px;
+	color: #4A4A4A;
+	margin: 10px 0 0 34px;
+}
+.popNameRadio,.newPopSexRadio{
+	width: 17px;
+	height: 20px;
+	margin-right: 5px;
+}
+.popNameCn,.popNameEn,.popPhone,.popMail,.popDocuments,.popDocumentsTime,.popPhone,.popFrequentFlier,.newCustomerLi{
+	height: 20px;
+	line-height: 20px;
+	font-size: 13px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 33px;
+	margin-top: 10px;
+}
+.newCompanySelect{
+	width: 180px;
+    height: 20px;
+    border: 1px solid #979797;
+}
+.require::before{
+	content: "*";
+	color: red;
+	position: absolute;
+	left: 25px;
+}
+.newCustomerHalfInput{
+	min-width: 85px;
+	max-width: 85px;
+}
+.popPhoneInput,.popMailInput,.popDocumentsInput,.popFrequentFlierInput,.popDocumentsTimeInput,.popFrequentFlierInputStart,.popFrequentFlierInputReturn,.newCustomerInput{
+	width: 180px;
+	border: 1px solid #979797;
+}
+.popDocumentsSelect,.popFrequentFlierSelect,.popFrequentFlierSelectStart,.popFrequentFlierSelectReturn,.newPopDocumentsSelect{
+	width: 90px;
+	height: 20px;
+	border: 1px solid #979797;
+	margin-right: 10px;
+}
+.passengerPopCancel,.passengerPopBtn,.newCustomerPopCancel,.newCustomerPopBtn{
+	width: 114px;
+	height: 28px;
+	line-height: 28px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 14px;
+	color: #FFFFFF;
+	background-color: #f57c01;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+}
+/*订单详情*/
+.orderDetail{
+	width: 100%;
+	min-height: 169px;
+	border: 1px solid #f57c01;
+}
+.orderDetailTittle{
+	width: 100%;
+	height: 24px;
+	font-size: 14px;
+	color: #FFFFFF;
+	padding-left: 25px;
+    box-sizing: border-box;
+    line-height: 24px;
+}
+.orderDetailBody{
+	width: 100%;
+	height: 146px;
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+}
+.orderDetailBox__first {
+	border-right: 1px solid #CCCCCC;
+	flex: 1;
+	padding: 12px 0 12px 12px;
+}
+.orderDetailBox__last {
+	margin: 0 12px;
+	line-height: 28px;
+	font-size: 14px;
+	padding: 12px 0;
+	width: 220px;
+}
+.d-f {
+	display: flex;
+}
+.fd-c {
+	flex-direction: column;
+}
+.ai-fs {
+	align-items: flex-start;
+}
+.ai-fe {
+	align-items: flex-end;
+}
+.ai-c {
+	align-items: center;
+}
+.jc-sa {
+	justify-content: space-around;
+}
+.jc-sb {
+	justify-content: space-between;
+}
+.orderDetail__main, .orderDetail__flightInfo{
+	flex: 1;
+}
+.orderDetail__memo {
+	padding: 0 20px;
+	line-height: 28px;
+	font-size: 14px;
+}
+.orderDetail__memo__textColumn {
+	color: #666666;
+}
+.orderDetail__memo__valueColumn{
+	color: #333333;
+	margin-left: 10px;
+}
+.orderDetail__price__textColumn{
+	color: #666666;
+}
+.orderDetail__price__value{
+	color: #FF7A00;
+}
+.orderDetail__fareAmount{
+	color: #333333;
+}
+.orderDetail__fareAmount b{
+	color: #041E5B;
+	font-size: 22px;
+}
+.orderDetail__flightInfo__middle{
+	margin: 0 20px;
+	margin-bottom: 40px;
+}
+
+.orderDateStart{
+	line-height: 20px;
+    font-size: 16px;
+	font-weight: 600;
+    color: #333333;
+	margin-right: 12px;
+}
+.orderAirLine{
+	line-height: 20px;
+    font-size: 14px;
+    color: #666666;
+	margin-right: 20px;
+}
+.orderFlightNo{
+	line-height: 20px;
+    font-size: 14px;
+    color: #333333;
+}
+.orderOperationAirline{
+	width: 260px;
+	height: 20px;
+	line-height: 20px;
+    font-size: 14px;
+    color: #4a4a4a;
+	left: 25px;
+	top: 77px;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.orderNewOrder{
+	line-height: 20px;
+    font-size: 14px;
+    color: #0075FF;
+	left: 154px;
+	top: 15px;
+	cursor: pointer;
+}
+.orderTimeStart{
+	line-height: 33px;
+    font-size: 24px;
+    color: #041E5B;
+}
+.orderArrowIcon{
+	width: 77px;
+	height: 12px;
+	left: 531px;
+	top: 54px;
+	background-image: url('../../css/images/orderArrow.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.orderTimeArrive{
+	line-height: 33px;
+    font-size: 24px;
+    color: #041E5B;
+}
+.orderDuration{
+	line-height: 18px;
+    font-size: 13px;
+    color: #666666;
+	text-align: center;
+}
+.orderAirportDeparte{
+	width: 200px;
+	height: 18px;
+	line-height: 18px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	left: 319px;
+	top: 77px;
+	text-align: right;
+}
+.orderAirportArrive{
+	width: 180px;
+	height: 18px;
+	line-height: 18px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	left: 618px;
+	top: 77px;
+}
+
+.orderBottomPrice, .ordeSavePrice, .orderReason{
+	font-size: 14px;
+	color: #000000;
+	line-height: 20px;
+	margin-right: 20px;
+}
+.baggage__weight {
+	
+	position: relative;
+}
+.baggage__pop{
+	position: absolute;
+	background-color: #FFF;
+	box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
+	color: #333333;
+	text-decoration: none;
+	top: 0;
+}
+.baggage__wrapper{
+	display: flex;
+	align-items: center;
+	border: 1px solid #E5E5E5;
+	margin: 10px;
+}
+.baggage__pop.hide{
+	display: none;
+}
+.baggage__triangle{
+	width: 10px;
+	position: absolute;
+	border-left: 10px solid white;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	transform: rotate(90deg);
+}
+.baggage__pop__text {
+	padding: 6px 10px;
+	min-width: 50px;
+}
+.baggage__pop__Details{
+	border-left: 1px solid #E5E5E5;
+}
+.baggage__pop__detail{
+	padding: 6px 10px;
+    border-bottom: 1px solid #F3F3F3;
+	min-width: 450px;
+	text-align: left;
+}
+.baggage__pop__detail:last-child{
+	border: none;
+}
+.baggage__btn{
+	color: #0075FF;
+	text-decoration: underline;
+	cursor: pointer;
+}
+/*乘客信息*/
+.passengerTittle,.serviceTittle,.frequentCardsTittle,.budgetTittle{
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	/*font-family: PingFangSC-Semibold;*/
+	font-size: 18px;
+	color: #404040;
+	box-sizing: border-box;
+	margin: 25px 0 5px 10px;
+}
+.passengerBody,.serviceBody,.frequentCardsBody,.budgetBody{
+	width: 100%;
+	min-height: 68px;
+	border: 1px solid #f57c01;
+}
+.serviceBody{
+	min-height: 60px;
+}
+.choosePassengerBody,.insuranceBody{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	/*font-family: PingFangSC-Semibold;*/
+	font-size: 16px;
+	/*color: #f6aa25;*/
+	box-sizing: border-box;
+	padding-left: 9px;
+	border-bottom: 1px solid #C5C3C6;
+	position: relative;
+}
+.addNewCustomer{
+	color: #041E5B;
+	margin-left: 420px;
+	cursor: pointer;
+}
+.selectPassengerBody{
+	width: 380px;
+	height: 32px;
+	margin-top: 14px;
+	border: 1px solid #f57c01;
+    border-radius: 4px;
+    position: relative;
+}
+.selectPassengerInput{
+	width: 300px;
+	height: 32px;
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	outline: none;
+}
+.selectPassengerArrow{
+	width:40px;
+	height:32px;
+	line-height: 32px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #000;
+	text-align: center;
+	cursor: pointer;
+}
+.selectPassengerSearch{
+	width: 80px;
+    height: 26px;
+    line-height: 26px;
+    position: absolute;
+    right: -152px;
+    top: 3px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    /*background-color: #f6aa25;*/
+    border-radius: 10px;
+}
+.selectPassengerList{
+	width: 378px;
+	height: 200px;
+	position: absolute;
+	top: 32px;
+	left: 0;
+	background-color: #fff;
+	border: 1px solid #979797;
+	z-index: 10;
+	display: none;
+}
+.selectPassengerListTittle{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	background-color: #9b9b9b;
+	color: #fff;
+}
+.selectPassengerLi{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+	font-size: 12px;
+	cursor: pointer;
+}
+.selectPassengerLi:hover{
+	background-color: #041E5B;
+	color: #fff;
+}
+/*常旅客卡*/
+.frequentCardsName{
+	width:100%;
+	height:40px;
+	line-height: 40px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 10px;
+	border-bottom: 1px solid #C5C3C6;
+}
+.frequentCardsLi{
+	width:100%;
+	height:40px;
+	line-height: 40px;
+	font-size: 14px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C5C3C6;
+}
+.frequentCardsLiCompany,.frequentCardsLiNumber{
+	width: 50%;
+	text-align: center;
+	box-sizing: border-box;
+}
+.frequentCardsLiCompany{
+	border-right: 1px solid #C5C3C6;
+	text-align: left;
+	padding-left: 250px;
+}
+.frequentCardsSelect{
+	width: 236px;
+	height: 25px;
+	border: 1px solid #C5C3C6;
+	border-radius: 2px;
+	margin-left: 20px;
+}
+/*保险*/
+.insuranceLi{
+	min-width: 140px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	position: relative;
+	padding-left: 20px;
+	box-sizing: border-box;
+	margin-right: 20px;
+}
+.insuranceCheckBox{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+    left: 0;
+    top: 22px;
+}
+/*总价*/
+.totalAmount{
+	/* width: 150px; */
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	line-height: 50px;
+	/* margin:30px 0 0 975px; */
+	width: 100%;
+	margin:30px 0 0 0;
+	text-align: right;
+}
+.totalAmountText{
+	font-size: 20px;
+	color:#f6aa25;
+	margin-left: 20px;
+}
+/*航空公司提示*/
+.someAirlineRemind{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.airlineRemindCheck{
+	width: 16px;
+	height: 16px;
+	margin-top: -2px;
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+.airlineRemind2,.airlineRemind3{
+	color:#f6aa25;
+	text-decoration: underline;
+	cursor: pointer;
+}
+/*预定按钮*/
+.bookTicketBody{
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	margin: 40px 0 54px 0;
+}
+.ricketOutBody{
+	width: 180px;
+    height: 28px;
+    line-height: 28px;
+    /*font-family: PingFangSC-Medium;*/
+    font-size: 14px;
+    color: #041E5B;
+    letter-spacing: 0;
+    margin-left: 365px;
+    position: relative;
+}
+.ricketOutCheckBox{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 6px;
+	left: 0;
+}
+.bookTicketBtn{
+	width: 100px;
+	height: 28px;
+	line-height: 28px;
+	background-color: #f6aa25;
+	border-radius: 4px;
+	margin-left: 20px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 14px;
+	color: #FFFFFF;
+	text-align: center;
+	cursor: pointer;
+}
+.CopyrightBody{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 16px;
+	color: #4A4A4A;
+	margin-bottom: 22px;
+}
+.luggageReminder{
+	color: #FF7A00;
+	background-image: url(../images/icon_hotts.png);
+}
+.covidReminder{
+	color: #E31836;
+	background-image: url(../images/icon_hotts_red.png);
+}
+.luggageReminder,.covidReminder{
+	width: 1200px;
+	font-size: 14px;
+	line-height: 20px;
+	padding-left: 20px;
+	margin-top: 12px;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	background-size: 14px;
+}
+/* 预算 */
+.budgetChart{
+	width: 120px;
+	height: 120px;
+}
+.budgetBody{
+	display: flex;
+}
+.budgetBox{
+	display: flex;
+	flex: 1;
+	border-right: 1px solid #ccc;
+}
+.budgetBox:last-child{
+	border: none;
+}
+.budgetItem{
+	padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+    align-items: start;
+    justify-content: center;
+}
+.budgetChartBox{
+	margin: 0 auto;
+	position: relative;
+}
+.budgetChartSubtittle{
+	position: absolute;
+    top: 45%;
+    left: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 120px;
+    font-size: 12px;
+    color: #999999;
+}
+.budgetDesc{
+	color: #666666;
+	margin-bottom: 12px;
+	font-size: 14px;
+}
+.budgetAmount{
+	color: #333333;
+	font-size: 18px;
+}
+
+.changePassengerInfo{
+	color: #0075FF;
+}

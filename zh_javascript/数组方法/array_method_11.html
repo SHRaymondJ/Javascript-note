@@ -1,0 +1,12 @@
+<script>
+    // 获取平均年龄
+    let john = { name: 'John', age: 25 }
+    let pete = { name: 'Pete', age: 30 }
+    let mary = { name: 'Mary', age: 29 }
+
+    let arr = [john, pete, mary]
+    const getAverageAge = (arr) =>
+        arr.reduce((acc, current) => acc + current.age, 0) / arr.length
+
+    alert(getAverageAge(arr)) // (25 + 30 + 29) / 3 = 28
+</script>

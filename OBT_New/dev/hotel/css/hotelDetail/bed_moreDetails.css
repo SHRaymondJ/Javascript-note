@@ -1,0 +1,262 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.bedDetails_pop {
+  padding: 24px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-width: 1000px;
+  z-index: 101;
+}
+
+.bedDetails_pop.hide {
+  display: none;
+}
+
+.bedDetails_pop header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 33px;
+}
+
+.bedDetails_pop header .bedDetails_pop_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: #111c4e;
+}
+
+.bedDetails_pop header .bedDetails_pop_title h1 {
+  font-size: 24px;
+  color: #111c4e;
+  margin-right: 12px;
+}
+
+.bedDetails_pop header .bedDetails_pop_title span {
+  font-size: 16px;
+}
+
+.bedDetails_pop header .close_bedDetails {
+  width: 20px;
+  height: 20px;
+  background: url(../../images/Aus/common/close.svg) no-repeat;
+  background-size: 24px;
+  cursor: pointer;
+}
+
+.bedDetails_pop .bedDetails_pop_props {
+  margin-bottom: 25px;
+}
+
+.bedDetails_pop .bedDetails_pop_props h3 {
+  padding-left: 30px;
+  font-size: 18px;
+  color: #111c4e;
+  margin-bottom: 12px;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-description {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-description:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_introduction.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-cancelPolicy {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-cancelPolicy:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_time.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-basicInformation {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-basicInformation:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_information.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-roomFacilities {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-roomFacilities:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_facilities.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-guaranteeCardType {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-guaranteeCardType:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_card.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-otherCharges {
+  position: relative;
+}
+
+.bedDetails_pop .bedDetails_pop_props .title-otherCharges:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/hotel/icon_othercharge.png") no-repeat;
+  background-position: center left;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_props_body {
+  padding-bottom: 12px;
+  margin-left: 30px;
+  border-bottom: 1px dashed #ececec;
+}
+
+.bedDetails_pop .bedDetails_pop_props:last-child .bedDetails_props_body {
+  border-bottom: none;
+}
+
+.bedDetails_pop .bedDetails_pop_props p {
+  font-size: 14px;
+  color: #111c4e;
+  margin-bottom: 12px;
+  line-height: 16px;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetail_pop_cancelPolicy {
+  color: #ff6720;
+}
+
+.bedDetails_pop .bedDetails_pop_props ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_creditCard_list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_creditCard_list li {
+  margin-right: 16px;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_basicInfo_list,
+.bedDetails_pop .bedDetails_pop_props .bedDetails_otherCharges_list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_basicInfo_list li,
+.bedDetails_pop .bedDetails_pop_props .bedDetails_otherCharges_list li {
+  margin-bottom: 10px;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_basicInfo_list li:last-child,
+.bedDetails_pop .bedDetails_pop_props .bedDetails_otherCharges_list li:last-child {
+  margin-bottom: 0;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_roomFacilities_list {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_roomFacilities_list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30%;
+}
+
+.bedDetails_pop .bedDetails_pop_props .bedDetails_roomFacilities_list li:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: url("../../images/Aus/common/icon_hook.png") no-repeat;
+  background-position: center left;
+}
+/*# sourceMappingURL=bed_moreDetails.css.map */

@@ -1,0 +1,20 @@
+@import './hotelList/keyword.scss';
+@import './hotelList/map.scss';
+@import './hotelList/hotelListMainSide.scss';
+@import '../../css/AusCommon/components/filterSide.scss';
+@import './hotelList/search.scss';
+
+body {
+    background-color: $main-background;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+}
+.filter_side{
+    width: $filter-side-width;
+    margin-right: 20px;
+}
+
+

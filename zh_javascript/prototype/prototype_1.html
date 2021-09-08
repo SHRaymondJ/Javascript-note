@@ -1,0 +1,10 @@
+<script>
+    // 给函数添加一个'f.defer(ms)' 的方法
+    Function.prototype.defer = function (ms) {
+        setTimeout(this, ms)
+    }
+    function f() {
+        alert('Hello!')
+    }
+    f.defer(1000)
+</script>

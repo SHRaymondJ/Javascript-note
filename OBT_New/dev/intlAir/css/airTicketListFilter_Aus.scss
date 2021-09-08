@@ -1,0 +1,490 @@
+@import '../../css/AusCommon/common.scss';
+
+$box-bg-color: #fff;
+$memo-fc: #666;
+$lighter-gray: #ccc;
+$light-gray: #999;
+$heavy-gray: #333;
+$selector-bg-color: #333;
+$dark-blue: #041e5b;
+$scheme-color: #3083fb;
+
+$arrow-active-color: #666;
+$arrow-inactive-color: #ccc;
+$filter-line-color: #999;
+$arrow-hover-color: #666;
+
+$m-side: 16px;
+$m-top: 8px;
+$m-bottom: 12px;
+
+$bar-fs-m: 14px;
+$bar-fs-b: 16px;
+
+$card-br: 4px;
+
+$transition-time: 0.5s;
+$transition-normal: all $transition-time cubic-bezier(0.51, 0, 0, 1.02);
+
+$bs-outside: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+
+@mixin box-padding {
+    padding: $m-top $m-side $m-bottom;
+}
+@mixin triangle-filled($length) {
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-right: $length solid $dark-blue;
+    border-bottom: $length solid transparent;
+    border-top: $length solid transparent;
+}
+@mixin triangle-empty($length, $deg, $color) {
+    position: absolute;
+    width: $length;
+    height: $length;
+    border-right: 2px solid $color;
+    border-bottom: 2px solid $color;
+    transform: rotate($deg);
+}
+@mixin ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+// @mixin init-show-hidden($initHeight,$show,$hidden) {
+//     max-height: $initHeight;
+//     transition: all 0.3s ease-in-out;
+//     &.show{
+//         max-height: $show;
+
+//     }
+//     &.hidden{
+//         max-height: $hidden;
+//         // display: none;
+//     }
+// }
+/* 新筛选 */
+.filter {
+    background-color: #f1f1f1;
+}
+.ticketBody {
+    background-color: $box-bg-color;
+    width: 1200px !important;
+    z-index: 21;
+    &.fixed {
+        position: fixed;
+        top: 0;
+    }
+}
+.filter__bar,
+.filter__closeBox,
+.filter__airCompanyPart,
+.filter__openBox {
+    background-color: $box-bg-color;
+    position: relative;
+    &.hide{
+        display: none;
+    }
+}
+
+.filter__bar {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    @include box-padding();
+    * {
+        display: inline-block;
+        background-color: $box-bg-color;
+        flex-shrink: 0;
+    }
+    &__title {
+        padding-right: $m-side;
+        font-size: $bar-fs-b;
+    }
+    &__resultCount {
+        padding-right: $m-side;
+        color: $memo-fc;
+        font-size: $bar-fs-m;
+    }
+    &__button {
+        right: $m-side;
+        padding: 0 $m-side;
+        font-size: $bar-fs-m;
+        position: relative;
+        color: $dark-blue;
+        cursor: pointer;
+        &::after {
+            content: "";
+            right: 0px;
+            top: 1px;
+            transform: rotate(-90deg);
+            transition: $transition-normal;
+            @include triangle-filled(8px);
+        }
+        &.open::after {
+            transform: rotate(90deg);
+        }
+    }
+    hr {
+        width: 100%;
+        background: $lighter-gray;
+        flex-shrink: 1;
+        height: 0.5px;
+    }
+}
+.filter__closeBox__container{
+    // @include init-show-hidden(0,1000px,0);
+
+}
+.filter__closeBox {
+    margin-bottom: 4px;
+    
+    @include box-padding();
+    &__fixedPart {
+        display: flex;
+        justify-content: start;
+    }
+    &__items {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        min-width: 18%;
+        margin-right: 2%;
+        p {
+            margin-bottom: $m-top;
+            font-size: $bar-fs-m;
+        }
+        input {
+            border-radius: 4px;
+            line-height: 20px;
+            height: 20px;
+            outline: none;
+            border: 1px solid $light-gray;
+            position: relative;
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 30px;
+            background-image: url(../../css/images/icon_xiala.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 18px;
+            background-color: transparent;
+            appearance: none;
+            @include ellipsis();
+        }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     right: 10px;
+        //     top: 33px;
+        //     @include triangle-empty(5px, 45deg, $lighter-gray);
+        // }
+        &-air{
+            @include box-padding();
+            border-right: 1px solid #f9f9f9;
+            flex: 1;
+            p{
+                // margin-bottom: 20px;
+            }
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+.filter__closeBox__items .openBox__card__body{
+    display: none;
+    &.show{
+        display: block;
+        box-shadow: $bs-outside;
+        position: absolute;
+        background-color: $box-bg-color;
+        z-index: 2;
+        top: 49px;
+        min-width: 210px;
+        box-sizing: border-box;
+    }
+}
+.filter__airCompanyPart {
+    // @include init-show-hidden(500px,500px,0);
+}
+.left {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: $transition-normal;
+    background-color: $box-bg-color;
+
+    &__button {
+        margin: 20px 0;
+        width: 80px;
+        height: 30px;
+        position: relative;
+        border-right: 2px solid $filter-line-color;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 35px;
+            top: 8px;
+            transition: $transition-normal;
+            @include triangle-empty(10px, 135deg, $arrow-inactive-color);
+        }
+    }
+}
+.left.active {
+    cursor: pointer;
+    &:hover {
+        background-color: $arrow-hover-color;
+        .left__button::after {
+            border-color: $box-bg-color;
+        }
+    }
+    .left__button {
+        border-right: 2px solid $filter-line-color;
+        &::after {
+            @include triangle-empty(10px, 135deg, $arrow-active-color);
+        }
+    }
+}
+.right {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: $transition-normal;
+    background-color: $box-bg-color;
+    &__button {
+        margin: 20px 0;
+        width: 80px;
+        height: 30px;
+        position: relative;
+        border-left: 2px solid $filter-line-color;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 35px;
+            top: 8px;
+            @include triangle-empty(10px, -45deg, $arrow-inactive-color);
+            transition: $transition-normal;
+        }
+    }
+}
+.right.active {
+    cursor: pointer;
+    &:hover {
+        background-color: $arrow-hover-color;
+        .right__button::after {
+            border-color: $box-bg-color;
+        }
+    }
+    .right__button {
+        border-left: 2px solid $filter-line-color;
+        &::after {
+            @include triangle-empty(10px, -45deg, $arrow-active-color);
+        }
+    }
+}
+.filter__airCompanys {
+    padding: 15px 82px;
+    position: relative;
+    overflow: hidden;
+    min-height: 40px;
+    &__box {
+        // height: 40px;
+        transition: transform 0.5s ease-in-out;
+    }
+}
+.filter__airCompany {
+    cursor: pointer;
+    width: 207.2px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 $m-side;
+    border-left: 2px solid $filter-line-color;
+    float: left;
+    &:first-child {
+        border-left: none;
+    }
+    &__name {
+        font-weight: bolder;
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    &__price {
+        color: $memo-fc;
+    }
+}
+.filter__selector {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid $heavy-gray;
+    flex-shrink: 0;
+    position: relative;
+    margin-right: 10px;
+    &.selected {
+        background-color: $scheme-color;
+        border-color: $scheme-color;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 0px;
+            width: 5px;
+            height: 10px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg);
+        }
+    }
+    &__desc{
+        color: $textColor;
+    }
+}
+
+.reset__filter {
+    color: $scheme-color;
+    font-size: $bar-fs-m;
+    @include box-padding();
+    span{
+        cursor: pointer;
+    }
+}
+
+.sort {
+    @include box-padding();
+    background-color: $box-bg-color;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.fixed{
+        box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+    &__title {
+        font-size: $bar-fs-m;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        color: $scheme-color;
+        border: 1px solid $scheme-color;
+        border-radius: 2px;
+        padding: 2px 12px;
+        cursor: pointer;
+        margin-right: 12px;
+        &:hover, &.active {
+            background-color: $scheme-color;
+            color: $box-bg-color;
+        }
+    }
+}
+
+.filter__openBox {
+    @include box-padding();
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    // @include init-show-hidden(1000px,1000px,0);
+}
+.openBox__card {
+    box-shadow: $bs-outside;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    min-width: 180px;
+    max-width: 280px;
+    height: fit-content;
+    &__body {
+        &.multiple{
+            padding: 0;
+            min-height: 0;
+        }
+        /*滚动条*/
+        &::-webkit-scrollbar  
+        {  
+            width: 5px;  
+            height: 16px;  
+            background-color: #F5F5F5;  
+        }  
+        
+        /*定义滚动条轨道 内阴影+圆角*/  
+        &::-webkit-scrollbar-track  
+        {  
+            border-radius: 10px;  
+            background-color: #F5F5F5;  
+        }  
+        
+        /*定义滑块 内阴影+圆角*/  
+        &::-webkit-scrollbar-thumb  
+        {  
+            border-radius: 5px;  
+            background-color: #dedede;  
+        } 
+        &::-webkit-scrollbar-thumb:hover{
+            background-color: #999;
+        }
+    }
+}
+
+
+.openBox__card__itemBox{
+    display: flex;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.openBox__card__selectorBox{
+    display: flex;
+    flex-direction: column;
+    .filter__closeBox__items{
+        margin-bottom: 10px;
+        &::after{
+            top: 32px;
+        }
+    }
+    &-air{
+        display: flex;
+        flex-direction: row;
+        min-width: 400px;
+    }
+}
+.openBox__selectorBox__options{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 49px;
+    background-color: white;
+    display: none;
+    min-width: 100%;
+    box-shadow: $bs-outside;
+    border-radius: 4px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    &.show{
+        display: block;
+    }
+}
+
+.ticketList.fixed{
+    // margin-top: 147px;  //显示sort
+    margin-top: 120px;  //显示sort
+}
+#scrollToTop{
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    box-shadow: $bs-outside;
+    border-radius: 25px;
+    z-index: 3;
+    background-color: $box-bg-color;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}

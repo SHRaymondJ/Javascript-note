@@ -1,0 +1,45 @@
+<script>
+    // 手动添加 遍历属性
+    const range = {
+        from: 0,
+        to: 5,
+        [Symbol.iterator]() {
+            this.value = this.from
+            return this
+        },
+        next() {
+            if (this.value <= this.to) {
+                return { done: false, value: this.value++ }
+            } else {
+                return { done: true }
+            }
+        },
+    }
+    for (let i of range) {
+        console.log(i)
+    }
+
+    // 每秒输出一次
+    const printNumbers = (from, to) => {
+        number = from
+        // setInterval
+        // const print = setInterval(() =>{
+        //     if(number >= to) {
+        //         clearInterval(print)
+        //     }
+        //     console.log(number++)
+        // },1000)
+        // setTimeout
+
+        setTimeout(
+            (go = () => {
+                if (number < to) {
+                    setTimeout(go, 1000)
+                }
+                console.log(number++)
+            }),
+            1000
+        )
+    }
+    printNumbers(1, 5)
+</script>

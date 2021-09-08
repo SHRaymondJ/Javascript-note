@@ -1,0 +1,227 @@
+@import './components/datepicker.scss';
+@import './components/kuCity.scss';
+@import './components/showMap.scss';
+@import './components/progressBar.scss';
+@import './components/searchBase.scss';
+@import './components/header.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+#main {
+    margin-top: 0 !important;
+}
+.temp-bar{
+    background-color: #dcdde1;
+    margin: 0 auto;
+    margin-bottom: $normal-margin;
+    position: relative;
+
+}
+.temp-box{
+    background-color: $lighter-gray;
+    margin: 0 auto;
+    margin-bottom: $normal-margin;
+    position: relative;
+}
+select {
+    border: none;
+    outline: none;
+    appearance: none;
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+.ui-widget-header {
+    background: none;
+    border: none;
+    color: $textColor;
+}
+
+.ui-datepicker-year,
+.ui-datepicker-month {
+    border: none;
+    outline: none;
+    color: $textColor;
+    font-weight: bold;
+    font-size: 20px;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: auto;
+    margin: 0 10px;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+    border: none;
+    background: none;
+}
+%datepicker-table {
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    margin: auto;
+}
+@mixin datepicker-arrow($color, $deg, $width) {
+    background: none;
+    border-right: 2px solid $selectedColor;
+    border-bottom: 2px solid $selectedColor;
+    transform: rotate($deg);
+    width: $width;
+    height: $width;
+}
+
+#ui-datepicker-div {
+    padding: 10px 10px 0 10px;
+}
+.ui-datepicker .ui-datepicker-prev span {
+    @include datepicker-arrow($selectedColor, 135deg, 6px);
+    margin-left: -3px;
+    margin-top: -3px;
+}
+.ui-datepicker .ui-datepicker-next span {
+    @include datepicker-arrow($selectedColor, -45deg, 6px);
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    background: $box-background;
+    border-radius: 1.8rem;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    border-collapse: inherit;
+}
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+    border: none;
+    background: none;
+    color: $textColor;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+    // 不能选
+    color: $textColorLighter !important;
+    background: none;
+    @extend %datepicker-table;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    //能选
+    color: $textColor;
+    background: none;
+    border: none;
+    transition: all 0.2s ease;
+    @extend %datepicker-table;
+}
+table .ui-state-hover,
+table .ui-state-active {
+    background: $selectedColor !important;
+    color: $box-background !important;
+    border: none !important;
+}
+.ui-widget.ui-widget-content {
+    @include pop-container-top();
+    border: none;
+    box-sizing: content-box;
+    width: auto;
+}
+// 评分
+.eTravel_grade {
+    color: $textColor;
+    font-size: $text-font-size-base;
+    font-weight: 600;
+    .eTravel_Score {
+        background-color: $light-orange;
+        border-radius: 0 8px 0 8px;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        display: inline-block;
+        text-align: center;
+        &.hide {
+            display: none;
+        }
+    }
+    .eTravel_Grade {
+    }
+}
+
+// 蓝色提醒框
+.eTravel_reminder_box {
+    @include eTravel-reminder-box();
+}
+//橙色提醒框
+.eTravel_reminder_box-orange {
+    @include eTravel-reminder-box('orange');
+}
+// 协议酒店等标签样式
+.companyPay {
+    border-radius: 1px;
+    padding: 2px 8px;
+    font-size: $normal-font-size - 2;
+    &-companyPay {
+        @include protocal-color($company-bill-color);
+    }
+    &-mostPreferred {
+        @include protocal-color($most-preferred-color);
+    }
+    &-corporate {
+        @include protocal-color($corporate-color);
+    }
+}
+// 危险样式
+.violationIcon {
+    color: $box-background;
+    background-color: $warningColor;
+    border-radius: 2px;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+// 列表积分样式
+.list_points {
+    padding: 0px 8px;
+    background-color: #ffeedf;
+    border-radius: 2px;
+    color: #ff6720;
+    font-size: $text-font-size-base;
+    line-height: 16px;
+    display: inline-block;
+    &.hide {
+        display: none;
+    }
+}
+// 下划线
+.underline {
+    text-decoration: underline;
+}
+.negative {
+    z-index: -1 !important;
+}
+.hide{
+    display: none !important;
+}

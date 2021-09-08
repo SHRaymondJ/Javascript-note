@@ -1,0 +1,62 @@
+@import '../../../css/AusCommon/common.scss';
+
+
+.sort_box {
+    background-color: $box-background;
+    padding: 16px $normal-pd;
+    margin-bottom: $normal-margin;
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        font-size: $text-font-size-base;
+        color: $textColor;
+    }
+}
+.sort_box_operations {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &-list {
+        position: relative;
+        font-size: $text-font-size-base;
+        font-weight: bold;
+    }
+    &-selected {
+        color: $selectedColor;
+        padding-right: 28px;
+        margin-left: 20px;
+        cursor: pointer;
+        &:after {
+            content: '';
+            position: absolute;
+            border-right: 8px solid $selectedColor;
+            border-bottom: 8px solid transparent;
+            transform: rotate(135deg);
+            transition: all 0.5s ease;
+            right: 5px;
+        }
+        &.active:after {
+            transform: rotate(-45deg) translate(-5px,3px);
+        }
+    }
+    &-pop {
+        @include pop-container-top-right(20px, 0);
+        @include pop-container-animation(0.5s, top, 20px);
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        color: $textColorLight;
+        font-weight: normal;
+        .active {
+            color: $selectedColor;
+            font-weight: bold;
+        }
+        * {
+            margin-bottom: $normal-margin;
+            cursor: pointer;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

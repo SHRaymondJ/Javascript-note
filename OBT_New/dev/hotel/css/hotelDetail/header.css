@@ -1,0 +1,174 @@
+@charset "UTF-8";
+input,
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 谷歌 去除input[type=numer]的增减按钮*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* 火狐 */
+input {
+  -moz-appearance: textfield;
+}
+
+.hotelInfoBody {
+  background-color: #fff;
+  padding: 24px;
+  margin-bottom: 12px;
+}
+
+.hotelInfoName {
+  color: #111c4e;
+  margin-bottom: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hotelInfoName > * {
+  margin-right: 12px;
+}
+
+.hotelInfoName h2 {
+  font-size: 20px;
+}
+
+.hotelInfoName .hotelReselection {
+  color: #0075ff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.hotelInfoName .starBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hotelInfoName .hotelInfoStar {
+  position: relative;
+  height: 13px;
+  background: url(../../images/Aus/common/icon_grade_star.png);
+  background-repeat: repeat-x;
+}
+
+.hotelInfoName .hotelLiStarHalf {
+  position: absolute;
+  height: 13px;
+  width: 13px;
+  right: -13px;
+  background: url(../../images/Aus/common/icon_grade_star-half.png);
+  position: relative;
+  right: auto;
+}
+
+.hotel_header_contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.hotel_header_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  min-height: 130px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.hotel_header_right > * {
+  margin-bottom: 12px;
+}
+
+.hotelAddress,
+.hotelInfoScore,
+.hotelInfoTelephone,
+.hotelInfoFax,
+.hotelInfoDescription {
+  color: #5d667c;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 19px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.hotelAddress img,
+.hotelInfoScore img,
+.hotelInfoTelephone img,
+.hotelInfoFax img,
+.hotelInfoDescription img {
+  margin-top: 2.5px;
+  margin-right: 12px;
+}
+
+.hotelInfoDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.hotelInfoDescription.active {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 999;
+  overflow: hidden;
+}
+
+.hotelInfoDescription img {
+  margin-right: 8px;
+}
+
+.showMore {
+  text-transform: capitalize;
+  color: #0075ff;
+  font-size: 14px;
+  display: none;
+  cursor: pointer;
+}
+
+.hotelInfoPrice {
+  font-size: 14px;
+  color: #5d667c;
+  text-align: right;
+}
+
+.hotelInfoPrice span {
+  color: #111c4e;
+  font-size: 24px;
+}
+/*# sourceMappingURL=header.css.map */
