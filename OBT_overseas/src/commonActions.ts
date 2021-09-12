@@ -1,10 +1,10 @@
 import { CommonActionTypes } from './commonActionTypes'
-import { Dispatch } from 'react'
+import type { Dispatch } from 'react'
 
 export const switchLanguage = () => ({
     type: CommonActionTypes.SWITCH_LANGUAGE,
 })
 
-export const actionDispatch = (dispatch: Dispatch<any>) => ({
+export const actionDispatch = (dispatch:Dispatch<any> ) => ({
     switchLanguage: () => dispatch(switchLanguage()),
 })
