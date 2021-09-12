@@ -1,4 +1,4 @@
-export interface Dictionary {
+export interface I18NIndexPage {
     languageTxt: string
     companyNameTxt: string
     userNameTxt: string
@@ -13,8 +13,9 @@ export interface Dictionary {
     backupTxt: string
 }
 
+type Lang = 'CN' | 'EN'
 
-const dictionary = {
+const i18IndexPageConfig:Record<Lang, I18NIndexPage> = {
     CN: {
         languageTxt: "English",
         companyNameTxt: "公司名",
@@ -45,5 +46,5 @@ const dictionary = {
     }
 }
 
-export default dictionary
+export default i18IndexPageConfig
 

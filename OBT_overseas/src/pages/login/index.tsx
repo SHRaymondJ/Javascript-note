@@ -1,6 +1,6 @@
 import React, { useEffect, useState, FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import dictionary, { Dictionary } from './dictionary'
+import i18IndexPageConfig, { I18NIndexPage } from './dictionary'
 import { submitLoginForm } from './components/loginSubmit'
 import { useHistory } from 'react-router'
 import BCDLOGO from '../../assets/logoImgBCD.png'
@@ -16,7 +16,7 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const { language } = useSelector(commonSelector)
     const { switchLanguage } = actionDispatch(useDispatch())
-    const [text, setText] = useState<Dictionary>(dictionary[language])
+    const [text, setText] = useState<I18NIndexPage>(i18IndexPageConfig[language])
     const [companyName, setCompanyName] = useState('')
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -61,7 +61,7 @@ const Login = () => {
     }, [])
 
     useEffect(() => {
-        const dic: Dictionary = dictionary[language]
+        const dic: I18NIndexPage = i18IndexPageConfig[language]
         setText(dic)
     }, [language])
 

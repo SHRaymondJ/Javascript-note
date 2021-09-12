@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $normal-pd: 24px;
 $normal-margin: 12px;
 $normal-font-size: 14px;
@@ -96,7 +98,7 @@ $radio-checked-color: #3392ff;
     width: 10px;
     height: 10px;
     bottom: -5px;
-    left: $parent-width/ 2;
+    left: math.div($parent-width,2);
     position: absolute;
     display: block;
     transform: rotate(45deg);
@@ -108,7 +110,7 @@ $radio-checked-color: #3392ff;
     width: 10px;
     height: 10px;
     top: -5px;
-    left: $parent-width/ 2;
+    left: math.div($parent-width,2);
     position: absolute;
     display: block;
     transform: rotate(45deg);

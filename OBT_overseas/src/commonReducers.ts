@@ -1,6 +1,10 @@
 import { CommonActionTypes } from './commonActionTypes'
 
-const defaultState = {
+export interface ICommonReducer {
+    language: 'CN' | 'EN'
+}
+
+const defaultState: ICommonReducer = {
     language: 'CN',
 }
 

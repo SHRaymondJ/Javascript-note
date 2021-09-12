@@ -1,5 +1,5 @@
 import React from 'react'
-import { checkProfile } from '../../utils/checkProfile'
+import { useCheckProfile } from '../../utils/checkProfile'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Air from '../air'
 import Hotel from '../hotel'
@@ -8,7 +8,7 @@ import Header from '../../components/header/header'
 import './index.scss'
 
 const Homepage = () => {
-    checkProfile()
+    useCheckProfile()
     return (
         <>
             <Router>
