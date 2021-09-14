@@ -2,7 +2,7 @@ import { useAppSelector } from '../app/hooks'
 import { selectName } from '../features/counter/counterSlice'
 
 function AuthorName() {
-    const { value, name } = useAppSelector(selectName)
+    const { name } = useAppSelector(selectName)
     return <div>{name}</div>
 }
 
