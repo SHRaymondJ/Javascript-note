@@ -13,7 +13,7 @@ import {
 } from './counterSlice'
 import styles from './Counter.module.css'
 
-export function Counter() {
+export function Counter:React.FC() {
     const count = useAppSelector(selectCount)
     const { name } = useAppSelector(selectName)
     const dispatch = useAppDispatch()
@@ -65,7 +65,7 @@ export function Counter() {
                 >
                     Add If Odd
                 </button>
-                <input type="text" value={name} onChange={(e) => dispatch(modifyName({userName: e.target.value}))}/>
+                <input type="text" value={name} onChange={(e) => dispatch(modifyName({ userName: e.target.value }))} />
             </div>
         </div>
     )
