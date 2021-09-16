@@ -11,6 +11,6 @@
         transition-all transform duration-300 border-b hover:border-yellow-200 select-none ease-out;
     }
     .transition-default {
-        @apply transition-all transform duration-300 ease-out;
+        @apply transition-all transform duration-500 ease-in-out;
     }
 }
