@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { XIcon } from '@heroicons/react/outline'
 import { observer } from 'mobx-react-lite'
 import { useSearchStore } from '../stores/SearchContext'
 
 const SearchBox = observer(() => {
   const searchStore = useSearchStore()
+  const inputEl = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if(searchStore.visible) {
+      inputEl.current?.select()
+    }
+  }, [searchStore.visible])
   return (
     <div
       className={`fixed h-screen w-screen top-0 left-0 bg-white bg-opacity-90 transition-opacity transform duration-200 ease-out ${
@@ -20,6 +26,7 @@ const SearchBox = observer(() => {
           type="text"
           className="border-b border-gray-900 font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black placeholder-gray-300 outline-none font-serif"
           placeholder="Search..."
+          ref={inputEl}
         />
       </div>
     </div>
