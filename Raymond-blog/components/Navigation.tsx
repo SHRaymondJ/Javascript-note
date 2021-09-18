@@ -15,7 +15,7 @@ const Navigation: React.FC = observer(() => {
   }
   const searchStore = useSearchStore()
   return (
-    <div className="sticky top-0 bg-white w-full overflow-hidden shadow-lg sm:shadow-none">
+    <div className="sticky top-0 bg-white w-full overflow-hidden shadow-lg sm:shadow-none z-10">
       <div className="flex justify-between items-center">
         <MenuIcon
           className="w-14 h-14 py-4 sm:hidden px-4 
@@ -25,11 +25,11 @@ const Navigation: React.FC = observer(() => {
 
         {/* nav-bar for big devices */}
         <div className="hidden pl-16 pt-6 sm:flex justify-between flex-grow">
-          <div className="nav-btn">Home</div>
-          <div className="nav-btn">Study</div>
-          <div className="nav-btn">Demo</div>
-          <div className="nav-btn">Reading</div>
-          <div className="nav-btn">contact</div>
+          <div className="border-b nav-btn">Home</div>
+          <div className="border-b nav-btn">Study</div>
+          <div className="border-b nav-btn">Demo</div>
+          <div className="border-b nav-btn">Reading</div>
+          <div className="border-b nav-btn">contact</div>
         </div>
         <img src={RaymondLogo} alt="Raymond Jiang" className="w-20 h-full sm:hidden"/>
         <SearchIcon

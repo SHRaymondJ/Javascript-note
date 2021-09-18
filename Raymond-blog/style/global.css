@@ -8,7 +8,7 @@
     .nav-btn {
         @apply sm:flex-grow text-center items-center py-4 px-2 h-14 text-gray-700 
         hover:bg-yellow-200 hover:text-white cursor-pointer 
-        transition-all transform duration-300 border-b hover:border-yellow-200 select-none ease-out;
+        transition-all transform duration-300 hover:border-yellow-200 select-none ease-out;
     }
     .transition-default {
         @apply transition-all transform duration-500 ease-in-out;

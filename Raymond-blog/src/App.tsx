@@ -2,6 +2,7 @@ import React from 'react'
 import Navigation from '../components/Navigation'
 import HomePageBody from '../components/HomePageBody'
 import { SearchProvider } from '../stores/SearchContext'
+import { ArticleProvider } from '../stores/ArticleContexct'
 import RaymondLogo from './img/myName.gif'
 
 const App: React.FC = () => {
@@ -15,7 +16,9 @@ const App: React.FC = () => {
       <SearchProvider>
         <Navigation></Navigation>
       </SearchProvider>
-      <HomePageBody></HomePageBody>
+      <ArticleProvider>
+        <HomePageBody></HomePageBody>
+      </ArticleProvider>
     </div>
   )
 }
