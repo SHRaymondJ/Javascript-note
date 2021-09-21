@@ -8,11 +8,11 @@ import RaymondLogo from './img/myName.gif'
 const App: React.FC = () => {
   return (
     <div className="relative">
-      <img
+      {/* <img
         src={RaymondLogo}
         alt="Raymond Jiang"
         className="m-auto w-96 mt-6 hidden sm:block"
-      />
+      /> */}
       <SearchProvider>
         <Navigation></Navigation>
       </SearchProvider>
