@@ -14,3 +14,46 @@
         @apply transition-all transform duration-500 ease-in-out;
     }
 }
+
+.XIcon {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 24px;
+    height: 16px;
+    z-index: 100;
+    cursor: pointer;
+}
+.XIcon span {
+    width: 24px;
+    height: 3px;
+    border-radius: 3px;
+    background-color:black;
+    display: block;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+.XIcon span:first-child {
+    top: 0;
+}
+.XIcon span:nth-child(2) {
+    top: 8px;
+}
+.XIcon span:last-child {
+    top: 16px;
+}
+
+.XIcon.close span:first-child {
+    transform: rotate(45deg) translate(-1px,-1px);
+    transform-origin: left top;
+}
+.XIcon.close span:nth-child(2) {
+    top: 6px;
+    transform: translateX(-20px);
+    opacity: 0;
+}
+.XIcon.close span:last-child {
+    top: 12px;
+    transform: rotate(-45deg) translate(-2px, 1px);
+    transform-origin: left bottom;
+}

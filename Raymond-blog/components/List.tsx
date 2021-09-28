@@ -1,12 +1,12 @@
 import React from 'react'
 import ListItem from './ListItem'
 import { observer } from 'mobx-react-lite'
-import { useArticleStore } from '../stores/ArticleContexct'
+import { useArticleStore } from '../stores/ArticleContext'
 
 const List = observer(() => {
   const articleStore = useArticleStore()
   return (
-    <div className="relative gap-8 flex flex-col max-w-[1200px] mx-auto">
+    <div className="relative gap-4 sm:gap-8 flex flex-col max-w-[1200px] mx-auto">
       {articleStore.articleList.map((article) => (
         <ListItem key={article.id} {...article} />
       ))}

@@ -8,7 +8,7 @@ function Super(name, age){
     console.log(this)
 }
 
-function Sub(name, age, height) {
+function Sub(height) {
     Super.call(this, ...arguments)  // 通过 call 拿到 Super 中的属性
     this.height = height
 }

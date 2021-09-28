@@ -4,13 +4,14 @@ export type TArticle = {
   createDate: string
   categories: Array<string>
   author: string
+  filePath: string
 }
 
 export interface IarticleStore {
   articleList: Array<TArticle>
   activeArticleID: number
   getArticleList: () => void
-  getActiveArticle: (id: number) => TArticle
+  getActiveArticle: (id: number) => Promise<string>
   selectArticle: (id: number) => void
 }
 
@@ -26,8 +27,9 @@ export const createArticleStore = (): IarticleStore => {
         this.articleList = [...list.articles]
       }
     },
-    getActiveArticle(id) {
-      return this.articleList.filter((article) => article.id === id)[0]
+    async getActiveArticle(id) {
+      await this.getArticleList()
+      return this.articleList.filter((article) => article.id === id)[0].filePath
     },
     selectArticle(id) {
       this.activeArticleID = id

@@ -29,10 +29,6 @@ class EventEmitter {
     }
 }
 
-
-
-
-
 const event = new EventEmitter();
 
 const handle = (...rest) => {

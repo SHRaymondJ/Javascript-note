@@ -1,8 +1,8 @@
 function mySetInterval(fn, time = 1000) {
     let timer = null,
         isClear = false
-    const interval = function () {
-        if (isClear) {
+    function interval() {
+        if(isClear) {
             isClear = false;
             clearTimeout(timer);
             return false
@@ -15,6 +15,7 @@ function mySetInterval(fn, time = 1000) {
         isClear = true
     }
 }
+
 
 let a = mySetInterval(function () {
     console.log(Math.random() * 100)

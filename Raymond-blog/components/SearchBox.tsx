@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { XIcon } from '@heroicons/react/outline'
 import { observer } from 'mobx-react-lite'
 import { useSearchStore } from '../stores/SearchContext'
@@ -6,6 +6,11 @@ import { useSearchStore } from '../stores/SearchContext'
 const SearchBox = observer(() => {
   const searchStore = useSearchStore()
   const inputEl = useRef<HTMLInputElement>(null)
+  const [XIconType, setXIconType] = useState('')
+  const toggleXIconType = () => {
+    const type = XIconType === '' ? 'close' : ''
+    setXIconType(type)
+  }
   useEffect(() => {
     if(searchStore.visible) {
       inputEl.current?.select()
@@ -21,6 +26,11 @@ const SearchBox = observer(() => {
         onClick={() => searchStore.closeSearchBox()}
         className="absolute w-14 right-4 top-0 p-2 bg-white sm:right-16 sm:top-6 text-gray-700 hover:text-white hover:bg-yellow-200 cursor-pointer transition transform duration-300"
       />
+      {/* <div className={`XIcon ${XIconType}`} onClick={toggleXIconType}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <input
           type="text"

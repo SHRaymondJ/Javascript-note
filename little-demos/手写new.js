@@ -7,6 +7,7 @@ const myNew = (fn, ...args) => {
     return obj
 }
 
+
 function Person(name, age) {
     this.name = name
     this.age = age
@@ -17,3 +18,4 @@ function Person(name, age) {
 
 let jack = new Person('Jack', 24)
 let person = myNew(Person,'Jack', 24)
+console.log(person)

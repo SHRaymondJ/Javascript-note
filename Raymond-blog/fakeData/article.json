@@ -2,31 +2,35 @@
   "articles": [
     {
       "id": 1,
-      "name": "Javascript 第1方库",
+      "name": "[前端] 代码规范",
       "createDate": "2020-10-1",
       "categories": ["javascript", "front-end"],
-      "author": "Raymond"
+      "author": "Raymond",
+      "filePath": "/files/[前端] 代码规范.md"
     },
     {
       "id": 2,
-      "name": "Javascript 第2方库",
+      "name": "React 学习笔记",
       "createDate": "2020-10-1",
       "categories": ["javascript", "front-end"],
-      "author": "Raymond"
+      "author": "Raymond",
+      "filePath": "/files/React 学习笔记.md"
     },
     {
       "id": 3,
-      "name": "Javascript 第三方库",
+      "name": "vite项目搭建",
       "createDate": "2020-10-1",
       "categories": ["javascript", "front-end"],
-      "author": "Raymond"
+      "author": "Raymond",
+      "filePath": "/files/vite项目搭建.md"
     },
     {
       "id": 4,
-      "name": "Javascript 第4方库",
+      "name": "Javascript 第三方库",
       "createDate": "2020-10-1",
       "categories": ["javascript", "front-end"],
-      "author": "Raymond"
+      "author": "Raymond",
+      "filePath": "/files/Javascript 第三方库.md"
     }
   ]
 }
