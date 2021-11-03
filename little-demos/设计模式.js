@@ -16,70 +16,98 @@
 // const user = factory.create('Ray')
 // console.log(user.username)
 
-/** 创建型模式 - 生产器模式 */
-class ConcreteBuilder1 {
-   constructor() {
-      this.reset()
-   }
-   reset(){
-      this.product = new Product1()
-   }
-   producePartA() {
-      this.product.parts.push('PartA1')
-   }
-   producePartB() {
-      this.product.parts.push('PartB1')
-   }
-   producePartC() {
-      this.product.parts.push('PartC1')
-   }
-   getProduct(){
-      const result = this.product
-      this.reset()
-      return result
-   }
-}
-class Product1 {
-   parts = []
-   listParts() {
-      console.log(`Product parts: ${this.parts.join(', ')}\n`)
-   }
-}
-class Director{
-   setBuilder(builder) {
-      this.builder = builder
-   }
-   buildMinimalViableProduct() {
-      this.builder.producePartA()
-   }
-   buildFullFeaturedProduct() {
-      this.builder.producePartA()
-      this.builder.producePartB()
-      this.builder.producePartC()
-   }
-}
-function clientCode(director) {
-   const builder = new ConcreteBuilder1()
-   director.setBuilder(builder)
+// /** 创建型模式 - 生产器模式 */
+// class ConcreteBuilder1 {
+//    constructor() {
+//       this.reset()
+//    }
+//    reset(){
+//       this.product = new Product1()
+//    }
+//    producePartA() {
+//       this.product.parts.push('PartA1')
+//    }
+//    producePartB() {
+//       this.product.parts.push('PartB1')
+//    }
+//    producePartC() {
+//       this.product.parts.push('PartC1')
+//    }
+//    getProduct(){
+//       const result = this.product
+//       this.reset()
+//       return result
+//    }
+// }
+// class Product1 {
+//    parts = []
+//    listParts() {
+//       console.log(`Product parts: ${this.parts.join(', ')}\n`)
+//    }
+// }
+// class Director{
+//    setBuilder(builder) {
+//       this.builder = builder
+//    }
+//    buildMinimalViableProduct() {
+//       this.builder.producePartA()
+//    }
+//    buildFullFeaturedProduct() {
+//       this.builder.producePartA()
+//       this.builder.producePartB()
+//       this.builder.producePartC()
+//    }
+// }
+// function clientCode(director) {
+//    const builder = new ConcreteBuilder1()
+//    director.setBuilder(builder)
 
-   console.log('Standard basic product: ')
-   director.buildMinimalViableProduct()
-   builder.getProduct().listParts()
+//    console.log('Standard basic product: ')
+//    director.buildMinimalViableProduct()
+//    builder.getProduct().listParts()
 
-   console.log('Standard full featured product: ')
-   director.buildFullFeaturedProduct()
-   builder.getProduct().listParts()
+//    console.log('Standard full featured product: ')
+//    director.buildFullFeaturedProduct()
+//    builder.getProduct().listParts()
 
-   console.log('Custom product: ')
-   builder.producePartA()
-   builder.producePartC()
-   builder.getProduct().listParts()
-}
+//    console.log('Custom product: ')
+//    builder.producePartA()
+//    builder.producePartC()
+//    builder.getProduct().listParts()
+// }
 
-const director = new Director()
-clientCode(director)
+// const director = new Director()
+// clientCode(director)
 
-// /** 单例模式 */
+// /** 创建型模式 - 原型模式 */
+// class Prototype {
+//    clone() {
+//       const clone = Object.create(this)
+//       clone.component = Object.create(this.component)
+//       clone.circularReference = {
+//          ...this.circularReference,
+//          prototype: {...this}
+//       }
+
+//       return clone
+//    }
+// }
+// class ComponentWithBackReference {
+//    constructor(prototype) {
+//       this.prototype = prototype
+//    }
+// }
+
+// function clientCode() {
+//    const p1 = new Prototype()
+//    p1.primitive = 245
+//    p1.component = new Date()
+//    p1.circularReference = new ComponentWithBackReference(p1)
+
+//    const p2 = p1.clone()
+// }
+
+// /** 创建型模式 - 单例模式 */
 // class LoginForm {
 //    constructor() {
 //       this.state = 'hide'
@@ -118,8 +146,45 @@ clientCode(director)
 // const login2 = LoginForm.getInstance()
 // login2.show()  // 已经显示
 
+/** 结构型模式 - 适配器模式 */
+class Target {
+   request() {
+      return 'Target: The default target\'s behavior.'
+   }
+}
 
-// /** 装饰器模式
+class Adaptee {
+   specificRequest() {
+      return '.eetpadA eht fo roivaheb laicepS'
+   }
+}
+
+class Adapter extends Target {
+   constructor(adaptee){
+      super()
+      this.adaptee = adaptee
+   }
+   request() {
+      const result = this.adaptee.specificRequest().split('').reverse().join('')
+      return `Adapter: (TRANSLATED) ${result}`
+   }
+}
+
+function clientCode(target) {
+   console.log(target.request())
+}
+
+console.log('Client: I can work just fine with the Target Objects: ')
+const target = new Target()
+clientCode(target)
+
+console.log('')
+
+const adaptee = new Adaptee()
+const adapter = new Adapter(adaptee)
+clientCode(adapter)
+
+// /** 结构型模式 - 装饰器模式
 //  * 解释： 装饰器传入实例引用，通过修改实例引用的属性，达到修改原实例的目的
 //  */
 // // 被装饰的对象构造函数
