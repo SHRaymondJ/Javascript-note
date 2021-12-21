@@ -11,14 +11,23 @@ import { useAsync } from 'utils/useAsync'
 
 export const UnauthenticatedApp = () => {
     const [isRegister, setIsRegister] = useState(false)
-    const {error, setError} = useAsync()
+    const { error, setError } = useAsync()
     return (
         <Container style={{ display: 'flex', justifyContent: 'center' }}>
             <Header />
             <Background />
             <ShadowCard>
-                {error ? <Typography.Text type={'danger'}>{error.message}</Typography.Text> : null}
-                {isRegister ? <RegisterComponent onError={setError}/> : <LoginComponent onError={setError}/>}
+                {isRegister ? <h2>请注册</h2> : <h2>请登录</h2>}
+                {error ? (
+                    <Typography.Text type={'danger'}>
+                        {error.message}
+                    </Typography.Text>
+                ) : null}
+                {isRegister ? (
+                    <RegisterComponent onError={setError} />
+                ) : (
+                    <LoginComponent onError={setError} />
+                )}
                 <Divider />
                 <a onClick={() => setIsRegister(!isRegister)}>{`${
                     isRegister
