@@ -1,17 +1,13 @@
-import Index from 'screens/project-list/Index'
 import './App.css'
-import { TsReactTest } from 'try-use-array'
-import Login from 'screens/login/Index'
-import { AppProviders } from 'context/Index'
+import { useAuth } from 'context/AuthContext'
+import { AuthenticatedApp } from 'AuthenticatedApp'
+import { UnauthenticatedApp } from 'unauthenticatedApp/Index'
 
 function App() {
+    const { user } = useAuth()
     return (
         <div className="App">
-            <AppProviders>
-                {/* <Index />
-            <TsReactTest /> */}
-                <Login />
-            </AppProviders>
+            {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
         </div>
     )
 }

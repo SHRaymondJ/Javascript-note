@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react'
 
 export const isFalsy = (value: unknown) => (value === 0 ? false : !value)
 
-export const cleanObject = <T extends object>(object: T) => {
+export const isVoid = (value: unknown) =>
+    value === undefined || value === null || value === ''
+
+export const cleanObject = (object: { [key: string]: unknown }) => {
     const result = { ...object }
     for (const key in object) {
         if (Object.prototype.hasOwnProperty.call(object, key)) {
             const element = object[key]
-            if (isFalsy(element)) {
+            if (isVoid(element)) {
                 delete result[key]
             }
         }
@@ -16,7 +19,12 @@ export const cleanObject = <T extends object>(object: T) => {
 }
 
 export const useMount = (callback: () => void) => {
-    return useEffect(() => callback(), [])
+    return useEffect(
+        () => callback(),
+        // TODO 依赖项里加上callback会造成无限循环， 这个和useCallback 以及 useMemo 有关系
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []
+    )
 }
 
 export const useDebounce = <V>(value: V, delay?: number) => {
@@ -41,7 +49,7 @@ export const useArray = <T>(array: T[]) => {
     const removeIndex = (index: number) => {
         if (index >= value.length) return
         const newValue = [...value]
-        newValue.splice(index,1)
+        newValue.splice(index, 1)
         setValue(newValue)
     }
     const add = (object: T) => {
