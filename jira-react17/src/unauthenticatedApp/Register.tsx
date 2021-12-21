@@ -5,7 +5,7 @@ import { useAsync } from 'utils/use-async'
 
 export const RegisterComponent = ({onError} : {onError: (error: Error) => void}) => {
     const { register } = useAuth()
-    const {isLoading, run} = useAsync()
+    const {isLoading, run} = useAsync(undefined, {throwOnError: true})
     const handleSubmit = async ({cpassword, ...value}: {
         username: string
         password: string
@@ -15,7 +15,11 @@ export const RegisterComponent = ({onError} : {onError: (error: Error) => void})
             onError(new Error('请确认两次输入的密码'))
             return
         }
-        run(register(value).catch(error => onError(error)))
+        try {
+            await run(register(value))
+        } catch (error) {
+            onError(error as Error)
+        }
     }
 
     return (

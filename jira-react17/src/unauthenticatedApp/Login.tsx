@@ -5,17 +5,17 @@ import styled from '@emotion/styled'
 
 export const LoginComponent = ({onError} : {onError: (error: Error) => void}) => {
     const { login } = useAuth()
-    const {isLoading, run} = useAsync()
+    const {isLoading, run} = useAsync(undefined, {throwOnError: true})
 
     const handleSubmit = async (value: {
         username: string
         password: string
     }) => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        run(login(value).catch(error=>{
-            console.log(error)
-            onError(error)
-        }))
+        try {
+            await run(login(value))
+        } catch (error) {
+            onError(error as Error)
+        }
     }
 
     return (
