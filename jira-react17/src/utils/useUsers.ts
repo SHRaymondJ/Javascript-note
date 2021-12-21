@@ -1,4 +1,4 @@
-import { useAsync } from 'utils/use-async'
+import { useAsync } from 'utils/useAsync'
 import { User } from 'screens/projectList/Index'
 import { cleanObject } from 'utils'
 import { useHttp } from './http'

@@ -52,7 +52,6 @@ export const useAsync = <D>(initialState?: State<D>, initialThrowOnError?: typeo
                 setError(error)
                 if(initialThrowOnError?.throwOnError) return Promise.reject(error)
                 return error
-                // return error
             })
     }
 

@@ -1,6 +1,6 @@
 import { useAuth } from 'context/AuthContext'
 import { Button, Form, Input } from 'antd'
-import { useAsync } from 'utils/use-async'
+import { useAsync } from 'utils/useAsync'
 import styled from '@emotion/styled'
 
 export const LoginComponent = ({onError} : {onError: (error: Error) => void}) => {

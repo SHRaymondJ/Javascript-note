@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Button, Form, Input } from 'antd'
 import { useAuth } from 'context/AuthContext'
-import { useAsync } from 'utils/use-async'
+import { useAsync } from 'utils/useAsync'
 
 export const RegisterComponent = ({onError} : {onError: (error: Error) => void}) => {
     const { register } = useAuth()

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Project } from 'screens/projectList/Index'
 import { cleanObject } from 'utils'
 import { useHttp } from './http'
-import { useAsync } from './use-async'
+import { useAsync } from './useAsync'
 
 export const useProjects = (param?: Partial<Project>) => {
     const client = useHttp()

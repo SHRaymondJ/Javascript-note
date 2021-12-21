@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 import logo from 'assets/logo.svg'
 import left from 'assets/left.svg'
 import right from 'assets/right.svg'
-import { useAsync } from 'utils/use-async'
+import { useAsync } from 'utils/useAsync'
 
 export const UnauthenticatedApp = () => {
     const [isRegister, setIsRegister] = useState(false)
