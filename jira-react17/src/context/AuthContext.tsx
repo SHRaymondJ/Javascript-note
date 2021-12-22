@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import { User } from 'screens/projectList/Index'
 import * as auth from 'AuthProvider'
 import { http } from 'utils/http'

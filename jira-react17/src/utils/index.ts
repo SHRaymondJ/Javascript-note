@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const isFalsy = (value: unknown) => (value === 0 ? false : !value)
 
@@ -41,7 +41,6 @@ export const useDebounce = <V>(value: V, delay?: number) => {
 }
 
 export const useArray = <T>(array: T[]) => {
-    // hello，请把作业写在这里吧，写完记得再对照作业要求检查一下
     const [value, setValue] = useState(array)
     const clear = () => {
         setValue([])
@@ -59,7 +58,7 @@ export const useArray = <T>(array: T[]) => {
 }
 
 export const useDocumentTitle = (title: string, keepOnUnmount = true) => {
-    const oldTitle = document.title
+    const oldTitle = useRef(document.title).current
 
     useEffect(() => {
         document.title = title
@@ -71,6 +70,5 @@ export const useDocumentTitle = (title: string, keepOnUnmount = true) => {
                 document.title = oldTitle
             }
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [keepOnUnmount, oldTitle])
 }
