@@ -8,10 +8,14 @@ import logo from 'assets/logo.svg'
 import left from 'assets/left.svg'
 import right from 'assets/right.svg'
 import { useAsync } from 'utils/useAsync'
+import { useDocumentTitle } from 'utils'
 
 export const UnauthenticatedApp = () => {
     const [isRegister, setIsRegister] = useState(false)
     const { error, setError } = useAsync()
+
+    useDocumentTitle('请登录或注册', false)
+
     return (
         <Container style={{ display: 'flex', justifyContent: 'center' }}>
             <Header />
