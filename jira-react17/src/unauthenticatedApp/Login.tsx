@@ -13,6 +13,8 @@ export const LoginComponent = ({onError} : {onError: (error: Error) => void}) =>
     }) => {
         try {
             await run(login(value))
+                .catch(err => console.log(err))  
+                // 因为 login 方法已经 catch 了 Promise 的报错，所以如果不在catch里重新return Promise.reject(err) 的话，这边的 .catch 是接收不到报错的
         } catch (error) {
             onError(error as Error)
         }
