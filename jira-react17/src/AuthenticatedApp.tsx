@@ -3,42 +3,62 @@ import { Button, Dropdown, Menu } from 'antd'
 import { Row } from 'components/libs'
 import { useAuth } from 'context/AuthContext'
 import { ReactComponent as SoftwareLogo } from 'assets/software-logo.svg'
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 import { ProjectListScreen } from 'screens/projectList/Index'
+import { ProjectScreen } from 'screens/projects/Index'
 
 export const AuthenticatedApp = () => {
-    const { user, logout } = useAuth()
     return (
         <Container>
-            <Header between={true}>
-                <HeaderLeft gap={true}>
-                    <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
-                    <h2>项目</h2>
-                    <h2>用户</h2>
-                </HeaderLeft>
-                <HeaderRight>
-                    {/* <Button onClick={logout} type="default"> */}
-                    <Dropdown
-                        overlay={
-                            <Menu>
-                                <Menu.Item>
-                                    <Button type={'link'} onClick={logout}>
-                                        登出
-                                    </Button>
-                                </Menu.Item>
-                            </Menu>
-                        }
-                    >
-                        <Button type={'link'} onClick={(e) => e.preventDefault()}>
-                            Hi, {user?.name}
-                        </Button>
-                    </Dropdown>
-                    {/* </Button> */}
-                </HeaderRight>
-            </Header>
-            <Main>
-                <ProjectListScreen></ProjectListScreen>
-            </Main>
+            <Router>
+                <PageHeader />
+                <Main>
+                    <Routes>
+                        <Route
+                            path={'/projects'}
+                            element={<ProjectListScreen />}
+                        />
+                        <Route
+                            path={'/projects/:projectId/*'}
+                            element={<ProjectScreen />}
+                        />
+                    </Routes>
+                </Main>
+            </Router>
         </Container>
+    )
+}
+
+const PageHeader = () => {
+    const { user, logout } = useAuth()
+
+    return (
+        <Header between={true}>
+            <HeaderLeft gap={true}>
+                <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
+                <Link to={'/projects'}>项目</Link>
+                <h2>用户</h2>
+            </HeaderLeft>
+            <HeaderRight>
+                {/* <Button onClick={logout} type="default"> */}
+                <Dropdown
+                    overlay={
+                        <Menu>
+                            <Menu.Item>
+                                <Button type={'link'} onClick={logout}>
+                                    登出
+                                </Button>
+                            </Menu.Item>
+                        </Menu>
+                    }
+                >
+                    <Button type={'link'} onClick={(e) => e.preventDefault()}>
+                        Hi, {user?.name}
+                    </Button>
+                </Dropdown>
+                {/* </Button> */}
+            </HeaderRight>
+        </Header>
     )
 }
 
