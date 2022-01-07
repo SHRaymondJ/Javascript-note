@@ -3,28 +3,25 @@ import { Button, Dropdown, Menu } from 'antd'
 import { Row } from 'components/libs'
 import { useAuth } from 'context/AuthContext'
 import { ReactComponent as SoftwareLogo } from 'assets/software-logo.svg'
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import { ProjectListScreen } from 'screens/projectList/Index'
 import { ProjectScreen } from 'screens/projects/Index'
+import { resetRoute } from 'utils'
 
 export const AuthenticatedApp = () => {
     return (
         <Container>
-            <Router>
-                <PageHeader />
-                <Main>
-                    <Routes>
-                        <Route
-                            path={'/projects'}
-                            element={<ProjectListScreen />}
-                        />
-                        <Route
-                            path={'/projects/:projectId/*'}
-                            element={<ProjectScreen />}
-                        />
-                    </Routes>
-                </Main>
-            </Router>
+            <PageHeader />
+            <Main>
+                <Routes>
+                    <Route path={'/projects'} element={<ProjectListScreen />} />
+                    <Route
+                        path={'/projects/:projectId/*'}
+                        element={<ProjectScreen />}
+                    />
+                    <Route index element={<ProjectListScreen />}/>
+                </Routes>
+            </Main>
         </Container>
     )
 }
@@ -35,8 +32,10 @@ const PageHeader = () => {
     return (
         <Header between={true}>
             <HeaderLeft gap={true}>
-                <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
-                <Link to={'/projects'}>项目</Link>
+                <Button type={'link'} onClick={resetRoute}>
+                    <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
+                </Button>
+                <h2>项目</h2>
                 <h2>用户</h2>
             </HeaderLeft>
             <HeaderRight>
