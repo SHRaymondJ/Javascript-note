@@ -14,6 +14,7 @@ specifiers:
   '@types/qs': ^6.9.7
   '@types/react': ^17.0.37
   '@types/react-dom': ^17.0.0
+  '@welldone-software/why-did-you-render': ^6.2.3
   antd: ^4.17.2
   craco-less: ^1.20.0
   dayjs: ^1.10.7
@@ -64,6 +65,7 @@ dependencies:
 
 devDependencies:
   '@types/qs': 6.9.7
+  '@welldone-software/why-did-you-render': 6.2.3_react@17.0.2
   eslint-config-prettier: 8.3.0
   husky: 7.0.4
   json-server: 0.17.0
@@ -3851,6 +3853,15 @@ packages:
       '@webassemblyjs/wast-parser': 1.9.0
       '@xtuc/long': 4.2.2
     dev: false
+
+  /@welldone-software/why-did-you-render/6.2.3_react@17.0.2:
+    resolution: {integrity: sha512-FQgi90jvC9uw2aALlonJfqaWOvU5UUBBVvdAnS2iryXwCc4YJkKsPJY5Y/LzaND3OIyk8XGUn1vTRn6hcem28Q==}
+    peerDependencies:
+      react: ^16 || ^17
+    dependencies:
+      lodash: 4.17.21
+      react: 17.0.2
+    dev: true
 
   /@xtuc/ieee754/1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}

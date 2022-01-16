@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import { Typography } from 'antd'
 import { useProjects } from 'utils/useProjects'
 import { useUsers } from 'utils/useUsers'
-
+import { useUrlQueryParams } from 'utils/url'
 export interface User {
     id: number
     name: string
@@ -21,10 +21,13 @@ export interface Project {
 }
 
 export const ProjectListScreen = () => {
-    const [param, setParam] = useState({
+    // 基本类型，可以放到依赖里，组件状态，可以放到依赖里，非组件状态的对象，绝对不能放到依赖里
+    const [, setParam] = useState({
         name: '',
         personId: '',
     })
+
+    const [param] = useUrlQueryParams(['name', 'personId'])
     const debouncedParam = useDebounce(param, 200)
     const { isLoading, error, data: list } = useProjects(debouncedParam)
     const { data: users } = useUsers()
@@ -51,6 +54,8 @@ export const ProjectListScreen = () => {
         </Container>
     )
 }
+
+ProjectListScreen.WhyDidYouRender = true
 
 const Container = styled.div`
     padding: 3.2rem;
