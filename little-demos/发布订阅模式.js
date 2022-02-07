@@ -2,6 +2,11 @@ class EventEmitter {
     constructor() {
         this.events = {}
     }
+    /**
+     * 订阅事件
+     * @param {String} type 事件类型
+     * @param {Function} callback 订阅后发布动作触发的回调函数，参数为发布的数据
+     */
     on(type, callback) {
         if (!this.events[type]) {
             this.events[type] = [callback]
@@ -22,7 +27,11 @@ class EventEmitter {
         }
         this.on(type, fn)
     }
-
+    /**
+     * 发布事件
+     * @param {String} type 事件类型
+     * @param {Any} rest 发布的内容
+     */
     emit(type, ...rest) {
         if (!this.events[type]) return
         this.events[type].forEach(fn => fn.apply(this, rest))
@@ -35,7 +44,7 @@ const handle = (...rest) => {
     console.log(rest);
 };
 const type = (...rest) => {
-    console.log(rest.reduce((a,b) => a+b , 0))
+    console.log(rest.reduce((a, b) => a + b, 0))
 }
 event.on("click", handle);
 event.on('click', type)

@@ -24,5 +24,5 @@ console.log(instance2)  // 每个实例之间是独立的
 
 console.log(instance1.__proto__ === Sub.prototype)//true
 console.log(instance1.__proto__.__proto__ === Super.prototype)//false
-console.log(Sub.prototype.__proto__ === Super.prototype)//fakse
+console.log(Sub.prototype.__proto__ === Super.prototype)//false
 instance1.sayHi() //hi
